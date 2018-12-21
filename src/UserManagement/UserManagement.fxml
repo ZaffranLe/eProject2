@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="528.0" style="-fx-background-color: #E0D5D2;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="UserManagement.UserManagementController">
+    <stylesheets>
+        <URL value="@usermanagement.css" />
+      <URL value="@../style.css" />
+    </stylesheets>
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="137.0" layoutY="49.0" prefHeight="33.0" prefWidth="255.0" text="User Profile">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="94.0" prefHeight="30.0" prefWidth="65.0" text="Username :" />
+      <Label layoutX="92.0" layoutY="137.0" prefHeight="30.0" prefWidth="40.0" text="Email:" />
+      <Label layoutX="37.0" layoutY="189.0" prefHeight="30.0" prefWidth="88.0" text="Phone Number:" />
+      <Label layoutX="75.0" layoutY="229.0" prefHeight="30.0" prefWidth="49.0" text="Address:" />
+      <JFXTextField editable="false" layoutX="137.0" layoutY="97.0" prefHeight="25.0" prefWidth="158.0" />
+      <JFXTextField layoutX="137.0" layoutY="139.0" prefHeight="25.0" prefWidth="158.0" />
+      <JFXTextField layoutX="132.0" layoutY="189.0" prefHeight="25.0" prefWidth="158.0" />
+      <JFXTextField layoutX="132.0" layoutY="229.0" prefHeight="25.0" prefWidth="158.0" />
+      <JFXButton layoutX="258.0" layoutY="284.0" styleClass="loginBtn" text="Edit Profile" />
+      <JFXButton layoutX="355.0" layoutY="284.0" styleClass="loginBtn" text="Change Password" />
+   </children>
+</AnchorPane>
