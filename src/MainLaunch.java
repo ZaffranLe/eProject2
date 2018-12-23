@@ -24,7 +24,7 @@ public class MainLaunch extends Application {
         Scene scene = new Scene(root);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
-        
+        this.stage = stage;
         stage.show();
     }
 

@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/MainController.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Main.fxml</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/MainLaunch.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Registration.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MenuSide/SideBarController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/AddProjectController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/Registration.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/TaskManagementController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/TaskManagement.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/AddProject.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MenuSide/SideBar.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/RegistrationController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/Main.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainLaunch.java</file>
         </group>
     </open-files>
 </project-private>

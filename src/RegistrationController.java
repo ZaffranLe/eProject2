@@ -35,10 +35,14 @@ public class RegistrationController implements Initializable {
     private void closeApp(MouseEvent event){
     System.exit(0);
     }
+    
     @FXML
     private void backToLogin(MouseEvent event) throws IOException{
          Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-         pane.getChildren().removeAll();
-         pane.getChildren().setAll(root);
+         MainLaunch.stage.getScene().setRoot(root);
+//         pane.getChildren().removeAll();
+//         pane.getChildren().setAll(root);
+           
+
     }
 }

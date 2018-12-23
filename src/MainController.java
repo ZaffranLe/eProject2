@@ -40,7 +40,7 @@ public class MainController implements Initializable {
     }    
 
     @FXML
-    private void openRegistration(MouseEvent event) throws Exception {
+    public void openRegistration(MouseEvent event) throws Exception {
         Parent fxml =  FXMLLoader.load(getClass().getResource("Registration.fxml"));
         contentArea.getChildren().removeAll();
 

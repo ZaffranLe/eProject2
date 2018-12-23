@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="595.0" style="-fx-background-color: #a3a3a3;" stylesheets="@../style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="TaskManagement.AddProjectController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="192.0" layoutY="28.0" prefHeight="45.0" prefWidth="217.0" text="Create Project" textFill="#a82828">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="87.0" text="Name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="152.0" layoutY="147.0" text="Member:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="181.0" layoutY="199.0" text="Start:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="240.0" text="End:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="171.0" layoutY="286.0" text="Image:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField layoutX="235.0" layoutY="88.0" prefHeight="25.0" prefWidth="177.0" />
+      <JFXComboBox layoutX="232.0" layoutY="148.0" prefHeight="25.0" prefWidth="183.0" />
+      <DatePicker layoutX="232.0" layoutY="200.0" prefHeight="25.0" prefWidth="183.0" />
+      <DatePicker layoutX="232.0" layoutY="241.0" prefHeight="25.0" prefWidth="183.0" />
+      <JFXButton layoutX="268.0" layoutY="287.0" prefHeight="25.0" prefWidth="65.0" styleClass="loginBtn" text="Upload" />
+      <JFXButton layoutX="347.0" layoutY="287.0" prefHeight="25.0" prefWidth="65.0" styleClass="loginBtn" text="Save" />
+      <ScrollPane layoutX="151.0" layoutY="347.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="131.0" prefWidth="300.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="131.0" prefWidth="300.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
