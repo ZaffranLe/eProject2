@@ -1,3 +1,5 @@
+package MainUI;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -24,6 +26,8 @@ import javafx.stage.StageStyle;
  * @author OS
  */
 public class MainController implements Initializable {
+    public static Stage stage = null;
+
     
     private Label label;
     @FXML
@@ -60,6 +64,7 @@ public class MainController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Task Management");
         stage.setScene(scene);
+        this.stage = stage;
         stage.show();
        
     }

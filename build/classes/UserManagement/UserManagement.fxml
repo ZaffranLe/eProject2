@@ -9,10 +9,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="528.0" style="-fx-background-color: #E0D5D2;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="UserManagement.UserManagementController">
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="528.0" style="-fx-background-color: #E0D5D2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserManagement.UserManagementController">
     <stylesheets>
         <URL value="@usermanagement.css" />
-      <URL value="@../style.css" />
+      <URL value="@../MainUI/style.css" />
     </stylesheets>
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="137.0" layoutY="49.0" prefHeight="33.0" prefWidth="255.0" text="User Profile">

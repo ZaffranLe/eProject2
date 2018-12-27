@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -21,7 +20,7 @@ import javafx.stage.Stage;
  *
  * @author OS
  */
-public class TaskManagementController implements Initializable {
+public class DetailProjectController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -32,9 +31,9 @@ public class TaskManagementController implements Initializable {
     }    
 
     @FXML
-    private void openCreateProject(MouseEvent event) throws IOException {
+    private void addTask(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("AddProject.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("AddMissionForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -42,9 +41,9 @@ public class TaskManagementController implements Initializable {
     }
 
     @FXML
-    private void openProject(MouseEvent event) throws IOException {
+    private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("DetailProject.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("DetailMission.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);

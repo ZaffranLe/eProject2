@@ -3,17 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MenuSide/SideBarController.java</file>
             <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/AddProjectController.java</file>
-            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/Registration.fxml</file>
-            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/TaskManagementController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/DetailProjectController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainUI/RegistrationController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainUI/style.css</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/DetailMissionController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/AddMissionForProjectController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainUI/Main.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/DetailProject.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainUI/MainController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MenuSide/SideBarController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainUI/MainLaunch.java</file>
             <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/TaskManagement.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/TaskManagementController.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/AddMissionForProject.fxml</file>
             <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/AddProject.fxml</file>
-            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainController.java</file>
             <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MenuSide/SideBar.fxml</file>
-            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/RegistrationController.java</file>
-            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/Main.fxml</file>
-            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainLaunch.java</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/MainUI/Registration.fxml</file>
+            <file>file:/C:/Users/OS/Desktop/Project2/eProject2/src/TaskManagement/DetailMission.fxml</file>
         </group>
     </open-files>
 </project-private>

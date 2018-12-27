@@ -23,7 +23,7 @@ import javafx.scene.layout.AnchorPane;
 public class SideBarController implements Initializable {
 
     @FXML
-    private AnchorPane content;
+    private AnchorPane content ;
 
     /**
      * Initializes the controller class.
