@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="700.0" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SideBarController">
+   <children>
+      <AnchorPane fx:id="content" layoutX="174.0" prefHeight="430.0" prefWidth="528.0" />
+      <AnchorPane prefHeight="430.0" prefWidth="172.0" styleClass="side" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="117.0" onMouseClicked="#taskManagement" prefHeight="38.0" prefWidth="161.0" styleClass="loginBtn" text="Task Management" />
+            <JFXButton buttonType="RAISED" layoutX="7.0" layoutY="177.0" onMouseClicked="#userManagement" prefHeight="38.0" prefWidth="161.0" styleClass="loginBtn" text="User Management" />
+            <Label layoutX="72.0" layoutY="254.0" />
+            <JFXButton fx:id="openDetail" layoutX="52.0" layoutY="259.0" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
