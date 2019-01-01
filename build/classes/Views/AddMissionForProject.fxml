@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="700.0" style="-fx-background-color: #a3a3a3;" stylesheets="@../Views/css/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controllers.AddMissionForProjectController">
+   <children>
+      <Label layoutX="251.0" layoutY="20.0" text="Create Task">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="165.0" layoutY="73.0" text="Title:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="364.0" text="Description:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="149.0" layoutY="137.0" prefHeight="30.0" prefWidth="63.0" text="Status:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="202.0" prefHeight="30.0" prefWidth="84.0" text="Member:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="233.0" layoutY="205.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXComboBox layoutX="233.0" layoutY="139.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextArea layoutX="226.0" layoutY="364.0" prefHeight="127.0" prefWidth="301.0" />
+      <Label layoutX="161.0" layoutY="261.0" prefHeight="30.0" prefWidth="50.0" text="Start:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="165.0" layoutY="313.0" prefHeight="30.0" prefWidth="42.0" text="End:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="233.0" layoutY="264.0" prefHeight="30.0" prefWidth="234.0" />
+      <DatePicker layoutX="233.0" layoutY="313.0" prefHeight="30.0" prefWidth="234.0" />
+      <JFXButton buttonType="RAISED" layoutX="478.0" layoutY="514.0" prefHeight="38.0" prefWidth="146.0" styleClass="loginBtn" text="Save" />
+   </children>
+</AnchorPane>
