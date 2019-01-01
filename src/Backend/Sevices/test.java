@@ -19,7 +19,7 @@ public class test {
     public static NguoidungJpaController nd;
     public static void main(String[] args) throws IllegalOrphanException, NonexistentEntityException {
         nd = new NguoidungJpaController();
-        System.out.println(nd.findNguoidung(1).getEmail());
+        System.out.println(nd.findNguoidungById(1).getEmail());
 //        Nguoidung n = new Nguoidung(3, "hahaha", "hahaha", "hahaha", "hahaha", "hahaha");
 //        nd.create(n);
         nd.destroy(2);
