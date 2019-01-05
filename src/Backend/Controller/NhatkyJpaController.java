@@ -16,6 +16,7 @@ import Backend.Model.Nhatky;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -23,13 +24,8 @@ import javax.persistence.EntityManagerFactory;
  */
 public class NhatkyJpaController implements Serializable {
 
-    public NhatkyJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
-
     public EntityManager getEntityManager() {
-        return emf.createEntityManager();
+        return Persistence.createEntityManagerFactory("eProject2PU").createEntityManager();
     }
 
     public void create(Nhatky nhatky) {
