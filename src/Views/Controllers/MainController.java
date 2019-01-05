@@ -32,6 +32,8 @@ public class MainController implements Initializable {
     private Label label;
     @FXML
     private Pane contentArea;
+    @FXML
+    private Label btn_signup;
     
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -43,7 +45,6 @@ public class MainController implements Initializable {
         // TODO
     }    
 
-    @FXML
     public void openRegistration(MouseEvent event) throws Exception {
         Parent fxml =  FXMLLoader.load(getClass().getResource("/Views/Registration.fxml"));
         contentArea.getChildren().removeAll();
@@ -51,12 +52,10 @@ public class MainController implements Initializable {
         contentArea.getChildren().setAll(fxml);
 
     }
-    @FXML
     private void closeApp(MouseEvent event){
     System.exit(0);
     }
 
-    @FXML
     private void login(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/SideBar.fxml"));
@@ -68,5 +67,10 @@ public class MainController implements Initializable {
         stage.show();
        
     }
+
+    @FXML
+    private void openRegistration_Click(MouseEvent event) {
+    }
+    
     
 }
