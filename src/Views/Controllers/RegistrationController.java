@@ -5,7 +5,6 @@ package Views.Controllers;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
@@ -20,7 +19,6 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import Backend.Sevices.Impl.UserSevicesImpl;
-
 
 /**
  * FXML Controller class
@@ -41,30 +39,39 @@ public class RegistrationController implements Initializable {
     private JFXTextField PhoneNumber;
     @FXML
     private JFXTextField Address;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    } 
-    @FXML
-    private void closeApp(MouseEvent event){
-    System.exit(0);
     }
-    private void clearText(){
+
+    @FXML
+    private void closeApp(MouseEvent event) {
+        System.exit(0);
+    }
+
+    private void clearText() {
         Email.setText("");
         Password.setText("");
         UserName.setText("");
         PhoneNumber.setText("");
         Address.setText("");
     }
+
     @FXML
-    private void backToLogin(MouseEvent event) throws IOException{
-         
+    private void backToLogin(MouseEvent event) throws IOException {
+
     }
+    
 
     @FXML
     private void Register_click(MouseEvent event) {
-        UserSevicesImpl UserS = new UserSevicesImpl();
-        boolean checkRegister = UserS.Register(Email.getText(), Password.getText(), UserName.getText(), PhoneNumber.getText(), Address.getText());
-        clearText();
+        try {
+            UserSevicesImpl UserS = new UserSevicesImpl();
+            boolean checkRegister = UserS.Register(Email.getText(), Password.getText(), UserName.getText(), PhoneNumber.getText(), Address.getText());
+            clearText();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

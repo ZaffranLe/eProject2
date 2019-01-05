@@ -18,7 +18,7 @@
 <?import de.jensd.fx.glyphs.*?>
 <?import de.jensd.fx.glyphs.fontawesome.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="parent" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="parent" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.MainController">
    <children>
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="side">
          <children>
@@ -50,12 +50,12 @@
                </font>
             </Label>
             <Label layoutX="40.0" layoutY="187.0" text="Sign in to continue" textFill="#a3a3a3" />
-            <JFXTextField labelFloat="true" layoutX="58.0" layoutY="254.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Email" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="Email" labelFloat="true" layoutX="58.0" layoutY="254.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Email" unFocusColor="#a3a3a3">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField labelFloat="true" layoutX="58.0" layoutY="310.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" unFocusColor="#a3a3a3">
+            <JFXPasswordField fx:id="Password" labelFloat="true" layoutX="58.0" layoutY="310.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" unFocusColor="#a3a3a3">
                <font>
                   <Font size="14.0" />
                </font>
