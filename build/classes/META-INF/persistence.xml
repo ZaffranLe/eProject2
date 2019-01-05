@@ -3,10 +3,10 @@
   <persistence-unit name="eProject2PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Backend.Model.Nguoidung</class>
-    <class>Backend.Model.Duan</class>
     <class>Backend.Model.Noidung</class>
-    <class>Backend.Model.Nhatky</class>
+    <class>Backend.Model.Duan</class>
     <class>Backend.Model.NguoidungDuan</class>
+    <class>Backend.Model.Nhatky</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/TaskManagement?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

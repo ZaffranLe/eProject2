@@ -1,4 +1,4 @@
-package Controllers;
+package Views.Controllers;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,6 +20,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import Backend.Sevices.UserSevices;
+import Backend.Sevices.Impl.UserSevicesImpl;
 
 /**
  *
@@ -60,7 +62,9 @@ public class MainController implements Initializable {
 
     @FXML
     private void login(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
+        UserSevicesImpl userS = new UserSevicesImpl();
+        if (userS.Login("hhhhhhh", "gggggggg")) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/SideBar.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
@@ -68,12 +72,10 @@ public class MainController implements Initializable {
         stage.setScene(scene);
         this.stage = stage;
         stage.show();
-       
+        }
     }
 
-    @FXML
-    private void openRegistration_Click(MouseEvent event) {
-    }   
+     
     
     
 }

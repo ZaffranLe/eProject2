@@ -40,16 +40,16 @@ public class Nhatky implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "ID")
     private Integer id;
     @Basic(optional = false)
-    @Column(name = "NoiDung", nullable = false, length = 100)
+    @Column(name = "NoiDung")
     private String noiDung;
     @Basic(optional = false)
-    @Column(name = "ThoiGian", nullable = false)
+    @Column(name = "ThoiGian")
     @Temporal(TemporalType.TIMESTAMP)
     private Date thoiGian;
-    @JoinColumn(name = "IDDuAn", referencedColumnName = "IDDuAn", nullable = false)
+    @JoinColumn(name = "IDDuAn", referencedColumnName = "IDDuAn")
     @ManyToOne(optional = false)
     private Duan iDDuAn;
 

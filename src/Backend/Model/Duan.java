@@ -41,20 +41,20 @@ public class Duan implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(name = "IDDuAn", nullable = false, length = 100)
+    @Column(name = "IDDuAn")
     private String iDDuAn;
     @Basic(optional = false)
-    @Column(name = "TenDuAn", nullable = false, length = 100)
+    @Column(name = "TenDuAn")
     private String tenDuAn;
     @Basic(optional = false)
-    @Column(name = "NgayBatDau", nullable = false)
+    @Column(name = "NgayBatDau")
     @Temporal(TemporalType.TIMESTAMP)
     private Date ngayBatDau;
     @Column(name = "NgayKetThuc")
     @Temporal(TemporalType.TIMESTAMP)
     private Date ngayKetThuc;
     @Basic(optional = false)
-    @Column(name = "TrangThai", nullable = false, length = 100)
+    @Column(name = "TrangThai")
     private String trangThai;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "duan")
     private Collection<NguoidungDuan> nguoidungDuanCollection;

@@ -44,31 +44,31 @@ public class Noidung implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(name = "IDNoiDung", nullable = false, length = 100)
+    @Column(name = "IDNoiDung")
     private String iDNoiDung;
     @Basic(optional = false)
-    @Column(name = "TieuDe", nullable = false, length = 100)
+    @Column(name = "TieuDe")
     private String tieuDe;
     @Basic(optional = false)
-    @Column(name = "NoiDung", nullable = false, length = 100)
+    @Column(name = "NoiDung")
     private String noiDung;
     @Basic(optional = false)
-    @Column(name = "TrangThai", nullable = false, length = 100)
+    @Column(name = "TrangThai")
     private String trangThai;
     @Basic(optional = false)
-    @Column(name = "NgayBatDau", nullable = false)
+    @Column(name = "NgayBatDau")
     @Temporal(TemporalType.TIMESTAMP)
     private Date ngayBatDau;
     @Basic(optional = false)
-    @Column(name = "NgayKetThuc", nullable = false)
+    @Column(name = "NgayKetThuc")
     @Temporal(TemporalType.TIMESTAMP)
     private Date ngayKetThuc;
     @JoinTable(name = "nguoidung_noidung", joinColumns = {
-        @JoinColumn(name = "IDNoiDung", referencedColumnName = "IDNoiDung", nullable = false)}, inverseJoinColumns = {
-        @JoinColumn(name = "IDNguoiDung", referencedColumnName = "ID", nullable = false)})
+        @JoinColumn(name = "IDNoiDung", referencedColumnName = "IDNoiDung")}, inverseJoinColumns = {
+        @JoinColumn(name = "IDNguoiDung", referencedColumnName = "ID")})
     @ManyToMany
     private Collection<Nguoidung> nguoidungCollection;
-    @JoinColumn(name = "IDDuAn", referencedColumnName = "IDDuAn", nullable = false)
+    @JoinColumn(name = "IDDuAn", referencedColumnName = "IDDuAn")
     @ManyToOne(optional = false)
     private Duan iDDuAn;
 

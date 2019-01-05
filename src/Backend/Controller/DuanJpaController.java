@@ -22,7 +22,6 @@ import Backend.Model.Noidung;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 /**
  *
@@ -30,8 +29,13 @@ import javax.persistence.Persistence;
  */
 public class DuanJpaController implements Serializable {
 
+    public DuanJpaController(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+    private EntityManagerFactory emf = null;
+
     public EntityManager getEntityManager() {
-        return Persistence.createEntityManagerFactory("eProject2PU").createEntityManager();
+        return emf.createEntityManager();
     }
 
     public void create(Duan duan) throws PreexistingEntityException, Exception {
@@ -310,5 +314,5 @@ public class DuanJpaController implements Serializable {
             em.close();
         }
     }
-
+    
 }

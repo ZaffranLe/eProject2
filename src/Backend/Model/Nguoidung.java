@@ -19,7 +19,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -28,8 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author vukho
  */
 @Entity
-@Table(name = "nguoidung", catalog = "TaskManagement", schema = "", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"Email"})})
+@Table(name = "nguoidung", catalog = "TaskManagement", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Nguoidung.findAll", query = "SELECT n FROM Nguoidung n")
@@ -45,22 +43,22 @@ public class Nguoidung implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "ID")
     private Integer id;
     @Basic(optional = false)
-    @Column(name = "Email", nullable = false, length = 100)
+    @Column(name = "Email")
     private String email;
     @Basic(optional = false)
-    @Column(name = "MatKhau", nullable = false, length = 100)
+    @Column(name = "MatKhau")
     private String matKhau;
     @Basic(optional = false)
-    @Column(name = "HoTen", nullable = false, length = 100)
+    @Column(name = "HoTen")
     private String hoTen;
     @Basic(optional = false)
-    @Column(name = "SDT", nullable = false, length = 10)
-    private String sdt;
+    @Column(name = "SDT")
+    private int sdt;
     @Basic(optional = false)
-    @Column(name = "DiaChi", nullable = false, length = 1000)
+    @Column(name = "DiaChi")
     private String diaChi;
     @ManyToMany(mappedBy = "nguoidungCollection")
     private Collection<Noidung> noidungCollection;
@@ -74,8 +72,7 @@ public class Nguoidung implements Serializable {
         this.id = id;
     }
 
-    public Nguoidung(Integer id, String email, String matKhau, String hoTen, String sdt, String diaChi) {
-        this.id = id;
+    public Nguoidung( String email, String matKhau, String hoTen, int sdt, String diaChi) {
         this.email = email;
         this.matKhau = matKhau;
         this.hoTen = hoTen;
@@ -115,11 +112,11 @@ public class Nguoidung implements Serializable {
         this.hoTen = hoTen;
     }
 
-    public String getSdt() {
+    public int getSdt() {
         return sdt;
     }
 
-    public void setSdt(String sdt) {
+    public void setSdt(int sdt) {
         this.sdt = sdt;
     }
 

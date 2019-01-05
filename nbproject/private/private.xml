@@ -2,17 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Controller/NguoidungJpaController.java</file>
             <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Model/Nguoidung.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Sevices/NguoiDungSevices.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/RegistrationController.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Main.fxml</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Sevices/Impl/UserSevicesImpl.java</file>
             <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/MainController.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Registration.fxml</file>
             <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/MainLaunch.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Model/Duan.java</file>
         </group>
->>>>>>> origin/khoidz
     </open-files>
 </project-private>

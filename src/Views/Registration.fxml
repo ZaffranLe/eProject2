@@ -11,7 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="parent" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegistrationController">
+<AnchorPane id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="parent" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.RegistrationController">
     <stylesheets>
         <URL value="@../Views/css/style.css" />
     </stylesheets>
@@ -28,32 +28,32 @@
          </image>
       </ImageView>
       <FontAwesomeIcon iconName="CLOSE" layoutX="379.0" layoutY="20.0" onMouseClicked="#closeApp" size="1.5em" styleClass="closeBtn" text="" />
-      <JFXPasswordField labelFloat="true" layoutX="65.0" layoutY="248.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" unFocusColor="#a3a3a3">
+      <JFXPasswordField fx:id="Password" labelFloat="true" layoutX="65.0" layoutY="248.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" unFocusColor="#a3a3a3">
          <font>
             <Font size="14.0" />
          </font>
       </JFXPasswordField>
-      <JFXTextField labelFloat="true" layoutX="65.0" layoutY="194.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Email" unFocusColor="#a3a3a3">
+      <JFXTextField fx:id="Email" labelFloat="true" layoutX="65.0" layoutY="194.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Email" unFocusColor="#a3a3a3">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="65.0" layoutY="302.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Enter Username" unFocusColor="#a3a3a3">
+      <JFXTextField fx:id="UserName" labelFloat="true" layoutX="65.0" layoutY="302.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Enter Username" unFocusColor="#a3a3a3">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="65.0" layoutY="359.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Enter Phone Number" unFocusColor="#a3a3a3">
+      <JFXTextField fx:id="PhoneNumber" labelFloat="true" layoutX="65.0" layoutY="359.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Enter Phone Number" unFocusColor="#a3a3a3">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="65.0" layoutY="418.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Your Adress" unFocusColor="#a3a3a3">
+      <JFXTextField fx:id="Address" labelFloat="true" layoutX="65.0" layoutY="418.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Your Adress" unFocusColor="#a3a3a3">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXButton buttonType="RAISED" layoutX="50.0" layoutY="478.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" ripplerFill="#0777ff" styleClass="loginBtn" text="Register">
+      <JFXButton buttonType="RAISED" layoutX="50.0" layoutY="478.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#Register_click" prefHeight="50.0" prefWidth="300.0" ripplerFill="#0777ff" styleClass="loginBtn" text="Register">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

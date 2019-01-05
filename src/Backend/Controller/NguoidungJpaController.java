@@ -28,6 +28,7 @@ import javax.persistence.Persistence;
  */
 public class NguoidungJpaController implements Serializable {
 
+
     public EntityManager getEntityManager() {
         return Persistence.createEntityManagerFactory("eProject2PU").createEntityManager();
     }
@@ -142,7 +143,7 @@ public class NguoidungJpaController implements Serializable {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = nguoidung.getId();
-                if (findNguoidungById(id) == null) {
+                if (findNguoidung(id) == null) {
                     throw new NonexistentEntityException("The nguoidung with id " + id + " no longer exists.");
                 }
             }
@@ -215,7 +216,7 @@ public class NguoidungJpaController implements Serializable {
         }
     }
 
-    public Nguoidung findNguoidungById(Integer id) {
+    public Nguoidung findNguoidung(Integer id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Nguoidung.class, id);
@@ -226,7 +227,7 @@ public class NguoidungJpaController implements Serializable {
     public List<Nguoidung> findNguoidungByEmail(String Email) {
         EntityManager em = getEntityManager();
         try {
-            String hql = String.format("select a from %s a where a.email = :Email", Nguoidung.class.getName());
+            String hql = String.format("select a from %s a where a.email = :Email ", Nguoidung.class.getName());
             return em.createQuery(hql).setParameter("Email", Email).getResultList();
         } finally {
             em.close();
@@ -245,4 +246,5 @@ public class NguoidungJpaController implements Serializable {
             em.close();
         }
     }
+    
 }

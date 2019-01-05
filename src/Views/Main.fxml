@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -12,7 +18,7 @@
 <?import de.jensd.fx.glyphs.*?>
 <?import de.jensd.fx.glyphs.fontawesome.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="parent" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="parent" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
    <children>
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="side">
          <children>
@@ -60,7 +66,7 @@
                </font>
             </JFXButton>
             <Label layoutX="195.0" layoutY="462.0" text="New user?" textFill="#a3a3a3" />
-            <Label fx:id="btn_signup" layoutX="258.0" layoutY="462.0" onMouseClicked="#openRegistration_Click" styleClass="registration" text="Sign Up" textFill="#6747cd">
+            <Label layoutX="258.0" layoutY="462.0" onMouseClicked="#openRegistration" styleClass="registration" text="Sign Up" textFill="#6747cd">
           
             </Label>
             <FontAwesomeIcon iconName="CLOSE" layoutX="381.0" layoutY="19.0" onMouseClicked="#closeApp" size="1.5em" styleClass="closeBtn" text="" />
