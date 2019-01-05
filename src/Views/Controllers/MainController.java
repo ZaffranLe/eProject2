@@ -52,10 +52,13 @@ public class MainController implements Initializable {
         contentArea.getChildren().setAll(fxml);
 
     }
+    
+    @FXML
     private void closeApp(MouseEvent event){
     System.exit(0);
     }
 
+    @FXML
     private void login(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/SideBar.fxml"));
@@ -70,7 +73,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void openRegistration_Click(MouseEvent event) {
-    }
+    }   
     
     
 }

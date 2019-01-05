@@ -8,6 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="parent" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
    <children>
@@ -15,7 +18,7 @@
          <children>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" smooth="false">
                <image>
-                  <Image url="@../Views.css/system-task.jpg" />
+                  <Image url="@../Views/css/system-task.jpg" />
                </image>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -32,7 +35,7 @@
          <children>
             <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="23.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon/system-task.jpg" />
+                  <Image url="@../Views/css/system-task.jpg" />
                </image>
             </ImageView>
             <Label layoutX="33.0" layoutY="153.0" text="Welcome,">
