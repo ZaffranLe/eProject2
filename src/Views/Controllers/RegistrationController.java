@@ -68,6 +68,7 @@ public class RegistrationController implements Initializable {
     private void Register_click(MouseEvent event) {
         try {
             UserSevicesImpl UserS = new UserSevicesImpl();
+            System.out.println(Address.getText());
             boolean checkRegister = UserS.Register(Email.getText(), Password.getText(), UserName.getText(), PhoneNumber.getText(), Address.getText());
             clearText();
         } catch (Exception e) {

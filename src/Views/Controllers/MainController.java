@@ -23,6 +23,8 @@ import Backend.Sevices.UserSevices;
 import Backend.Sevices.Impl.UserSevicesImpl;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -77,7 +79,6 @@ public class MainController implements Initializable {
                 Stage stage = new Stage();
                 stage.setTitle("Task Management");
                 stage.setScene(scene);
-                
                 this.stage = stage;
                 stage.show();
             }
@@ -85,8 +86,19 @@ public class MainController implements Initializable {
     }
 
     public boolean CheckValid(String Email, String Password) {
+        Validate vld = new Validate();
         if (Email.isEmpty() || Password.isEmpty()) {
             AlertMess alertMess = new AlertMess("Email or Password is empty!");
+            alertMess.ShowMessError();
+            return false;
+        }
+        if (Email.length()>50) {
+             AlertMess alertMess = new AlertMess("Email no more than 50 character length validation");
+            alertMess.ShowMessError();
+            return false;
+        }
+        if (!vld.validateEmail(Email)) {
+            AlertMess alertMess = new AlertMess("Email is not correct!");
             alertMess.ShowMessError();
             return false;
         }
