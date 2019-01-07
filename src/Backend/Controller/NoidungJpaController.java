@@ -32,7 +32,6 @@ public class NoidungJpaController implements Serializable {
         return Persistence.createEntityManagerFactory("eProject2PU").createEntityManager();
     }
 
-
     public void create(Noidung noidung) throws PreexistingEntityException, Exception {
         if (noidung.getNguoidungCollection() == null) {
             noidung.setNguoidungCollection(new ArrayList<Nguoidung>());

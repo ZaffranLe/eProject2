@@ -35,12 +35,12 @@ public class NguoidungDuan implements Serializable {
     @EmbeddedId
     protected NguoidungDuanPK nguoidungDuanPK;
     @Basic(optional = false)
-    @Column(name = "ViTri", nullable = false, length = 100)
+    @Column(name = "ViTri")
     private String viTri;
-    @JoinColumn(name = "IDNguoiDung", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "IDNguoiDung", referencedColumnName = "ID", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Nguoidung nguoidung;
-    @JoinColumn(name = "IDDuAn", referencedColumnName = "IDDuAn", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "IDDuAn", referencedColumnName = "IDDuAn", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Duan duan;
 
