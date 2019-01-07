@@ -18,10 +18,10 @@ import javax.persistence.Embeddable;
 public class NguoidungDuanPK implements Serializable {
 
     @Basic(optional = false)
-    @Column(name = "IDNguoiDung", nullable = false)
+    @Column(name = "IDNguoiDung")
     private int iDNguoiDung;
     @Basic(optional = false)
-    @Column(name = "IDDuAn", nullable = false, length = 100)
+    @Column(name = "IDDuAn")
     private String iDDuAn;
 
     public NguoidungDuanPK() {

@@ -17,6 +17,7 @@ import Backend.Model.Noidung;
 import java.util.ArrayList;
 import java.util.Collection;
 import Backend.Model.NguoidungDuan;
+import Views.Controllers.AlertMess;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -142,7 +143,7 @@ public class NguoidungJpaController implements Serializable {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = nguoidung.getId();
-                if (findNguoidungById(id) == null) {
+                if (findNguoidung(id) == null) {
                     throw new NonexistentEntityException("The nguoidung with id " + id + " no longer exists.");
                 }
             }
@@ -215,7 +216,7 @@ public class NguoidungJpaController implements Serializable {
         }
     }
 
-    public Nguoidung findNguoidungById(Integer id) {
+    public Nguoidung findNguoidung(Integer id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Nguoidung.class, id);
@@ -223,13 +224,28 @@ public class NguoidungJpaController implements Serializable {
             em.close();
         }
     }
+
     public List<Nguoidung> findNguoidungByEmail(String Email) {
         EntityManager em = getEntityManager();
         try {
             String hql = String.format("select a from %s a where a.email = :Email", Nguoidung.class.getName());
             return em.createQuery(hql).setParameter("Email", Email).getResultList();
+        } catch (Exception e) {
+            AlertMess alert = new AlertMess("Đã xảy ra lỗi khi truy cập cơ sở dữ liệu");
+            alert.ShowMessError();
+            System.out.println(e.getMessage());
+            return null;
         } finally {
             em.close();
+        }
+    }
+
+    public void EditStatusLogin(Nguoidung user, boolean status) {
+        try {
+            user.setTrangThaiDangNhap(status);
+            edit(user);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -245,4 +261,5 @@ public class NguoidungJpaController implements Serializable {
             em.close();
         }
     }
+
 }

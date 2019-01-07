@@ -27,7 +27,6 @@ public class NhatkyJpaController implements Serializable {
     public EntityManager getEntityManager() {
         return Persistence.createEntityManagerFactory("eProject2PU").createEntityManager();
     }
-
     public void create(Nhatky nhatky) {
         EntityManager em = null;
         try {
