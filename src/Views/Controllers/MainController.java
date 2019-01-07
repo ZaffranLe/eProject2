@@ -10,9 +10,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -20,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 
 /**
  *
@@ -66,8 +69,18 @@ public class MainController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Task Management");
         stage.setScene(scene);
+
         this.stage = stage;
+       
+
         stage.show();
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+        //Goi su kien khi nhan nut tat (dung de chuyen trang thai dang nhap)
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+          public void handle(WindowEvent we) {
+              System.out.println("Stage is closing");
+          }
+      });        
        
     }
 

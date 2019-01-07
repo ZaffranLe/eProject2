@@ -28,6 +28,7 @@ public class MainLaunch extends Application {
         stage.setScene(scene);
         this.stage = stage;
         stage.show();
+        
     }
 
     /**

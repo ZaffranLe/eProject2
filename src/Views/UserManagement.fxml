@@ -23,10 +23,10 @@
         <Label layoutX="92.0" layoutY="137.0" prefHeight="30.0" prefWidth="40.0" text="Email:" />
         <Label layoutX="37.0" layoutY="189.0" prefHeight="30.0" prefWidth="88.0" text="Phone Number:" />
         <Label layoutX="75.0" layoutY="229.0" prefHeight="30.0" prefWidth="49.0" text="Address:" />
-        <JFXTextField editable="false" layoutX="137.0" layoutY="97.0" prefHeight="25.0" prefWidth="158.0" />
-        <JFXTextField layoutX="137.0" layoutY="139.0" prefHeight="25.0" prefWidth="158.0" />
-        <JFXTextField layoutX="132.0" layoutY="189.0" prefHeight="25.0" prefWidth="158.0" />
-        <JFXTextField layoutX="132.0" layoutY="229.0" prefHeight="25.0" prefWidth="158.0" />
+        <JFXTextField editable="false" layoutX="137.0" layoutY="97.0" prefHeight="25.0" prefWidth="158.0" styleClass="textField" />
+        <JFXTextField editable="false" layoutX="137.0" layoutY="139.0" prefHeight="25.0" prefWidth="158.0" />
+        <JFXTextField editable="false" layoutX="132.0" layoutY="189.0" prefHeight="25.0" prefWidth="158.0" />
+        <JFXTextField editable="false" layoutX="132.0" layoutY="229.0" prefHeight="25.0" prefWidth="158.0" />
         <JFXButton layoutX="258.0" layoutY="284.0" styleClass="loginBtn" text="Edit Profile" />
         <JFXButton layoutX="355.0" layoutY="284.0" styleClass="loginBtn" text="Change Password" />
     </children>
