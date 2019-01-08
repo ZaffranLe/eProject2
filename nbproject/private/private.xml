@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Controller/NguoidungJpaController.java</file>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Views/Controllers/MainController.java</file>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Duan.java</file>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Noidung.java</file>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Nguoidung.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/Impl/NoidungServiceImpl.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Enum/TRANGTHAITASK.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Controller/NoidungJpaController.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Controller/DuanJpaController.java</file>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Controller/NguoidungDuanJpaController.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Duan.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/NoidungServices.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Views/Controllers/test.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Noidung.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,7 +5,6 @@ package Views.Controllers;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,60 +21,88 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import Backend.Sevices.UserSevices;
 import Backend.Sevices.Impl.UserSevicesImpl;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
  * @author OS
  */
 public class MainController implements Initializable {
+
     public static Stage stage = null;
 
-    
     private Label label;
     @FXML
     private Pane contentArea;
     @FXML
     private Label btn_signup;
-    
+
+    @FXML
+    private JFXTextField Email;
+
+    @FXML
+    private JFXPasswordField Password;
+
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     public void openRegistration(MouseEvent event) throws Exception {
-        Parent fxml =  FXMLLoader.load(getClass().getResource("/Views/Registration.fxml"));
+        Parent fxml = FXMLLoader.load(getClass().getResource("/Views/Registration.fxml"));
         contentArea.getChildren().removeAll();
-
         contentArea.getChildren().setAll(fxml);
 
     }
-    
+
     @FXML
-    private void closeApp(MouseEvent event){
-    System.exit(0);
+    private void closeApp(MouseEvent event) {
+        System.exit(0);
     }
 
     @FXML
     private void login(MouseEvent event) throws IOException {
         UserSevicesImpl userS = new UserSevicesImpl();
-        if (userS.Login("hhhhhhh", "gggggggg")) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/Views/SideBar.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setTitle("Task Management");
-        stage.setScene(scene);
-        this.stage = stage;
-        stage.show();
+        if (CheckValid(Email.getText(), Password.getText())) {
+            if (userS.Login(Email.getText(), Password.getText())) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/Views/SideBar.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = new Stage();
+                stage.setTitle("Task Management");
+                stage.setScene(scene);
+                this.stage = stage;
+                stage.show();
+            }
         }
     }
 
-     
-    
-    
+    public boolean CheckValid(String Email, String Password) {
+        Validate vld = new Validate();
+        if (Email.isEmpty() || Password.isEmpty()) {
+            AlertMess alertMess = new AlertMess("Email or Password is empty!");
+            alertMess.ShowMessError();
+            return false;
+        }
+        if (Email.length()>50) {
+             AlertMess alertMess = new AlertMess("Email no more than 50 character length validation");
+            alertMess.ShowMessError();
+            return false;
+        }
+        if (!vld.validateEmail(Email)) {
+            AlertMess alertMess = new AlertMess("Email is not correct!");
+            alertMess.ShowMessError();
+            return false;
+        }
+        return true;
+    }
+
 }

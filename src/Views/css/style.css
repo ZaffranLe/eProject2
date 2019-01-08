@@ -42,3 +42,8 @@
 .backBtn:hover{
     -fx-fill:#ff6666;
 }
+.dialog-panel{
+    -fx-border-color: bisque;
+    -fx-text-alignment: center;
+    -fx-text-fill: blue;
+}

@@ -36,7 +36,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Nguoidung.findByMatKhau", query = "SELECT n FROM Nguoidung n WHERE n.matKhau = :matKhau")
     , @NamedQuery(name = "Nguoidung.findByHoTen", query = "SELECT n FROM Nguoidung n WHERE n.hoTen = :hoTen")
     , @NamedQuery(name = "Nguoidung.findBySdt", query = "SELECT n FROM Nguoidung n WHERE n.sdt = :sdt")
-    , @NamedQuery(name = "Nguoidung.findByDiaChi", query = "SELECT n FROM Nguoidung n WHERE n.diaChi = :diaChi")})
+    , @NamedQuery(name = "Nguoidung.findByDiaChi", query = "SELECT n FROM Nguoidung n WHERE n.diaChi = :diaChi")
+    , @NamedQuery(name = "Nguoidung.findByTrangThaiDangNhap", query = "SELECT n FROM Nguoidung n WHERE n.trangThaiDangNhap = :trangThaiDangNhap")})
 public class Nguoidung implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -56,10 +57,13 @@ public class Nguoidung implements Serializable {
     private String hoTen;
     @Basic(optional = false)
     @Column(name = "SDT")
-    private int sdt;
+    private String sdt;
     @Basic(optional = false)
     @Column(name = "DiaChi")
     private String diaChi;
+    @Basic(optional = false)
+    @Column(name = "TrangThaiDangNhap")
+    private boolean trangThaiDangNhap;
     @ManyToMany(mappedBy = "nguoidungCollection")
     private Collection<Noidung> noidungCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "nguoidung")
@@ -72,12 +76,13 @@ public class Nguoidung implements Serializable {
         this.id = id;
     }
 
-    public Nguoidung( String email, String matKhau, String hoTen, int sdt, String diaChi) {
+    public Nguoidung(String email, String matKhau, String hoTen, String sdt, String diaChi, boolean trangThaiDangNhap) {
         this.email = email;
         this.matKhau = matKhau;
         this.hoTen = hoTen;
         this.sdt = sdt;
         this.diaChi = diaChi;
+        this.trangThaiDangNhap = trangThaiDangNhap;
     }
 
     public Integer getId() {
@@ -112,11 +117,11 @@ public class Nguoidung implements Serializable {
         this.hoTen = hoTen;
     }
 
-    public int getSdt() {
+    public String getSdt() {
         return sdt;
     }
 
-    public void setSdt(int sdt) {
+    public void setSdt(String sdt) {
         this.sdt = sdt;
     }
 
@@ -126,6 +131,14 @@ public class Nguoidung implements Serializable {
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
+    }
+
+    public boolean getTrangThaiDangNhap() {
+        return trangThaiDangNhap;
+    }
+
+    public void setTrangThaiDangNhap(boolean trangThaiDangNhap) {
+        this.trangThaiDangNhap = trangThaiDangNhap;
     }
 
     @XmlTransient

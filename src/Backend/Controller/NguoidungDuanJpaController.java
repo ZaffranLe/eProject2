@@ -19,6 +19,7 @@ import Backend.Model.NguoidungDuanPK;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,21 +27,16 @@ import javax.persistence.EntityManagerFactory;
  */
 public class NguoidungDuanJpaController implements Serializable {
 
-    public NguoidungDuanJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
-
     public EntityManager getEntityManager() {
-        return emf.createEntityManager();
+        return Persistence.createEntityManagerFactory("eProject2PU").createEntityManager();
     }
 
     public void create(NguoidungDuan nguoidungDuan) throws PreexistingEntityException, Exception {
         if (nguoidungDuan.getNguoidungDuanPK() == null) {
             nguoidungDuan.setNguoidungDuanPK(new NguoidungDuanPK());
         }
-        nguoidungDuan.getNguoidungDuanPK().setIDDuAn(nguoidungDuan.getDuan().getIDDuAn());
         nguoidungDuan.getNguoidungDuanPK().setIDNguoiDung(nguoidungDuan.getNguoidung().getId());
+        nguoidungDuan.getNguoidungDuanPK().setIDDuAn(nguoidungDuan.getDuan().getIDDuAn());
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -78,8 +74,8 @@ public class NguoidungDuanJpaController implements Serializable {
     }
 
     public void edit(NguoidungDuan nguoidungDuan) throws NonexistentEntityException, Exception {
-        nguoidungDuan.getNguoidungDuanPK().setIDDuAn(nguoidungDuan.getDuan().getIDDuAn());
         nguoidungDuan.getNguoidungDuanPK().setIDNguoiDung(nguoidungDuan.getNguoidung().getId());
+        nguoidungDuan.getNguoidungDuanPK().setIDDuAn(nguoidungDuan.getDuan().getIDDuAn());
         EntityManager em = null;
         try {
             em = getEntityManager();
