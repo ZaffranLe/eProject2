@@ -8,8 +8,7 @@ package Backend.Sevices;
 import Backend.Controller.NguoidungJpaController;
 import Backend.Controller.exceptions.IllegalOrphanException;
 import Backend.Controller.exceptions.NonexistentEntityException;
-import Backend.Model.Nguoidung;
-import javax.persistence.Persistence;
+
 
 /**
  *

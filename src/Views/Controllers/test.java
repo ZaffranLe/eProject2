@@ -10,8 +10,10 @@ import Backend.Controller.NguoidungJpaController;
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Duan;
+import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
 import Backend.Sevices.Impl.DuanServicesImpl;
+import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class test {
         System.out.println("khởi dz bướng vcc");
         DuanServicesImpl da = new DuanServicesImpl();
         NoidungServiceImpl nd = new NoidungServiceImpl();
-
+        NguoidungServicesImpl nguoidung = new NguoidungServicesImpl();
         List<Duan> list = da.getAllByStatus(1, TRANGTHAIDUAN.DANGLAM.toString());
         for (Duan a : list) {
             System.out.println(a.getTenDuAn());
@@ -37,6 +39,12 @@ public class test {
         for (Noidung a : listNoidung) {
             System.out.println(a.getTieuDe());
 
+        }
+        
+        List<Nguoidung> ListNguoidung = nguoidung.getAllByProject("1");
+        
+        for (Nguoidung nguoidung1 : ListNguoidung) {
+            System.out.println(nguoidung1.getHoTen());
         }
     }
 }
