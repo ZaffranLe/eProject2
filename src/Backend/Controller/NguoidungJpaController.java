@@ -17,7 +17,7 @@ import Backend.Model.Noidung;
 import java.util.ArrayList;
 import java.util.Collection;
 import Backend.Model.NguoidungDuan;
-import Views.Controllers.AlertMess;
+import Foundation.AlertMess;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

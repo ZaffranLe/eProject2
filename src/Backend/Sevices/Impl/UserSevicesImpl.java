@@ -5,11 +5,12 @@
  */
 package Backend.Sevices.Impl;
 
+import Foundation.LibraryMD5;
 import Backend.Controller.NguoidungDuanJpaController;
 import Backend.Sevices.UserSevices;
 import Backend.Controller.NguoidungJpaController;
 import Backend.Model.Nguoidung;
-import Views.Controllers.AlertMess;
+import Foundation.AlertMess;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.util.List;
