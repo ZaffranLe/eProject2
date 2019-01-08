@@ -5,9 +5,15 @@
  */
 package Controllers;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -16,6 +22,15 @@ import javafx.fxml.Initializable;
  */
 public class AddProjectController implements Initializable {
 
+    @FXML
+    private JFXTextField txtTenProject;
+    @FXML
+    private JFXComboBox<?> cbThanhVien;
+    @FXML
+    private DatePicker dtNgayBatDau;
+    @FXML
+    private DatePicker dtNgayKetThuc;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +38,9 @@ public class AddProjectController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void btnThemProject(MouseEvent event) {
+    }
     
 }
