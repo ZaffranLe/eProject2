@@ -9,9 +9,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -19,12 +21,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import javafx.stage.WindowEvent;
 import Backend.Sevices.UserSevices;
 import Backend.Sevices.Impl.UserSevicesImpl;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+
+
 
 /**
  *
@@ -81,6 +88,14 @@ public class MainController implements Initializable {
                 stage.setScene(scene);
                 this.stage = stage;
                 stage.show();
+                ((Node) (event.getSource())).getScene().getWindow().hide();
+                //Goi su kien khi nhan nut tat (dung de chuyen trang thai dang nhap)
+                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                    public void handle(WindowEvent we) {
+                        System.out.println("Stage is closing");
+                    }
+                });
+
             }
         }
     }
@@ -92,8 +107,8 @@ public class MainController implements Initializable {
             alertMess.ShowMessError();
             return false;
         }
-        if (Email.length()>50) {
-             AlertMess alertMess = new AlertMess("Email no more than 50 character length validation");
+        if (Email.length() > 50) {
+            AlertMess alertMess = new AlertMess("Email no more than 50 character length validation");
             alertMess.ShowMessError();
             return false;
         }
