@@ -15,9 +15,11 @@ import javax.persistence.criteria.Root;
 import Backend.Model.Duan;
 import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
+import Views.Controllers.AlertMess;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -208,5 +210,25 @@ public class NoidungJpaController implements Serializable {
             em.close();
         }
     }
-    
+    /**
+     * Lấy ra các task trong dự án theo trạng thái
+     * @param idDuAn id của dự án được chọn
+     * @param trangThaiTask trạng thái của task
+     * @return danh sách các task có trạng thái và thuộc dự án đã chọn
+     */
+    public List<Noidung> getAllByStatus(String idDuAn, String trangThaiTask) {
+        EntityManager em = getEntityManager();
+        try {
+            String jpql = String.format("Select a from Noidung a   where a.iDDuAn.iDDuAn =:idDuAn and   a.trangThai = :trangThaiTask");
+            return em.createQuery(jpql).setParameter("idDuAn", idDuAn).setParameter("trangThaiTask", trangThaiTask).getResultList();
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+            return null;
+        } finally {
+            em.close();
+        }
+    }
 }

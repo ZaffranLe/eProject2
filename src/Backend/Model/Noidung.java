@@ -178,4 +178,6 @@ public class Noidung implements Serializable {
         return "Backend.Model.Noidung[ iDNoiDung=" + iDNoiDung + " ]";
     }
     
+
+    
 }
