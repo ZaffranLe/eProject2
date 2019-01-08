@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -22,6 +23,11 @@ import javafx.stage.Stage;
  * @author OS
  */
 public class TaskManagementController implements Initializable {
+
+    @FXML
+    private Label txtTenProject;
+    @FXML
+    private Label txtTrangThai;
 
     /**
      * Initializes the controller class.

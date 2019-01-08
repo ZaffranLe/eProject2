@@ -8,7 +8,9 @@ package Backend.Controller;
 import Backend.Controller.exceptions.IllegalOrphanException;
 import Backend.Controller.exceptions.NonexistentEntityException;
 import Backend.Controller.exceptions.PreexistingEntityException;
+import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Model.Duan;
+import Backend.Model.Nguoidung;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import Backend.Model.Nhatky;
 import Backend.Model.Noidung;
+import Views.Controllers.AlertMess;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -306,6 +309,26 @@ public class DuanJpaController implements Serializable {
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
+        } finally {
+            em.close();
+        }
+    }
+    /**
+     * Lấy danh sách dự án theo người dùng và trang thái dự án
+     * @param idNguoiDung: id của người dùng
+     * @param trangThaiDuAn: trạng thái của dự án
+     * @return danh sách dự án
+     */
+    public List<Duan> getAllByStatus(int idNguoiDung, String trangThaiDuAn) {
+        EntityManager em = getEntityManager();
+        try {
+            String jpql = String.format("Select a from Duan a join NguoidungDuan c  where a.iDDuAn = c.duan.iDDuAn and c.nguoidung.id = :idNguoiDung and  a.trangThai = :trangThaiDuAn");
+            return em.createQuery(jpql).setParameter("idNguoiDung", idNguoiDung).setParameter("trangThaiDuAn", trangThaiDuAn).getResultList();
+        } catch (Exception e) {
+            AlertMess alert = new AlertMess("Đã xảy ra lỗi khi lấy danh sách dự án trong cơ sở dữ liệu");
+            alert.ShowMessError();
+            System.out.println(e.getStackTrace());
+            return null;
         } finally {
             em.close();
         }

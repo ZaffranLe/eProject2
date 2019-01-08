@@ -9,42 +9,37 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="528.0" style="-fx-background-color: #E0D5D2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserManagementController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="628.0" style="-fx-background-color: #E0D5D2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserManagementController">
     <stylesheets>
         <URL value="@../Views/css/style.css" />
     </stylesheets>
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="137.0" layoutY="49.0" prefHeight="33.0" prefWidth="255.0" text="User Profile">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="90.0" prefHeight="42.0" prefWidth="282.0" text="User Profile" textFill="#652323">
             <font>
                 <Font size="25.0" />
             </font>
         </Label>
-        <Label layoutX="68.0" layoutY="94.0" prefHeight="30.0" prefWidth="65.0" text="Username :" />
-        <Label layoutX="92.0" layoutY="137.0" prefHeight="30.0" prefWidth="40.0" text="Email:" />
-        <Label layoutX="37.0" layoutY="189.0" prefHeight="30.0" prefWidth="88.0" text="Phone Number:" />
-        <Label layoutX="75.0" layoutY="229.0" prefHeight="30.0" prefWidth="49.0" text="Address:" />
-        <JFXButton layoutX="258.0" layoutY="284.0" onMouseClicked="#btnEditClick" styleClass="loginBtn" text="Edit Profile" />
-        <JFXButton layoutX="355.0" layoutY="284.0" onMouseClicked="#btnChangePassword" styleClass="loginBtn" text="Change Password" />
-      <Label fx:id="txtUserName" layoutX="143.0" layoutY="94.0" prefHeight="30.0" prefWidth="142.0" style="-fx-border-color: black;" textFill="#250e0e">
+        <Label layoutX="134.0" layoutY="153.0" prefHeight="30.0" prefWidth="97.0" text="Username :">
          <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="txtEmail" layoutX="143.0" layoutY="137.0" prefHeight="30.0" prefWidth="142.0" style="-fx-border-color: black;">
+            <Font size="18.0" />
+         </font></Label>
+        <Label layoutX="173.0" layoutY="197.0" prefHeight="30.0" prefWidth="49.0" text="Email:">
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="txtPhoneNumber" layoutX="143.0" layoutY="189.0" prefHeight="30.0" prefWidth="142.0" style="-fx-border-color: black;">
+            <Font size="18.0" />
+         </font></Label>
+        <Label layoutX="97.0" layoutY="248.0" prefHeight="30.0" prefWidth="126.0" text="Phone Number:">
          <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="137.0" layoutY="229.0" prefHeight="30.0" prefWidth="142.0" />
-      <Label fx:id="txtAddress" layoutX="143.0" layoutY="232.0" prefHeight="25.0" prefWidth="148.0" style="-fx-border-color: black;">
+            <Font size="18.0" />
+         </font></Label>
+        <Label layoutX="148.0" layoutY="288.0" prefHeight="30.0" prefWidth="74.0" text="Address:">
          <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
+            <Font size="18.0" />
+         </font></Label>
+        <JFXTextField fx:id="txt" layoutX="230.0" layoutY="155.0" prefHeight="27.0" prefWidth="221.0" style="-fx-border-color: black;" styleClass="textField" />
+        <JFXTextField editable="false" layoutX="230.0" layoutY="198.0" prefHeight="25.0" prefWidth="221.0" style="-fx-border-color: black;" />
+        <JFXTextField editable="false" layoutX="230.0" layoutY="248.0" prefHeight="27.0" prefWidth="221.0" style="-fx-border-color: black;" />
+        <JFXTextField editable="false" layoutX="230.0" layoutY="288.0" prefHeight="27.0" prefWidth="221.0" style="-fx-border-color: black;" />
+        <JFXButton layoutX="340.0" layoutY="366.0" onMouseClicked="#btnEditClick" styleClass="loginBtn" text="Edit Profile" />
+        <JFXButton layoutX="435.0" layoutY="366.0" onMouseClicked="#btnChangePassword" styleClass="loginBtn" text="Change Password" />
     </children>
 </AnchorPane>

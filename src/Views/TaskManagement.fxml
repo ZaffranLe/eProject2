@@ -9,24 +9,36 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="contentProject" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="528.0" style="-fx-background-color: gray;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TaskManagementController">
+<AnchorPane id="contentProject" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="628.0" style="-fx-background-color: gray;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TaskManagementController">
     <stylesheets>
       <URL value="@../Views/css/style.css" />
     </stylesheets>
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="14.0" prefHeight="41.0" prefWidth="253.0" text="Project" textFill="#f8f8f8" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="147.0" AnchorPane.topAnchor="14.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="14.0" prefHeight="42.0" prefWidth="364.0" text="Project" textFill="#f8f8f8" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="14.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <ScrollPane layoutX="38.0" layoutY="109.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="463.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="109.0">
         <content>
-          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="463.0">
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="564.0">
                <children>
-                  <Pane layoutX="44.0" layoutY="14.0" onMouseClicked="#openProject" prefHeight="110.0" prefWidth="161.0" style="-fx-background-color: #a3a3a3;" />
-                  <Pane layoutX="256.0" layoutY="14.0" prefHeight="110.0" prefWidth="161.0" style="-fx-background-color: #a3a3a3;" />
-                  <Pane layoutX="44.0" layoutY="150.0" prefHeight="110.0" prefWidth="161.0" style="-fx-background-color: #a3a3a3;" />
-                  <Pane layoutX="256.0" layoutY="150.0" prefHeight="110.0" prefWidth="161.0" style="-fx-background-color: #a3a3a3;" />
+                  <Pane layoutX="55.0" layoutY="22.0" onMouseClicked="#openProject" prefHeight="151.0" prefWidth="199.0" style="-fx-background-color: #a3a3a3; -fx-border-width: 1px; -fx-border-color: black;">
+                     <children>
+                        <Label fx:id="txtTenProject" alignment="CENTER" layoutX="50.0" layoutY="24.0" prefHeight="41.0" prefWidth="99.0" text="Tên Project">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtTrangThai" alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="87.0" prefHeight="34.0" prefWidth="99.0" text="Trạng thái">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+                  <Pane layoutX="327.0" layoutY="32.0" prefHeight="132.0" prefWidth="181.0" style="-fx-background-color: #a3a3a3;" />
+                  <Pane layoutX="55.0" layoutY="189.0" prefHeight="134.0" prefWidth="200.0" style="-fx-background-color: #a3a3a3;" />
+                  <Pane layoutX="326.0" layoutY="194.0" prefHeight="124.0" prefWidth="182.0" style="-fx-background-color: #a3a3a3;" />
                </children></AnchorPane>
         </content>
       </ScrollPane>

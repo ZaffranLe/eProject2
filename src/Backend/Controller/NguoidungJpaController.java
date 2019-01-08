@@ -261,5 +261,19 @@ public class NguoidungJpaController implements Serializable {
             em.close();
         }
     }
+        public List<Nguoidung> getAllByProject(String idDuAn){
+        EntityManager em = getEntityManager();
+        try{
+            String jpql = "Select a from Nguoidung a join NguoidungDuan b where a.id = b.nguoidung.id and b.duan.iDDuAn =:idDuAn";
+            return em.createQuery(jpql).setParameter("idDuAn", idDuAn).getResultList();
+        }catch(Exception e){
+            System.out.println("Xảy ra lỗi khi lấy danh sách người dùng từ cơ sở dữ liệu");
+            System.out.println(e.getMessage());
+            return null;
+            
+        }finally{
+            em.close();
+        }
+    }
 
 }

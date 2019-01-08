@@ -35,10 +35,10 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <JFXComboBox layoutX="233.0" layoutY="205.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXComboBox layoutX="233.0" layoutY="142.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXTextField layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXTextArea layoutX="237.0" layoutY="380.0" prefHeight="127.0" prefWidth="301.0" />
+      <JFXComboBox fx:id="cbThanhVien" layoutX="233.0" layoutY="205.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXComboBox fx:id="cbTrangThai" layoutX="233.0" layoutY="142.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField fx:id="txtTenNhiemVu" layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextArea fx:id="txtMoTa" layoutX="237.0" layoutY="380.0" prefHeight="127.0" prefWidth="301.0" />
       <Label layoutX="165.0" layoutY="272.0" prefHeight="30.0" prefWidth="50.0" text="Start:">
          <font>
             <Font size="20.0" />
@@ -49,8 +49,9 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <DatePicker editable="false" layoutX="237.0" layoutY="272.0" prefHeight="30.0" prefWidth="234.0" />
-      <DatePicker layoutX="237.0" layoutY="321.0" prefHeight="30.0" prefWidth="234.0" />
-      <JFXButton buttonType="RAISED" layoutX="538.0" layoutY="76.0" prefHeight="23.0" prefWidth="98.0" styleClass="loginBtn" text="Edit" />
+      <DatePicker fx:id="dtNgayBatDau" editable="false" layoutX="237.0" layoutY="272.0" prefHeight="30.0" prefWidth="234.0" />
+      <DatePicker fx:id="dtNgayKetThuc" layoutX="237.0" layoutY="321.0" prefHeight="30.0" prefWidth="234.0" />
+      <JFXButton buttonType="RAISED" layoutX="538.0" layoutY="76.0" onMouseClicked="#btnSuaNhiemVu" prefHeight="23.0" prefWidth="98.0" styleClass="loginBtn" text="Edit" />
+      <JFXButton buttonType="RAISED" layoutX="538.0" layoutY="117.0" onMouseClicked="#btnLuuNhiemVu" prefHeight="23.0" prefWidth="98.0" styleClass="loginBtn" text="Save" />
    </children>
 </AnchorPane>

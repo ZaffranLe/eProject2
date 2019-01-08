@@ -60,7 +60,8 @@ public class RegistrationController implements Initializable {
 
     @FXML
     private void backToLogin(MouseEvent event) throws IOException {
-
+            Parent root = FXMLLoader.load(getClass().getResource("/Views/Main.fxml"));
+            Controllers.MainLaunch.stage.getScene().setRoot(root);
     }
     
 
