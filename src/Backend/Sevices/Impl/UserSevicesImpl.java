@@ -41,8 +41,7 @@ public class UserSevicesImpl implements UserSevices {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        AlertMess alert = new AlertMess("Email or Password is not correct");
-        alert.ShowMessError();
+        AlertMess.Instance().ShowMessError("Email or Password is not correct");
         return false;
     }
 

@@ -231,8 +231,7 @@ public class NguoidungJpaController implements Serializable {
             String hql = String.format("select a from %s a where a.email = :Email", Nguoidung.class.getName());
             return em.createQuery(hql).setParameter("Email", Email).getResultList();
         } catch (Exception e) {
-            AlertMess alert = new AlertMess("Đã xảy ra lỗi khi truy cập cơ sở dữ liệu");
-            alert.ShowMessError();
+            AlertMess.Instance().ShowMessError("Đã xảy ra lỗi khi truy cập cơ sở dữ liệu");
             System.out.println(e.getMessage());
             return null;
         } finally {

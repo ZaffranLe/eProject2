@@ -79,7 +79,7 @@ public class MainController implements Initializable {
     @FXML
     private void login(MouseEvent event) throws IOException {
         UserSevicesImpl userS = new UserSevicesImpl();
-        if (CheckValid(Email.getText(), Password.getText())) {
+        if (Validate.Instance().validateEmail(Email.getText())&&Validate.Instance().validatePassword(Password.getText())) {
             if (userS.Login(Email.getText(), Password.getText())) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/Views/SideBar.fxml"));
@@ -99,26 +99,6 @@ public class MainController implements Initializable {
 
             }
         }
-    }
-
-    public boolean CheckValid(String Email, String Password) {
-        Validate vld = new Validate();
-        if (Email.isEmpty() || Password.isEmpty()) {
-            AlertMess alertMess = new AlertMess("Email or Password is empty!");
-            alertMess.ShowMessError();
-            return false;
-        }
-        if (Email.length() > 50) {
-            AlertMess alertMess = new AlertMess("Email no more than 50 character length validation");
-            alertMess.ShowMessError();
-            return false;
-        }
-        if (!vld.validateEmail(Email)) {
-            AlertMess alertMess = new AlertMess("Email is not correct!");
-            alertMess.ShowMessError();
-            return false;
-        }
-        return true;
     }
 
 }

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import Backend.Model.Nhatky;
 import Backend.Model.Noidung;
-import Views.Controllers.AlertMess;
+import Foundation.AlertMess;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -325,8 +325,7 @@ public class DuanJpaController implements Serializable {
             String jpql = String.format("Select a from Duan a join NguoidungDuan c  where a.iDDuAn = c.duan.iDDuAn and c.nguoidung.id = :idNguoiDung and  a.trangThai = :trangThaiDuAn");
             return em.createQuery(jpql).setParameter("idNguoiDung", idNguoiDung).setParameter("trangThaiDuAn", trangThaiDuAn).getResultList();
         } catch (Exception e) {
-            AlertMess alert = new AlertMess("Đã xảy ra lỗi khi lấy danh sách dự án trong cơ sở dữ liệu");
-            alert.ShowMessError();
+            AlertMess.Instance().ShowMessError("Đã xảy ra lỗi khi lấy danh sách dự án trong cơ sở dữ liệu");
             System.out.println(e.getStackTrace());
             return null;
         } finally {
