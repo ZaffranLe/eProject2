@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views.Controllers;
+package Foundation;
+
+import Backend.Model.Nguoidung;
 
 /**
  *
  * @author vukho
  */
-public class test {
+public class t2 {
     public static void main(String[] args) {
-        System.out.println("khởi dz bướng vcc");
+        cachingSevices s = new cachingSevices();
+        System.out.println(s.getUerLogin().getEmail());
     }
 }
