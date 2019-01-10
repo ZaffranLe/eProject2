@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="595.0" style="-fx-background-color: #a3a3a3;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddProjectController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="189.0" layoutY="64.0" prefHeight="45.0" prefWidth="217.0" text="Create Project" textFill="#a82828">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="176.0" layoutY="175.0" text="Name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="187.0" layoutY="233.0" text="Start:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="191.0" layoutY="279.0" text="End:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtTenProject" layoutX="243.0" layoutY="176.0" prefHeight="25.0" prefWidth="177.0" />
+      <DatePicker fx:id="dtNgayBatDau" layoutX="238.0" layoutY="234.0" prefHeight="25.0" prefWidth="183.0" />
+      <DatePicker fx:id="dtNgayKetThuc" layoutX="238.0" layoutY="280.0" prefHeight="25.0" prefWidth="183.0" />
+      <JFXButton layoutX="380.0" layoutY="358.0" onMouseClicked="#btnThemProject" prefHeight="45.0" prefWidth="122.0" styleClass="loginBtn" text="Save" />
+   </children>
+</AnchorPane>
