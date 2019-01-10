@@ -7,7 +7,10 @@ package Controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -16,6 +19,15 @@ import javafx.fxml.Initializable;
  */
 public class UserManagementController implements Initializable {
 
+    @FXML
+    private Label txtUserName;
+    @FXML
+    private Label txtEmail;
+    @FXML
+    private Label txtPhoneNumber;
+    @FXML
+    private Label txtAddress;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +35,13 @@ public class UserManagementController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void btnEditClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnChangePassword(MouseEvent event) {
+    }
     
 }

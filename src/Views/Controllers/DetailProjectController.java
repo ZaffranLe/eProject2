@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -21,6 +22,11 @@ import javafx.stage.Stage;
  * @author OS
  */
 public class DetailProjectController implements Initializable {
+
+    @FXML
+    private Label txtTenNhiemVu;
+    @FXML
+    private Label txtMoTa;
 
     /**
      * Initializes the controller class.
@@ -44,6 +50,20 @@ public class DetailProjectController implements Initializable {
     private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/DetailMission.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void btnLocNhiemVu(MouseEvent event) {
+    }
+
+    @FXML
+    private void addMember(MouseEvent event) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/AddMemberForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);

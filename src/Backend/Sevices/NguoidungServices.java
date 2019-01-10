@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Foundation;
+package Backend.Sevices;
 
 import Backend.Model.Nguoidung;
+import java.util.List;
 
 /**
  *
- * @author vukho
+ * @author Quang
  */
-public class t2 {
-    public static void main(String[] args) {
-        cachingSevices s = new cachingSevices();
-        System.out.println(s.getUerLogin().getEmail());
-    }
+public interface NguoidungServices {
+    public List<Nguoidung> getAllByProject(String idDuAn);
 }

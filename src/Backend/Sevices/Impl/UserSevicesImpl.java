@@ -11,6 +11,7 @@ import Backend.Sevices.UserSevices;
 import Backend.Controller.NguoidungJpaController;
 import Backend.Model.Nguoidung;
 import Foundation.AlertMess;
+import Foundation.Transdata;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.util.List;
@@ -31,8 +32,15 @@ public class UserSevicesImpl implements UserSevices {
             if (users.size() == 1) {
                 for (Nguoidung user : users) {
                     String PassHash = md5.getMd5(Pass);
-                    if (user.getMatKhau().equals(PassHash)) {
-//                        xet trang thai dang nhap
+                    if (!user.getMatKhau().equals(PassHash)) {
+                        AlertMess.Instance().ShowMessError("Username or password is not correct!");
+                        return false;
+                    }else{
+                        if (user.getTrangThaiDangNhap()) {
+                            AlertMess.Instance().ShowMessError("Account has been logged in from an other devices!");
+                            return false;
+                        }
+                        Transdata.Instance().setUserLoginID(user.getId().toString());
                         return true;
                     }
                 }
@@ -41,8 +49,7 @@ public class UserSevicesImpl implements UserSevices {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        AlertMess alert = new AlertMess("Email or Password is not correct");
-        alert.ShowMessError();
+        AlertMess.Instance().ShowMessError("Email or Password is not correct");
         return false;
     }
 
