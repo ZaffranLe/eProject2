@@ -39,12 +39,13 @@ public class RegistrationController implements Initializable {
     private JFXTextField PhoneNumber;
     @FXML
     private JFXTextField Address;
+    @FXML
+    private JFXPasswordField RepeatPassword;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-
     @FXML
     private void closeApp(MouseEvent event) {
         System.exit(0);

@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -20,13 +21,13 @@ import javafx.scene.input.MouseEvent;
 public class UserManagementController implements Initializable {
 
     @FXML
-    private Label txtUserName;
+    private JFXTextField txtEmail;
     @FXML
-    private Label txtEmail;
+    private JFXTextField txtAddress;
     @FXML
-    private Label txtPhoneNumber;
+    private JFXTextField txtUsername;
     @FXML
-    private Label txtAddress;
+    private JFXTextField txtPhone;
 
     /**
      * Initializes the controller class.
