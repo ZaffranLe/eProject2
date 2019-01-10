@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views.Controllers;
+package Foundation;
+
+import Backend.Model.Nguoidung;
 
 import Backend.Controller.DuanJpaController;
 import Backend.Controller.NguoidungJpaController;

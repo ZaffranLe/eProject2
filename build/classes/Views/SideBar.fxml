@@ -13,7 +13,7 @@
       <AnchorPane fx:id="content" layoutX="174.0" prefHeight="480.0" prefWidth="628.0" />
       <AnchorPane prefHeight="430.0" prefWidth="172.0" styleClass="side" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="117.0" onMouseClicked="#taskManagement" prefHeight="38.0" prefWidth="161.0" styleClass="loginBtn" text="Task Management" />
+            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="117.0" onMouseClicked="#taskManagement" prefHeight="38.0" prefWidth="161.0" styleClass="loginBtn" text="Project Management" />
             <JFXButton buttonType="RAISED" layoutX="7.0" layoutY="177.0" onMouseClicked="#userManagement" prefHeight="38.0" prefWidth="161.0" styleClass="loginBtn" text="User Management" />
             <Label layoutX="72.0" layoutY="254.0" />
             <JFXButton fx:id="openDetail" layoutX="52.0" layoutY="259.0" visible="false" />

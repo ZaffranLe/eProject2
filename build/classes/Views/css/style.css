@@ -26,6 +26,11 @@
     -fx-border-radius: 3px;
 
 }
+.projectBtn{
+    -fx-background-color: #caf8f7;
+    -fx-text-fill: #000;
+    -fx-background-radius: 30px;
+}
 .closeBtn{
     -fx-fill: #545454;
 }

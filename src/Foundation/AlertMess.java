@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views.Controllers;
+package Foundation;
 
 import javafx.scene.control.Alert;
 
@@ -15,7 +15,14 @@ public class AlertMess {
 
     private String TittleError;
     private String TittleSuccess;
-    private String Content;
+    public static AlertMess instance;
+
+    public static AlertMess Instance() {
+        if (instance == null) {
+            instance = new AlertMess();
+        }
+        return instance;
+    }
 
     public String getTittleError() {
         return TittleError;
@@ -33,32 +40,20 @@ public class AlertMess {
         this.TittleError = "Error";
     }
 
-    public AlertMess(String Content) {
 
-        this.Content = Content;
-    }
-
-    public String getContent() {
-        return Content;
-    }
-
-    public void setContent(String Content) {
-        this.Content = Content;
-    }
-
-    public void ShowMessError() {
+    public void ShowMessError(String mess) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(TittleError);
         alert.setHeaderText(null);
-        alert.setContentText(Content);
+        alert.setContentText(mess);
         alert.showAndWait();
     }
 
-    public void ShowMessSuccess() {
+    public void ShowMessSuccess(String mess) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setTitle(TittleSuccess);
-        alert.setContentText(Content);
+        alert.setContentText(mess);
         alert.showAndWait();
     }
 }

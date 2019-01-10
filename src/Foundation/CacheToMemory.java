@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views.Controllers;
+package Foundation;
 
 /**
  *
@@ -21,7 +21,7 @@ import java.util.Map.Entry;
  */
  
 // Create Simple Cache object with the help of HashMap...
-public class CrunchifyCacheExample<K, T> {
+public class CacheToMemory<K, T> {
     
     private long timeToLive;
     private HashMap<K, T> cacheMap;
@@ -35,7 +35,7 @@ public class CrunchifyCacheExample<K, T> {
         }
     }
     
-    public CrunchifyCacheExample(long timeToLive, final long timeInterval, int max) {
+    public CacheToMemory(long timeToLive, final long timeInterval, int max) {
         this.timeToLive = timeToLive * 2000;
         
         cacheMap = new HashMap<K, T>(max);
@@ -48,6 +48,7 @@ public class CrunchifyCacheExample<K, T> {
                         try {
                             Thread.sleep(timeInterval * 1000);
                         } catch (InterruptedException ex) {
+                            ex.getStackTrace();
                         }
                         
                     }
