@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Controller/NguoidungJpaController.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Foundation/CacheToMemory.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Foundation/LibraryMD5.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Sevices/Impl/UserSevicesImpl.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Foundation/cachingSevices.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/MainController.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Foundation/t2.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Foundation/test.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/TaskManagementController.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/PanelProjectController.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/AddMemberForProjectController.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/TaskManagement.fxml</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/panelProject.fxml</file>
         </group>
     </open-files>
 </project-private>

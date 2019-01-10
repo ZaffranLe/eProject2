@@ -11,39 +11,40 @@
 
 <AnchorPane id="contentProject" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="642.0" style="-fx-background-color: #caf8f7;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TaskManagementController">
     <stylesheets>
-      <URL value="@../Views/css/style.css" />
+        <URL value="@../Views/css/style.css" />
     </stylesheets>
-   <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="33.0" prefHeight="42.0" prefWidth="364.0" text="Projects" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="33.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ScrollPane layoutX="38.0" layoutY="109.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="565.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="109.0">
-        <content>
-          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="558.0">
-               <children>
-                  <Pane layoutX="55.0" layoutY="23.0" onMouseClicked="#openProject" prefHeight="151.0" prefWidth="199.0" style="-fx-background-color: #a3a3a3; -fx-border-width: 1px; -fx-border-color: black;">
-                     <children>
-                        <Label fx:id="txtTenProject" alignment="CENTER" layoutX="50.0" layoutY="24.0" prefHeight="41.0" prefWidth="99.0" text="Project name">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="txtTrangThai" alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="87.0" prefHeight="34.0" prefWidth="99.0" text="Status">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="318.0" layoutY="22.0" prefHeight="153.0" prefWidth="199.0" style="-fx-background-color: #a3a3a3;" />
-                  <Pane layoutX="55.0" layoutY="244.0" prefHeight="151.0" prefWidth="200.0" style="-fx-background-color: #a3a3a3;" />
-                  <Pane layoutX="318.0" layoutY="243.0" prefHeight="153.0" prefWidth="200.0" style="-fx-background-color: #a3a3a3;" />
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
-      <JFXButton buttonType="RAISED" layoutX="382.0" layoutY="71.0" onMouseClicked="#openCreateProject" prefHeight="25.0" prefWidth="107.0" styleClass="loginBtn" text="Add Project" AnchorPane.rightAnchor="39.0" />
-   </children>
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="14.0" prefHeight="42.0" prefWidth="364.0" text="Projects" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="14.0">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <ScrollPane layoutX="38.0" layoutY="109.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="565.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="109.0">
+            <content>
+                <AnchorPane fx:id="BoardProject" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="558.0">
+                    <children>
+                        <AnchorPane layoutX="52.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                            <children>
+                                <Label  layoutX="-44.0" layoutY="-8.0" text="tao la khoi">
+                                    <font>
+                                        <Font size="49.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="idd" layoutX="56.0" layoutY="87.0" text="1">
+                                    <font>
+                                        <Font size="49.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+        <JFXButton buttonType="RAISED" layoutX="382.0" layoutY="54.0" onMouseClicked="#openCreateProject" prefHeight="42.0" prefWidth="126.0" styleClass="loginBtn" text="Add Project" AnchorPane.rightAnchor="39.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </JFXButton>
+    </children>
 </AnchorPane>
