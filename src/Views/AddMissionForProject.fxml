@@ -8,49 +8,68 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="700.0" style="-fx-background-color: #a3a3a3;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMissionForProjectController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="700.0" style="-fx-background-color: #FFF;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMissionForProjectController">
    <children>
-      <Label layoutX="251.0" layoutY="20.0" text="Create Task">
+      <Label layoutX="266.0" layoutY="14.0" text="Create Task">
          <font>
             <Font name="System Bold" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="165.0" layoutY="73.0" text="Title:">
+      <Label layoutX="162.0" layoutY="140.0" text="Title:">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="116.0" layoutY="364.0" text="Description:">
+      <Label layoutX="113.0" layoutY="418.0" text="Description:">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="149.0" layoutY="137.0" prefHeight="30.0" prefWidth="63.0" text="Status:">
+      <Label layoutX="150.0" layoutY="203.0" prefHeight="30.0" prefWidth="63.0" text="Status:">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="202.0" prefHeight="30.0" prefWidth="84.0" text="Member:">
+      <Label layoutX="130.0" layoutY="257.0" prefHeight="30.0" prefWidth="84.0" text="Member:">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cbThanhVien" layoutX="233.0" layoutY="205.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXComboBox fx:id="cbTrangThaiNV" layoutX="233.0" layoutY="139.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXTextField fx:id="txtTenNhiemVu" layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXTextArea fx:id="txtMoTa" layoutX="226.0" layoutY="364.0" prefHeight="127.0" prefWidth="301.0" />
-      <Label layoutX="161.0" layoutY="261.0" prefHeight="30.0" prefWidth="50.0" text="Start:">
+      <JFXComboBox fx:id="cbThanhVien" layoutX="234.0" layoutY="260.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXComboBox fx:id="cbTrangThaiNV" layoutX="233.0" layoutY="206.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField fx:id="txtTenNhiemVu" layoutX="234.0" layoutY="134.0" prefHeight="25.0" prefWidth="234.0">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
+         </font></JFXTextField>
+      <JFXTextArea fx:id="txtMoTa" layoutX="226.0" layoutY="418.0" prefHeight="127.0" prefWidth="301.0">
+         <font>
+            <Font size="18.0" />
+         </font></JFXTextArea>
+      <Label layoutX="169.0" layoutY="318.0" prefHeight="30.0" prefWidth="48.0" text="Start:">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="165.0" layoutY="313.0" prefHeight="30.0" prefWidth="42.0" text="End:">
+      <Label layoutX="172.0" layoutY="367.0" prefHeight="30.0" prefWidth="42.0" text="End:">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <DatePicker fx:id="dtNgayBatDau" layoutX="233.0" layoutY="264.0" prefHeight="30.0" prefWidth="234.0" />
-      <DatePicker fx:id="dtNgayKetThuc" layoutX="233.0" layoutY="313.0" prefHeight="30.0" prefWidth="234.0" />
-      <JFXButton buttonType="RAISED" layoutX="478.0" layoutY="514.0" onMouseClicked="#btnThemNhiemVu" prefHeight="38.0" prefWidth="146.0" styleClass="loginBtn" text="Save" />
+      <DatePicker fx:id="dtNgayBatDau" layoutX="233.0" layoutY="318.0" prefHeight="30.0" prefWidth="234.0" />
+      <DatePicker fx:id="dtNgayKetThuc" layoutX="233.0" layoutY="367.0" prefHeight="30.0" prefWidth="234.0" />
+      <JFXButton buttonType="RAISED" layoutX="540.0" layoutY="514.0" onMouseClicked="#btnThemNhiemVu" prefHeight="38.0" prefWidth="146.0" styleClass="loginBtn" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font></JFXButton>
+      <JFXTextField fx:id="txtMaNhiemVu" layoutX="234.0" layoutY="78.0" prefHeight="25.0" prefWidth="234.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="181.0" layoutY="84.0" text="ID:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
