@@ -35,19 +35,19 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-        <JFXTextField fx:id="txt" layoutX="231.0" layoutY="101.0" prefHeight="27.0" prefWidth="221.0" promptText="tung@gmail.com" style="-fx-border-color: black;" styleClass="textField">
+        <JFXTextField fx:id="txtEmail" layoutX="231.0" layoutY="101.0" prefHeight="27.0" prefWidth="221.0" promptText="tung@gmail.com" style="-fx-border-color: black;" styleClass="textField">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXTextField editable="false" layoutX="231.0" layoutY="171.0" prefHeight="25.0" prefWidth="221.0" promptText="Le Son Tung" style="-fx-border-color: black;">
+        <JFXTextField fx:id="txtUsername" editable="false" layoutX="231.0" layoutY="171.0" prefHeight="25.0" prefWidth="221.0" promptText="Le Son Tung" style="-fx-border-color: black;">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXTextField editable="false" layoutX="231.0" layoutY="240.0" prefHeight="27.0" prefWidth="221.0" promptText="0123456789" style="-fx-border-color: black;">
+        <JFXTextField fx:id="txtPhone" editable="false" layoutX="231.0" layoutY="240.0" prefHeight="27.0" prefWidth="221.0" promptText="0123456789" style="-fx-border-color: black;">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXTextField editable="false" layoutX="232.0" layoutY="311.0" prefHeight="27.0" prefWidth="221.0" style="-fx-border-color: black;">
+        <JFXTextField fx:id="txtAddress" editable="false" layoutX="232.0" layoutY="311.0" prefHeight="27.0" prefWidth="221.0" promptText="285 Doi Can" style="-fx-border-color: black;">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
