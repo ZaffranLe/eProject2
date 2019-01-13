@@ -29,7 +29,12 @@
 .projectBtn{
     -fx-background-color: #caf8f7;
     -fx-text-fill: #000;
+    -fx-border-color: black;
     -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-style: solid;
+
+
 }
 .closeBtn{
     -fx-fill: #545454;
@@ -51,4 +56,11 @@
     -fx-border-color: bisque;
     -fx-text-alignment: center;
     -fx-text-fill: blue;
+}
+.label-project{
+    -fx-border-color: black;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-style: solid;
+
 }

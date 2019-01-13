@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -18,8 +20,9 @@ import javafx.scene.control.Label;
  */
 public class PanelProjectController implements Initializable {
 
-    @FXML
     public Label idd;
+    @FXML
+    private AnchorPane panelProject;
 
   
 
@@ -30,5 +33,9 @@ public class PanelProjectController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void panelProjectClick(MouseEvent event) {
+    }
     
 }

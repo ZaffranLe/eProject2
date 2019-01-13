@@ -50,12 +50,12 @@
                </font>
             </Label>
             <Label layoutX="40.0" layoutY="187.0" text="Sign in to continue" textFill="#a3a3a3" />
-            <JFXTextField fx:id="Email" labelFloat="true" layoutX="58.0" layoutY="254.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Email" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="Email" labelFloat="true" layoutX="58.0" layoutY="254.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Email" text="admin@admin.admin" unFocusColor="#a3a3a3">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="Password" labelFloat="true" layoutX="58.0" layoutY="310.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" unFocusColor="#a3a3a3">
+            <JFXPasswordField fx:id="Password" labelFloat="true" layoutX="58.0" layoutY="310.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" text="123456" unFocusColor="#a3a3a3">
                <font>
                   <Font size="14.0" />
                </font>
