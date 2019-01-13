@@ -8,7 +8,6 @@ package Foundation;
 import Backend.Model.Nguoidung;
 
 import Backend.Controller.DuanJpaController;
-import Backend.Controller.NguoidungJpaController;
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Duan;
@@ -17,7 +16,10 @@ import Backend.Model.Noidung;
 import Backend.Sevices.Impl.DuanServicesImpl;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,24 +29,36 @@ public class test {
 
     public static void main(String[] args) {
         System.out.println("khởi dz bướng vcc");
+        DuanJpaController dajpa = new DuanJpaController();
         DuanServicesImpl da = new DuanServicesImpl();
         NoidungServiceImpl nd = new NoidungServiceImpl();
         NguoidungServicesImpl nguoidung = new NguoidungServicesImpl();
         List<Duan> list = da.getAllByStatus(1, TRANGTHAIDUAN.DANGLAM.toString());
+        try {
+
+            da.edit("1", "test edit", new Date(1998, 02, 11), TRANGTHAIDUAN.DANGLAM.toString());
+            //da.delete("4");
+            da.setEndDate("1", new Date());
+        } catch (Exception ex) {
+            Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
+        }
         for (Duan a : list) {
             System.out.println(a.getTenDuAn());
 
         }
 
         List<Noidung> listNoidung = nd.getAllByStatus("abc", TRANGTHAITASK.DANGLAM.toString());
+        //nd.create("5", "5", "a", "a", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
+        nd.edit("5", "5", "a", "test edit", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
+        nd.delete("5");
 
         for (Noidung a : listNoidung) {
             System.out.println(a.getTieuDe());
 
         }
-        
+
         List<Nguoidung> ListNguoidung = nguoidung.getAllByProject("1");
-        
+
         for (Nguoidung nguoidung1 : ListNguoidung) {
             System.out.println(nguoidung1.getHoTen());
         }
