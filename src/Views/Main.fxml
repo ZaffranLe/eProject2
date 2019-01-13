@@ -20,7 +20,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="parent" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.MainController">
    <children>
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="side">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #90afc5;" styleClass="side">
          <children>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" smooth="false">
                <image>
@@ -44,7 +44,7 @@
                   <Image url="@../Views/css/system-task.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="33.0" layoutY="153.0" text="Welcome,">
+            <Label layoutX="33.0" layoutY="153.0" text="Welcome">
                <font>
                   <Font size="23.0" />
                </font>
@@ -66,9 +66,10 @@
                </font>
             </JFXButton>
             <Label layoutX="195.0" layoutY="462.0" text="New user?" textFill="#a3a3a3" />
-            <Label layoutX="258.0" layoutY="462.0" onMouseClicked="#openRegistration" styleClass="registration" text="Sign Up" textFill="#6747cd">
-          
-            </Label>
+            <Label layoutX="258.0" layoutY="462.0" onMouseClicked="#openRegistration" styleClass="registration" text="Sign Up" textFill="#2a3132">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             <FontAwesomeIcon iconName="CLOSE" layoutX="381.0" layoutY="19.0" onMouseClicked="#closeApp" size="1.5em" styleClass="closeBtn" text="" />
          </children>
       </Pane>
