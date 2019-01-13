@@ -24,7 +24,6 @@ import Backend.Model.Noidung;
 import Foundation.AlertMess;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
@@ -332,5 +331,7 @@ public class DuanJpaController implements Serializable {
             em.close();
         }
     }
+    
+
     
 }

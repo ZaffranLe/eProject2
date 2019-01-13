@@ -38,6 +38,40 @@ public class TaskManagementController implements Initializable {
     private GridPane BoardProject;
     public DuanServicesImpl duAn;
     public String idUser;
+    private int col;
+    private int row;
+
+    public GridPane getBoardProject() {
+        return BoardProject;
+    }
+
+    public void setBoardProject(GridPane BoardProject) {
+        this.BoardProject = BoardProject;
+    }
+
+    public DuanServicesImpl getDuAn() {
+        return duAn;
+    }
+
+    public void setDuAn(DuanServicesImpl duAn) {
+        this.duAn = duAn;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
 
     public String getIdUser() {
         return idUser;
@@ -54,19 +88,49 @@ public class TaskManagementController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         try {
             duAn = new DuanServicesImpl();
-            List<Duan> lis = duAn.getAllByStatus(2, TRANGTHAIDUAN.DANGLAM.toString());
-            for (Duan li : lis) {
-                System.out.println(li.getTenDuAn());
-                BoardProject.setPadding(new Insets(30, 30, 30, 30));
-                Node[] nodes = new Node[1];
+            List<Duan> lstToDo = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.DANGLAM.toString());
+            List<Duan> lstDone = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.HOANTHANH.toString());
+            BoardProject.setPadding(new Insets(30, 30, 30, 30));
+            for (Duan DA : lstToDo) {
                 Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProject.fxml"));
                 Label lbName = (Label) node.lookup("#ProjectName");
-                lbName.setText("hihi");
+                lbName.setText(DA.getTenDuAn());
                 Label lbStatus = (Label) node.lookup("#ProjectStatus");
-                lbStatus.setText("hahah");
-                BoardProject.add(node, 0, 0);
+                lbStatus.setText(DA.getTrangThai());
+                BoardProject.add(node, col, row);
+                col = col++;
+                if (col == 2) {
+                    col = 0;
+                    row = row++;
+                }
             }
-
+            for (Duan DA : lstDone) {
+                Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProject.fxml"));
+                Label lbName = (Label) node.lookup("#ProjectName");
+                lbName.setText(DA.getTenDuAn());
+                Label lbStatus = (Label) node.lookup("#ProjectStatus");
+                lbStatus.setText(DA.getTrangThai());
+                BoardProject.add(node, col, row);
+                col = col++;
+                if (col == 2) {
+                    col = 0;
+                    row = row++;
+                }
+            }
+//            for (int i = 0; i < 6; i++) {
+//                System.out.println(getCol()+"va"+getRow());
+//                 Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProject.fxml"));
+//                Label lbName = (Label) node.lookup("#ProjectName");
+//                lbName.setText("hihihi");
+//                Label lbStatus = (Label) node.lookup("#ProjectStatus");
+//                lbStatus.setText("hahahaha");
+//                BoardProject.add(node, getCol(), getRow());
+//                setCol(getCol()+1);
+//                if (getCol() == 2) {
+//                    setCol(0);
+//                    setRow(getRow()+1);
+//                }
+//            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

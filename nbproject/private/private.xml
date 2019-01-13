@@ -4,9 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/TaskManagementController.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/PanelProjectController.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Foundation/Transdata.java</file>
-            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Sevices/Impl/DuanServicesImpl.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/panelProject.fxml</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/PanelProjectController.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Views/Controllers/DetailProjectController.java</file>
+            <file>file:/C:/Users/vukho/Desktop/Project%20ki%202/eProject2/src/Backend/Enum/TRANGTHAIDUAN.java</file>
         </group>
     </open-files>
 </project-private>
