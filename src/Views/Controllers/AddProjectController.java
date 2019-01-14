@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Backend.Sevices.Impl.DuanServicesImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -13,6 +14,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -23,13 +25,19 @@ import javafx.scene.input.MouseEvent;
 public class AddProjectController implements Initializable {
 
     @FXML
-    private JFXTextField txtTenProject;
+    private Label IDuser;
+    
     @FXML
-    private JFXComboBox<?> cbThanhVien;
+    private JFXTextField txtProjectID;
+    
     @FXML
-    private DatePicker dtNgayBatDau;
+    private JFXTextField txtProjectName;
+    
     @FXML
-    private DatePicker dtNgayKetThuc;
+    private DatePicker dtStartDay;
+    
+    @FXML
+    private DatePicker dtEndDay;
 
     /**
      * Initializes the controller class.
@@ -41,6 +49,10 @@ public class AddProjectController implements Initializable {
 
     @FXML
     private void btnThemProject(MouseEvent event) {
+        try {
+            DuanServicesImpl DA = new  DuanServicesImpl();
+        } catch (Exception e) {
+        }
     }
     
 }

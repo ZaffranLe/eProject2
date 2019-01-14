@@ -28,26 +28,30 @@ public class DetailProjectController implements Initializable {
     private Label txtTenNhiemVu;
     @FXML
     private Label txtMoTa;
-    private Duan Da;
+    private int idDuan;
 
-    public Duan getDa() {
-        return Da;
+    public int getIdDuan() {
+        return idDuan;
     }
 
-    public void setDa(Duan Da) {
-        this.Da = Da;
+    public void setIdDuan(int idDuan) {
+        this.idDuan = idDuan;
     }
 
+  
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        System.out.println(getIdDuan());
+        System.out.println(getIdDuan());
+        System.out.println(getIdDuan());
         
     }    
     public void initData(Duan DA){
-        setDa(DA);
+//        setDa(DA);
     }
 
     @FXML

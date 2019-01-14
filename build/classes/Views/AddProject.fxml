@@ -51,5 +51,15 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label fx:id="IDuser" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="52.0" prefHeight="39.0" prefWidth="132.0" text="ID User" textFill="#6d8af7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="51.0" prefHeight="39.0" prefWidth="132.0" text="ID User :" textFill="#6d8af7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
