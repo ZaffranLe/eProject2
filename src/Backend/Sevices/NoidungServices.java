@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface NoidungServices {
 
-    public void create(String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc);
+    public void create(int idNguoidung,String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc);
 
     public void edit(String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc);
 

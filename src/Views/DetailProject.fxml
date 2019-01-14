@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="861.0" style="-fx-background-color: #fff;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DetailProjectController">
+<AnchorPane id="AnchorPane" fx:id="idProject" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="861.0" style="-fx-background-color: #fff;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DetailProjectController">
    <children>
       <Label layoutX="29.0" layoutY="23.0" text="Project name:">
          <font>
@@ -119,14 +119,19 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <JFXTextField editable="false" labelFloat="true" layoutX="213.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="216.0" unFocusColor="#4712da">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
       <JFXButton buttonType="RAISED" layoutX="677.0" layoutY="79.0" onMouseClicked="#addMember" prefHeight="39.0" prefWidth="145.0" styleClass="loginBtn" text="Add Member">
          <font>
             <Font size="18.0" />
          </font></JFXButton>
+      <Label fx:id="lbID" layoutX="399.0" layoutY="26.0" prefHeight="17.0" prefWidth="113.0" text="Label" textFill="#3c77cf">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbNameProject" layoutX="236.0" layoutY="22.0" text="Name" textFill="#eb3a3a">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

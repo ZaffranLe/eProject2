@@ -78,7 +78,7 @@ public class TaskManagementController implements Initializable {
     }
 
     public void setIdUser(String idUser) {
-        this.idUser = Transdata.Instance().getUserLoginID();
+        this.idUser = idUser;
     }
 
     /**
@@ -87,16 +87,19 @@ public class TaskManagementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            setIdUser(Transdata.Instance().getUserLoginID());
             duAn = new DuanServicesImpl();
             List<Duan> lstToDo = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.DANGLAM.toString());
             List<Duan> lstDone = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.HOANTHANH.toString());
             BoardProject.setPadding(new Insets(30, 30, 30, 30));
             for (Duan DA : lstToDo) {
-                Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProject.fxml"));
+                Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProjects.fxml"));
                 Label lbName = (Label) node.lookup("#ProjectName");
                 lbName.setText(DA.getTenDuAn());
                 Label lbStatus = (Label) node.lookup("#ProjectStatus");
                 lbStatus.setText(DA.getTrangThai());
+                Label lbID = (Label) node.lookup("#idProject");
+                lbID.setText(DA.getIDDuAn());
                 BoardProject.add(node, col, row);
                 col = col++;
                 if (col == 2) {
@@ -105,11 +108,13 @@ public class TaskManagementController implements Initializable {
                 }
             }
             for (Duan DA : lstDone) {
-                Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProject.fxml"));
+                Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProjects.fxml"));
                 Label lbName = (Label) node.lookup("#ProjectName");
                 lbName.setText(DA.getTenDuAn());
                 Label lbStatus = (Label) node.lookup("#ProjectStatus");
                 lbStatus.setText(DA.getTrangThai());
+                Label lbID = (Label) node.lookup("#idProject");
+                lbID.setText(DA.getIDDuAn());
                 BoardProject.add(node, col, row);
                 col = col++;
                 if (col == 2) {
@@ -141,27 +146,14 @@ public class TaskManagementController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        Label lookup = (Label)scene.lookup("#IDuser");
+        lookup.setText(getIdUser());
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML
-    private void openProject(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/Views/DetailProject.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public List<Duan> getListProjectDoing() {
-        return duAn.getAllByStatus(Integer.parseInt(idUser), TRANGTHAIDUAN.DANGLAM.toString());
-    }
-
-    public List<Duan> getListProjectDone() {
-        return duAn.getAllByStatus(Integer.parseInt(idUser), TRANGTHAIDUAN.HOANTHANH.toString());
-    }
+   
 
 }
