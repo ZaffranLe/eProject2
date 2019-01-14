@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controllers;
+package Views.Controllers;
 
+import Backend.Model.Duan;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,6 +28,15 @@ public class DetailProjectController implements Initializable {
     private Label txtTenNhiemVu;
     @FXML
     private Label txtMoTa;
+    private Duan Da;
+
+    public Duan getDa() {
+        return Da;
+    }
+
+    public void setDa(Duan Da) {
+        this.Da = Da;
+    }
 
     /**
      * Initializes the controller class.
@@ -34,7 +44,11 @@ public class DetailProjectController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
+    public void initData(Duan DA){
+        setDa(DA);
+    }
 
     @FXML
     private void addTask(MouseEvent event) throws IOException {

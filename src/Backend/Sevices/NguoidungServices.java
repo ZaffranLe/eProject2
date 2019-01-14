@@ -14,4 +14,5 @@ import java.util.List;
  */
 public interface NguoidungServices {
     public List<Nguoidung> getAllByProject(String idDuAn);
+    public List<Nguoidung> getAllByTask(String idTask);
 }
