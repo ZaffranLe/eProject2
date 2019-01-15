@@ -52,6 +52,7 @@ public class AddProjectController implements Initializable {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views.Controllers;
+package Controllers;
 
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Model.Duan;
@@ -97,7 +97,7 @@ public class TaskManagementController implements Initializable {
                 Label lbName = (Label) node.lookup("#ProjectName");
                 lbName.setText(DA.getTenDuAn());
                 Label lbStatus = (Label) node.lookup("#ProjectStatus");
-                lbStatus.setText(DA.getTrangThai());
+                lbStatus.setText("Đang Làm");
                 Label lbID = (Label) node.lookup("#idProject");
                 lbID.setText(DA.getIDDuAn());
                 BoardProject.add(node, col, row);
@@ -112,7 +112,7 @@ public class TaskManagementController implements Initializable {
                 Label lbName = (Label) node.lookup("#ProjectName");
                 lbName.setText(DA.getTenDuAn());
                 Label lbStatus = (Label) node.lookup("#ProjectStatus");
-                lbStatus.setText(DA.getTrangThai());
+                lbStatus.setText("Hoàn Thành");
                 Label lbID = (Label) node.lookup("#idProject");
                 lbID.setText(DA.getIDDuAn());
                 BoardProject.add(node, col, row);

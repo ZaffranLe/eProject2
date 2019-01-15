@@ -5,6 +5,12 @@
  */
 package Controllers;
 
+import Backend.Model.Nguoidung;
+import Backend.Sevices.Impl.UserSevicesImpl;
+import Backend.Sevices.UserSevices;
+import Foundation.AlertMess;
+import Foundation.Transdata;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,21 +34,53 @@ public class UserManagementController implements Initializable {
     private JFXTextField txtUsername;
     @FXML
     private JFXTextField txtPhone;
+    @FXML
+    private JFXButton btnEdit;
+
+    @FXML
+    private JFXButton btnSaveProfile;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        Nguoidung user = Transdata.Instance().getUserLogin();
+        txtEmail.setText(user.getEmail());
+        txtAddress.setText(user.getDiaChi());
+        txtUsername.setText(user.getHoTen());
+        txtPhone.setText(user.getSdt());
+
+    }
 
     @FXML
     private void btnEditClick(MouseEvent event) {
+        btnEdit.setVisible(false);
+        btnSaveProfile.setVisible(true);
+        txtEmail.setEditable(true);
+        txtAddress.setEditable(true);
+        txtUsername.setEditable(true);
+        txtPhone.setEditable(true);
+
     }
 
     @FXML
     private void btnChangePassword(MouseEvent event) {
     }
-    
+
+    @FXML
+    private void btnSaveClick(MouseEvent event) {
+        UserSevicesImpl userS = new UserSevicesImpl();
+        Nguoidung user = Transdata.Instance().getUserLogin();
+        user.setEmail(txtEmail.getText());
+        user.setHoTen(txtUsername.getText());
+        user.setDiaChi(txtAddress.getText());
+        user.setSdt(txtPhone.getText());
+        if (userS.Edit(user)) {
+            AlertMess.Instance().ShowMessSuccess("Edit profile succeed.");
+        } else {
+            AlertMess.Instance().ShowMessError("Edit profile failed.");
+        }
+    }
+
 }

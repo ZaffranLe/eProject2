@@ -5,6 +5,8 @@
  */
 package Foundation;
 
+import Backend.Model.Nguoidung;
+
 /**
  *
  * @author vukho
@@ -14,6 +16,15 @@ public class Transdata {
     public static String projectID;
     public static String taskID;
     public static Transdata instance;
+    public static Nguoidung userLogin;
+
+    public static Nguoidung getUserLogin() {
+        return userLogin;
+    }
+
+    public static void setUserLogin(Nguoidung userLogin) {
+        Transdata.userLogin = userLogin;
+    }
 
 
     public static Transdata Instance() {

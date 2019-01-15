@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="628.0" style="-fx-background-color: #FFFFFF;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserManagementController">
+<AnchorPane id="AnchorPane" fx:id="btnSave" prefHeight="480.0" prefWidth="628.0" style="-fx-background-color: #FFFFFF;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserManagementController">
     <stylesheets>
         <URL value="@../Views/css/style.css" />
     </stylesheets>
@@ -35,7 +35,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-        <JFXTextField fx:id="txtEmail" layoutX="231.0" layoutY="101.0" prefHeight="27.0" prefWidth="221.0" promptText="tung@gmail.com" style="-fx-border-color: black;" styleClass="textField">
+        <JFXTextField fx:id="txtEmail" editable="false" layoutX="231.0" layoutY="101.0" prefHeight="27.0" prefWidth="221.0" promptText="tung@gmail.com" style="-fx-border-color: black;" styleClass="textField">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
@@ -51,7 +51,7 @@
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXButton layoutX="153.0" layoutY="390.0" onMouseClicked="#btnEditClick" styleClass="loginBtn" text="Edit Profile">
+        <JFXButton fx:id="btnEdit" layoutX="176.0" layoutY="390.0" onMouseClicked="#btnEditClick" styleClass="loginBtn" text="Edit Profile">
          <font>
             <Font size="18.0" />
          </font></JFXButton>
@@ -59,5 +59,10 @@
          <font>
             <Font size="18.0" />
          </font></JFXButton>
+      <JFXButton fx:id="btnSaveProfile" layoutX="484.0" layoutY="101.0" onMouseClicked="#btnSaveClick" styleClass="loginBtn" text="Save" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
     </children>
 </AnchorPane>

@@ -5,6 +5,8 @@
  */
 package Backend.Sevices;
 
+import Backend.Model.Nguoidung;
+
 /**
  *
  * @author vukho
@@ -12,4 +14,5 @@ package Backend.Sevices;
 public interface UserSevices {
     public boolean Login(String Email, String Pass);
     public boolean Register(String Email, String Pass, String UserName, String Phone,String Address);
+    public boolean Edit(Nguoidung userEdit);
 }
