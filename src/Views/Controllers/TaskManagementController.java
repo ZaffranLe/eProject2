@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controllers;
+package Views.Controllers;
 
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Model.Duan;

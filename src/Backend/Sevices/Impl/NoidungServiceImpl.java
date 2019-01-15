@@ -6,10 +6,13 @@
 package Backend.Sevices.Impl;
 
 import Backend.Controller.DuanJpaController;
+import Backend.Controller.NguoidungJpaController;
 import Backend.Controller.NoidungJpaController;
 import Backend.Controller.exceptions.NonexistentEntityException;
+import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
 import Backend.Sevices.NoidungServices;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -23,6 +26,7 @@ public class NoidungServiceImpl implements NoidungServices {
 
     NoidungJpaController noiDungController = new NoidungJpaController();
     DuanJpaController duAnController = new DuanJpaController();
+    NguoidungJpaController nguoidungController = new NguoidungJpaController();
 
     @Override
     public List<Noidung> getAllByStatus(String idDuAn, String trangThaiTask) {
@@ -30,8 +34,11 @@ public class NoidungServiceImpl implements NoidungServices {
     }
 
     @Override
-    public void create(String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
+    public void create(int idNguoitao,String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
         try {
+            ArrayList<Nguoidung> nguoidung = new ArrayList<>();
+            Nguoidung nguoitao = nguoidungController.findNguoidung(idNguoitao);
+            nguoidung.add(nguoitao);
             Noidung nd = new Noidung();
             nd.setIDNoiDung(iDNoiDung);
             nd.setTieuDe(tieuDe);
@@ -40,6 +47,7 @@ public class NoidungServiceImpl implements NoidungServices {
             nd.setNgayBatDau(ngayBatDau);
             nd.setNgayKetThuc(ngayKetThuc);
             nd.setIDDuAn((duAnController.findDuan(iDDuAn)));
+            nd.setNguoidungCollection(nguoidung);
             noiDungController.create(nd);
         } catch (Exception ex) {
             Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
