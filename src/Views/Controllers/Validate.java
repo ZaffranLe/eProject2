@@ -61,4 +61,30 @@ public class Validate {
         }
         return true;
     }
+    public boolean validatePhoneNumber(String Phone) {
+        if (Phone.isEmpty()) {
+            AlertMess.Instance().ShowMessError("Phone number is empty!");
+            return false;
+        }
+        if (Phone.length() != 10) {
+            AlertMess.Instance().ShowMessError("Phone number must be 10 characters long");
+            return false;
+        }
+         if (!Phone.isEmpty()) {
+            pattern = Pattern.compile("\\d{10}");
+            matcher = pattern.matcher(Phone);
+            if (!matcher.matches()) {
+                AlertMess.Instance().ShowMessError("Phone is not valid");
+                return false;
+            }
+        }
+        return true;
+    }
+    public boolean validateAddress(String address) {
+        if (address.isEmpty()) {
+            AlertMess.Instance().ShowMessError("Address number is empty!");
+            return false;
+        }
+        return true;
+    }
 }
