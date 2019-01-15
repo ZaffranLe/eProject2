@@ -6,11 +6,15 @@
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/NguoidungServices.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/DuanServices.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Views/Controllers/DetailProjectController.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/test.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Nguoidung.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/NoidungServices.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/Impl/NoidungServiceImpl.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Controller/NguoidungJpaController.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/Impl/NguoidungServicesImpl.java</file>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Nguoidung.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/Impl/DuanServicesImpl.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Views/Controllers/PanelProjectController.java</file>
-            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Sevices/NoidungServices.java</file>
+            <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Duan.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Backend/Model/Noidung.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject/eProject2/src/Views/Controllers/TaskManagementController.java</file>
         </group>
