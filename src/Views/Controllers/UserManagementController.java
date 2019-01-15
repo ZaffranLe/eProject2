@@ -45,12 +45,22 @@ public class UserManagementController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+            loadForm();
+    }
+
+    public void loadForm() {
+
         Nguoidung user = Transdata.Instance().getUserLogin();
         txtEmail.setText(user.getEmail());
         txtAddress.setText(user.getDiaChi());
         txtUsername.setText(user.getHoTen());
         txtPhone.setText(user.getSdt());
-
+         btnEdit.setVisible(false);
+        btnSaveProfile.setVisible(true);
+        txtEmail.setEditable(true);
+        txtAddress.setEditable(true);
+        txtUsername.setEditable(true);
+        txtPhone.setEditable(true);
     }
 
     @FXML
@@ -78,6 +88,9 @@ public class UserManagementController implements Initializable {
         user.setSdt(txtPhone.getText());
         if (userS.Edit(user)) {
             AlertMess.Instance().ShowMessSuccess("Edit profile succeed.");
+            btnSaveProfile.setVisible(false);
+            btnEdit.setVisible(true);
+            loadForm();
         } else {
             AlertMess.Instance().ShowMessError("Edit profile failed.");
         }

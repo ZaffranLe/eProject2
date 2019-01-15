@@ -93,7 +93,7 @@ public class TaskManagementController implements Initializable {
             List<Duan> lstDone = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.HOANTHANH.toString());
             BoardProject.setPadding(new Insets(30, 30, 30, 30));
             for (Duan DA : lstToDo) {
-                System.out.println(getCol()+"va"+getRow());
+                System.out.println(getCol() + "va" + getRow());
                 System.out.println(DA.getTenDuAn());
                 Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProjects.fxml"));
                 Label lbName = (Label) node.lookup("#ProjectName");
@@ -103,10 +103,10 @@ public class TaskManagementController implements Initializable {
                 Label lbID = (Label) node.lookup("#idProject");
                 lbID.setText(DA.getIDDuAn());
                 BoardProject.add(node, col, row);
-                col = col++;
-                if (col == 2) {
-                    col = 0;
-                    row = row++;
+                setCol(getCol() + 1);
+                if (getCol() == 2) {
+                    setCol(0);
+                    setRow(getRow() + 1);
                 }
             }
             for (Duan DA : lstDone) {
@@ -118,10 +118,10 @@ public class TaskManagementController implements Initializable {
                 Label lbID = (Label) node.lookup("#idProject");
                 lbID.setText(DA.getIDDuAn());
                 BoardProject.add(node, col, row);
-                col = col++;
-                if (col == 2) {
-                    col = 0;
-                    row = row++;
+                setCol(getCol() + 1);
+                if (getCol() == 2) {
+                    setCol(0);
+                    setRow(getRow() + 1);
                 }
             }
 //            for (int i = 0; i < 6; i++) {
@@ -148,14 +148,11 @@ public class TaskManagementController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Label lookup = (Label)scene.lookup("#IDuser");
+        Label lookup = (Label) scene.lookup("#IDuser");
         lookup.setText(getIdUser());
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }
-
-
-   
 
 }

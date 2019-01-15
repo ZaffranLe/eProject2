@@ -35,7 +35,7 @@ public class test {
 //        NoidungServiceImpl nds = new NoidungServiceImpl();
 //        nds.create(1, "1", "xxx", "test", "aa", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
         DuanServicesImpl da = new DuanServicesImpl();
-        da.create(1, "duan test 7", "quang", new Date(), TRANGTHAIDUAN.DANGLAM.toString());
+        da.create(1, "nh 7", "quang", new Date(), TRANGTHAIDUAN.DANGLAM.toString());
 //          NguoidungDuanJpaController da = new NguoidungDuanJpaController();
 //        try {
 //            da.create(new NguoidungDuan(new NguoidungDuanPK(2, "7"), VITRI.NHANVIEN.toString()));
