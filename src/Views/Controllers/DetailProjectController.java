@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Backend.Model.Duan;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,14 +28,31 @@ public class DetailProjectController implements Initializable {
     private Label txtTenNhiemVu;
     @FXML
     private Label txtMoTa;
+    private int idDuan;
 
+    public int getIdDuan() {
+        return idDuan;
+    }
+
+    public void setIdDuan(int idDuan) {
+        this.idDuan = idDuan;
+    }
+
+  
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        System.out.println(getIdDuan());
+        System.out.println(getIdDuan());
+        System.out.println(getIdDuan());
+        
     }    
+    public void initData(Duan DA){
+//        setDa(DA);
+    }
 
     @FXML
     private void addTask(MouseEvent event) throws IOException {

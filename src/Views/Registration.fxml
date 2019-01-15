@@ -27,7 +27,7 @@
                 <Image url="@css/system-task.jpg" />
             </image>
         </ImageView>
-        <!--<FontAwesomeIcon iconName="CLOSE" layoutX="379.0" layoutY="20.0" onMouseClicked="#closeApp" size="1.5em" styleClass="closeBtn" text="" />-->
+        <FontAwesomeIcon iconName="CLOSE" layoutX="379.0" layoutY="20.0" onMouseClicked="#closeApp" size="1.5em" styleClass="closeBtn" text="" />
         <JFXPasswordField fx:id="Password" labelFloat="true" layoutX="65.0" layoutY="208.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" unFocusColor="#a3a3a3">
             <font>
                 <Font size="14.0" />
@@ -58,8 +58,11 @@
                 <Font name="System Bold" size="14.0" />
             </font>
         </JFXButton>
-        <!--<FontAwesomeIcon iconName="ARROW_LEFT" layoutX="8.0" layoutY="18.0" onMouseClicked="#backToLogin" size="1.5em" styleClass="backBtn" />-->
-        <Label fx:id="backToLogin" layoutX="272.0" layoutY="551.0" onMouseClicked="#backToLogin" styleClass="registration" text="Login Now" textFill="#6747cd" />
+        <FontAwesomeIcon iconName="ARROW_LEFT" layoutX="8.0" layoutY="18.0" onMouseClicked="#backToLogin" size="1.5em" styleClass="backBtn" />
+        <Label fx:id="backToLogin" layoutX="272.0" layoutY="551.0" onMouseClicked="#backToLogin" styleClass="registration" text="Login Now" textFill="#2a3132">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <JFXPasswordField fx:id="RepeatPassword" labelFloat="true" layoutX="65.0" layoutY="265.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Confirm password" unFocusColor="#a3a3a3">
          <font>
             <Font size="14.0" />
