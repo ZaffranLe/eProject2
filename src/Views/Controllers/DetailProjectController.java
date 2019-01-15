@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controllers;
+package Views.Controllers;
 
 import Backend.Model.Duan;
 import java.io.IOException;

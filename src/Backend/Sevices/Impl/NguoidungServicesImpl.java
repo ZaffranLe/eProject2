@@ -20,5 +20,10 @@ public class NguoidungServicesImpl implements NguoidungServices{
     public List<Nguoidung> getAllByProject(String idDuAn) {
         return nguoidungController.getAllByProject(idDuAn);
     }
+
+    @Override
+    public List<Nguoidung> getAllByTask(String idTask) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
