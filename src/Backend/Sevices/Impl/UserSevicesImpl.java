@@ -45,6 +45,9 @@ public class UserSevicesImpl implements UserSevices {
                         user.setTrangThaiDangNhap(true);
                         UserJpa.edit(user);
                         return true;
+                    } else {
+                        AlertMess.Instance().ShowMessError("Username or password is not correct!");
+                        return false;
                     }
                 }
             }
@@ -52,9 +55,8 @@ public class UserSevicesImpl implements UserSevices {
             return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            return false;
         }
-        AlertMess.Instance().ShowMessError("Email or Password is not correct");
-        return false;
     }
 
     @Override

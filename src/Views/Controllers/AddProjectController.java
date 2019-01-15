@@ -8,7 +8,11 @@ package Controllers;
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.VITRI;
 import Backend.Sevices.Impl.DuanServicesImpl;
+<<<<<<< HEAD
 import Foundation.Transdata;
+=======
+import Foundation.AlertMess;
+>>>>>>> origin/khoidev
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -56,8 +60,12 @@ public class AddProjectController implements Initializable {
     private void btnThemProject(MouseEvent event) {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
+<<<<<<< HEAD
             LocalDate date = dtStartDay.getValue();
 //            DA.create(Integer.parseInt(IDuser.getText()), txtProjectID.getText(), txtProjectName.getText(),Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()) , TRANGTHAIDUAN.DANGLAM.toString());
+=======
+            AlertMess.Instance().ShowMessSuccess("Success!");
+>>>>>>> origin/khoidev
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
