@@ -6,6 +6,7 @@
 package Controllers;
 
 import Backend.Sevices.Impl.DuanServicesImpl;
+import Foundation.AlertMess;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -51,7 +52,9 @@ public class AddProjectController implements Initializable {
     private void btnThemProject(MouseEvent event) {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
+            AlertMess.Instance().ShowMessSuccess("Success!");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
     
