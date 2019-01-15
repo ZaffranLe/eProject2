@@ -5,6 +5,8 @@ package Views.Controllers;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Backend.Controller.NguoidungJpaController;
+import Backend.Model.Nguoidung;
 import Foundation.AlertMess;
 import java.io.IOException;
 import java.net.URL;
@@ -26,13 +28,11 @@ import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 import Backend.Sevices.UserSevices;
 import Backend.Sevices.Impl.UserSevicesImpl;
+import Foundation.Transdata;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-
-
 
 /**
  *
@@ -79,7 +79,7 @@ public class MainController implements Initializable {
     @FXML
     private void login(MouseEvent event) throws IOException {
         UserSevicesImpl userS = new UserSevicesImpl();
-        if (Validate.Instance().validateEmail(Email.getText())&&Validate.Instance().validatePassword(Password.getText())) {
+        if (Validate.Instance().validateEmail(Email.getText()) && Validate.Instance().validatePassword(Password.getText())) {
             if (userS.Login(Email.getText(), Password.getText())) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/Views/SideBar.fxml"));
@@ -93,7 +93,15 @@ public class MainController implements Initializable {
                 //Goi su kien khi nhan nut tat (dung de chuyen trang thai dang nhap)
                 stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                     public void handle(WindowEvent we) {
-                        System.out.println("Stage is closing");
+                        try {
+                            System.out.println("Stage is closing");
+                            NguoidungJpaController userJPA = new NguoidungJpaController();
+                            Nguoidung user = Transdata.Instance().getUserLogin();
+                            user.setTrangThaiDangNhap(false);
+                            userJPA.edit(user);
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
                 });
 

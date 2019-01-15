@@ -35,12 +35,15 @@ public class UserSevicesImpl implements UserSevices {
                     if (!user.getMatKhau().equals(PassHash)) {
                         AlertMess.Instance().ShowMessError("Username or password is not correct!");
                         return false;
-                    }else{
+                    } else {
                         if (user.getTrangThaiDangNhap()) {
                             AlertMess.Instance().ShowMessError("Account has been logged in from an other devices!");
                             return false;
                         }
                         Transdata.Instance().setUserLoginID(user.getId().toString());
+                        Transdata.Instance().setUserLogin(user);
+                        user.setTrangThaiDangNhap(true);
+                        UserJpa.edit(user);
                         return true;
                     }
                 }
@@ -64,6 +67,17 @@ public class UserSevicesImpl implements UserSevices {
             System.out.println(e.getMessage());
         }
         return false;
+    }
+
+    @Override
+    public boolean Edit(Nguoidung userEdit) {
+        try {
+            UserJpa.edit(userEdit);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
 }

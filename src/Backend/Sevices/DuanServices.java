@@ -16,7 +16,7 @@ import java.util.List;
  * @author Quang
  */
 public interface DuanServices {
-    public void create(String id,String name,Date start,String status);
+    public void create(int idNguoidung,String id,String name,Date start,String status);
     public void edit(String id,String name,Date start,String status);
     public void delete(String id);
     public void setEndDate(String id,Date end);
