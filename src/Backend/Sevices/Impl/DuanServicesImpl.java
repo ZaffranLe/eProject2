@@ -6,9 +6,13 @@
 package Backend.Sevices.Impl;
 
 import Backend.Controller.DuanJpaController;
+import Backend.Controller.NguoidungDuanJpaController;
 import Backend.Controller.exceptions.IllegalOrphanException;
 import Backend.Controller.exceptions.NonexistentEntityException;
+import Backend.Enum.VITRI;
 import Backend.Model.Duan;
+import Backend.Model.NguoidungDuan;
+import Backend.Model.NguoidungDuanPK;
 import Backend.Sevices.DuanServices;
 import java.time.ZonedDateTime;
 import java.util.Date;
@@ -23,6 +27,7 @@ import java.util.logging.Logger;
 public class DuanServicesImpl implements DuanServices {
 
     DuanJpaController duAnController = new DuanJpaController();
+    NguoidungDuanJpaController nguoiDungDuAn = new NguoidungDuanJpaController();
 
     @Override
     public List<Duan> getAllByStatus(int idNguoiDung, String trangThaiDuAn) {
@@ -30,10 +35,17 @@ public class DuanServicesImpl implements DuanServices {
     }
 
     @Override
-    public void create(String id, String name, Date start, String status) {
+    public void create(int idNguoidung, String id, String name, Date start, String status) {
 
         try {
             duAnController.create(new Duan(id, name, start, status));
+
+        } catch (Exception ex) {
+            Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            NguoidungDuan ndda = new NguoidungDuan(new NguoidungDuanPK(idNguoidung, id), VITRI.QUANLY.toString());
+            nguoiDungDuAn.create(ndda);
         } catch (Exception ex) {
             Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -66,7 +78,7 @@ public class DuanServicesImpl implements DuanServices {
     }
 
     @Override
-    public void setEndDate(String id,Date end) {
+    public void setEndDate(String id, Date end) {
         Duan da = duAnController.findDuan(id);
         da.setNgayKetThuc(end);
         try {

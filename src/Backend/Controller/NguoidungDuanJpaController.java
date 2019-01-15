@@ -35,8 +35,8 @@ public class NguoidungDuanJpaController implements Serializable {
         if (nguoidungDuan.getNguoidungDuanPK() == null) {
             nguoidungDuan.setNguoidungDuanPK(new NguoidungDuanPK());
         }
-        nguoidungDuan.getNguoidungDuanPK().setIDNguoiDung(nguoidungDuan.getNguoidung().getId());
-        nguoidungDuan.getNguoidungDuanPK().setIDDuAn(nguoidungDuan.getDuan().getIDDuAn());
+        nguoidungDuan.getNguoidungDuanPK().setIDNguoiDung(nguoidungDuan.getNguoidungDuanPK().getIDNguoiDung());
+        nguoidungDuan.getNguoidungDuanPK().setIDDuAn(nguoidungDuan.getNguoidungDuanPK().getIDDuAn());
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -203,7 +203,5 @@ public class NguoidungDuanJpaController implements Serializable {
             em.close();
         }
     }
-    
 
-    
 }

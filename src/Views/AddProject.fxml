@@ -26,18 +26,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="176.0" layoutY="296.0" text="End:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <JFXTextField fx:id="txtTenProject" layoutX="240.0" layoutY="150.0" prefHeight="25.0" prefWidth="177.0">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
       <DatePicker fx:id="dtNgayBatDau" layoutX="237.0" layoutY="228.0" prefHeight="25.0" prefWidth="183.0" />
-      <DatePicker fx:id="dtNgayKetThuc" layoutX="236.0" layoutY="297.0" prefHeight="25.0" prefWidth="183.0" />
-      <JFXButton layoutX="237.0" layoutY="372.0" onMouseClicked="#btnThemProject" prefHeight="45.0" prefWidth="122.0" styleClass="loginBtn" text="Save">
+      <JFXButton layoutX="238.0" layoutY="286.0" onMouseClicked="#btnThemProject" prefHeight="45.0" prefWidth="122.0" styleClass="loginBtn" text="Save">
          <font>
             <Font size="18.0" />
          </font></JFXButton>

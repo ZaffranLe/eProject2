@@ -5,11 +5,16 @@
  */
 package Controllers;
 
+import Backend.Enum.TRANGTHAIDUAN;
+import Backend.Enum.VITRI;
 import Backend.Sevices.Impl.DuanServicesImpl;
+import Foundation.Transdata;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,8 +41,7 @@ public class AddProjectController implements Initializable {
     @FXML
     private DatePicker dtStartDay;
     
-    @FXML
-    private DatePicker dtEndDay;
+
 
     /**
      * Initializes the controller class.
@@ -51,6 +55,8 @@ public class AddProjectController implements Initializable {
     private void btnThemProject(MouseEvent event) {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
+            Date date = Date.from(dtStartDay.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+            DA.create(Integer.parseInt(IDuser.getText()), txtProjectID.getText(), txtProjectName.getText(),date , TRANGTHAIDUAN.DANGLAM.toString());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

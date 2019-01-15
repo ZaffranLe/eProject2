@@ -93,6 +93,8 @@ public class TaskManagementController implements Initializable {
             List<Duan> lstDone = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.HOANTHANH.toString());
             BoardProject.setPadding(new Insets(30, 30, 30, 30));
             for (Duan DA : lstToDo) {
+                System.out.println(getCol()+"va"+getRow());
+                System.out.println(DA.getTenDuAn());
                 Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProjects.fxml"));
                 Label lbName = (Label) node.lookup("#ProjectName");
                 lbName.setText(DA.getTenDuAn());
