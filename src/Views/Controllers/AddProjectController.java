@@ -51,6 +51,7 @@ public class AddProjectController implements Initializable {
     private void btnThemProject(MouseEvent event) {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
+            
         } catch (Exception e) {
         }
     }

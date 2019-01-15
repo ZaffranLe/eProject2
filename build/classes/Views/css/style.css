@@ -26,6 +26,15 @@
     -fx-border-radius: 3px;
 
 }
+.sidebarBtn{
+    -fx-background-color: #336B87;
+    -fx-text-fill: #FFF;
+}
+.sidebarBtn:hover{
+    -fx-background-color: transparent;
+    -fx-text-fill: #763626;
+   
+}
 .projectBtn{
     -fx-background-color: #FFF;
     -fx-text-fill: #000;
@@ -36,6 +45,7 @@
 
 
 }
+
 .closeBtn{
     -fx-fill: #545454;
 }
