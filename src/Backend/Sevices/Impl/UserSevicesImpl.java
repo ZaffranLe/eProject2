@@ -45,9 +45,7 @@ public class UserSevicesImpl implements UserSevices {
                         user.setTrangThaiDangNhap(true);
                         UserJpa.edit(user);
                         return true;
-                    } else {
-                        AlertMess.Instance().ShowMessError("Username or password is not correct!");
-                        return false;
+              
                     }
                 }
             }
