@@ -8,7 +8,11 @@ package Controllers;
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.VITRI;
 import Backend.Sevices.Impl.DuanServicesImpl;
+
 import Foundation.Transdata;
+
+import Foundation.AlertMess;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -34,13 +38,13 @@ public class AddProjectController implements Initializable {
     private Label IDuser;
     
     @FXML
-    private JFXTextField txtProjectID;
+    private JFXTextField txtMaDuAn;
     
     @FXML
-    private JFXTextField txtProjectName;
+    private JFXTextField txtTenProject;
     
     @FXML
-    private DatePicker dtStartDay;
+    private DatePicker dtNgayBatDau;
     
 
 
@@ -56,11 +60,18 @@ public class AddProjectController implements Initializable {
     private void btnThemProject(MouseEvent event) {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
-            LocalDate date = dtStartDay.getValue();
-            System.out.println(date);
-            System.out.println(date);
-            System.out.println(date);
-//            DA.create(Integer.parseInt(IDuser.getText()), txtProjectID.getText(), txtProjectName.getText(),Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()) , TRANGTHAIDUAN.DANGLAM.toString());
+            
+            LocalDate date = dtNgayBatDau.getValue();
+            Date dt = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
+            DA.create(Integer.parseInt(IDuser.getText()), txtMaDuAn.getText(), txtTenProject.getText(),dt , TRANGTHAIDUAN.DANGLAM.toString());
+
+            AlertMess.Instance().ShowMessSuccess("Success!");
+
+            System.out.println(dt);
+            System.out.println(IDuser);
+            System.out.println(dt);
+            System.out.println(dt);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

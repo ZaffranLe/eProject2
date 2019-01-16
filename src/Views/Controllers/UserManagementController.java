@@ -45,7 +45,7 @@ public class UserManagementController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-            loadForm();
+        loadForm();
     }
 
     public void loadForm() {
@@ -55,12 +55,12 @@ public class UserManagementController implements Initializable {
         txtAddress.setText(user.getDiaChi());
         txtUsername.setText(user.getHoTen());
         txtPhone.setText(user.getSdt());
-         btnEdit.setVisible(false);
-        btnSaveProfile.setVisible(true);
-        txtEmail.setEditable(true);
-        txtAddress.setEditable(true);
-        txtUsername.setEditable(true);
-        txtPhone.setEditable(true);
+        btnEdit.setVisible(true);
+        btnSaveProfile.setVisible(false);
+        txtEmail.setEditable(false);
+        txtAddress.setEditable(false);
+        txtUsername.setEditable(false);
+        txtPhone.setEditable(false);
     }
 
     @FXML
