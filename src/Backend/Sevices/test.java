@@ -26,17 +26,18 @@ import java.util.logging.Logger;
  * @author vukho
  */
 public class test {
-
+    
     public static NguoidungJpaController nd;
-
+    
     public static void main(String[] args) throws IllegalOrphanException, NonexistentEntityException {
 
 //        System.out.println("coi trong db co chua!");
 //        NoidungServiceImpl nds = new NoidungServiceImpl();
 //        nds.create(1, "1", "xxx", "test", "aa", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
         DuanServicesImpl da = new DuanServicesImpl();
-        da.create(1, "nh 7", "quang", new Date(), TRANGTHAIDUAN.DANGLAM.toString());
+        //da.create(1, "nh 7", "quang", new Date(), TRANGTHAIDUAN.DANGLAM.toString());
 //          NguoidungDuanJpaController da = new NguoidungDuanJpaController();
+        da.edit(1, "xxx", "test", new Date(), TRANGTHAIDUAN.HOANTHANH.toString());
 //        try {
 //            da.create(new NguoidungDuan(new NguoidungDuanPK(2, "7"), VITRI.NHANVIEN.toString()));
 //        } catch (Exception ex) {

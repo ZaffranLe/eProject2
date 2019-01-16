@@ -13,6 +13,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -40,7 +41,7 @@ public class AddProjectController implements Initializable {
     private JFXTextField txtProjectName;
     
     @FXML
-    private DatePicker dtStartDay;
+    private DatePicker dtNgayBatDau;
     
 
 
@@ -56,13 +57,19 @@ public class AddProjectController implements Initializable {
     private void btnThemProject(MouseEvent event) {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
-            LocalDate date = dtStartDay.getValue();
-            System.out.println(IDuser.getText());
-            System.out.println("aaaa");
-            System.out.println(dtStartDay.getValue());
-            System.out.println(date);
-            DA.create(4, "hehehe", "aa", new Date(), TRANGTHAIDUAN.DANGLAM.toString());
-            DA.create(Integer.parseInt(IDuser.getText()), txtProjectID.getText(), txtProjectName.getText(),Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()) , TRANGTHAIDUAN.DANGLAM.toString());
+           LocalDate date = dtNgayBatDau.getValue();
+           Date start = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
+            System.out.println(start);
+            System.out.println("aa");
+            System.out.println(new Date());
+            System.out.println(txtProjectID.getText());
+            System.out.println(txtProjectName.getText());
+//            System.out.println("aaaa");
+//            System.out.println(dtStartDay.getValue());
+          System.out.println(date);
+          DA.create(4, "xxx", "aa", start, TRANGTHAIDUAN.DANGLAM.toString());
+//          DA.create(Integer.parseInt(IDuser.getText()), txtProjectID.getText(), txtProjectName.getText(),start , TRANGTHAIDUAN.DANGLAM.toString());
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

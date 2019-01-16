@@ -36,9 +36,9 @@ public class test {
         List<Duan> list = da.getAllByStatus(1, TRANGTHAIDUAN.DANGLAM.toString());
         try {
 
-            da.edit("1", "test edit", new Date(1998, 02, 11), TRANGTHAIDUAN.DANGLAM.toString());
+            // da.edit("1", "test edit", new Date(1998, 02, 11), TRANGTHAIDUAN.DANGLAM.toString());
             //da.delete("4");
-            da.setEndDate("1", new Date());
+            //da.setEndDate("1", new Date());
         } catch (Exception ex) {
             Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
         }

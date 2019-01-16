@@ -17,9 +17,9 @@ import java.util.List;
  */
 public interface DuanServices {
     public void create(int idNguoidung,String id,String name,Date start,String status);
-    public void edit(String id,String name,Date start,String status);
-    public void delete(String id);
-    public void setEndDate(String id,Date end);
+    public void edit(int idNguoidung,String id,String name,Date start,String status);
+    public void delete(int idNguoidung,String id);
+    public void setEndDate(int idNguoidung,String id,Date end);
     
     public List<Duan> getAllByStatus(int idNguoiDung, String trangThaiDuAn);
     
