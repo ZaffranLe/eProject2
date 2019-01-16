@@ -32,10 +32,14 @@ public class UserSevicesImpl implements UserSevices {
             if (users.size() == 1) {
                 for (Nguoidung user : users) {
                     String PassHash = md5.getMd5(Pass);
+<<<<<<< HEAD
                     if (!user.getMatKhau().equals(PassHash)) {
                         AlertMess.Instance().ShowMessError("Username or password is not correct!");
                         return false;
                     } else {
+=======
+                    if (user.getMatKhau().equals(PassHash)) {
+>>>>>>> 3cbc7fe65af8b44ae502d29f27963dbafcf0d83d
                         if (user.getTrangThaiDangNhap()) {
                             AlertMess.Instance().ShowMessError("Account has been logged in from an other devices!");
                             return false;
@@ -45,6 +49,9 @@ public class UserSevicesImpl implements UserSevices {
                         user.setTrangThaiDangNhap(true);
                         UserJpa.edit(user);
                         return true;
+                    } else {
+                        AlertMess.Instance().ShowMessError("Username or password is not correct!");
+                        return false;
                     }
                 }
             }
@@ -52,9 +59,8 @@ public class UserSevicesImpl implements UserSevices {
             return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            return false;
         }
-        AlertMess.Instance().ShowMessError("Email or Password is not correct");
-        return false;
     }
 
     @Override
