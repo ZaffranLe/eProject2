@@ -62,6 +62,7 @@ public class AddProjectController implements Initializable {
         try {
             DuanServicesImpl DA = new  DuanServicesImpl();
 <<<<<<< HEAD
+<<<<<<< HEAD
            LocalDate date = dtNgayBatDau.getValue();
            Date start = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
             System.out.println(start);
@@ -78,6 +79,10 @@ public class AddProjectController implements Initializable {
 =======
             AlertMess.Instance().ShowMessSuccess("Success!");
 >>>>>>> 3cbc7fe65af8b44ae502d29f27963dbafcf0d83d
+=======
+            LocalDate date = dtStartDay.getValue();
+//            DA.create(Integer.parseInt(IDuser.getText()), txtProjectID.getText(), txtProjectName.getText(),Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()) , TRANGTHAIDUAN.DANGLAM.toString());
+>>>>>>> acd8df142d183e1d0f751afc25276d7821c74e13
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

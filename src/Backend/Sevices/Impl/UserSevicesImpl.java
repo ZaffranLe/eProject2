@@ -32,14 +32,10 @@ public class UserSevicesImpl implements UserSevices {
             if (users.size() == 1) {
                 for (Nguoidung user : users) {
                     String PassHash = md5.getMd5(Pass);
-<<<<<<< HEAD
                     if (!user.getMatKhau().equals(PassHash)) {
                         AlertMess.Instance().ShowMessError("Username or password is not correct!");
                         return false;
                     } else {
-=======
-                    if (user.getMatKhau().equals(PassHash)) {
->>>>>>> 3cbc7fe65af8b44ae502d29f27963dbafcf0d83d
                         if (user.getTrangThaiDangNhap()) {
                             AlertMess.Instance().ShowMessError("Account has been logged in from an other devices!");
                             return false;
@@ -49,10 +45,10 @@ public class UserSevicesImpl implements UserSevices {
                         user.setTrangThaiDangNhap(true);
                         UserJpa.edit(user);
                         return true;
-                    } else {
-                        AlertMess.Instance().ShowMessError("Username or password is not correct!");
-                        return false;
                     }
+                    AlertMess.Instance().ShowMessError("Username or password is not correct!");
+                    return false;
+
                 }
             }
             AlertMess.Instance().ShowMessError("Username or password is not correct!");
@@ -65,7 +61,7 @@ public class UserSevicesImpl implements UserSevices {
 
     @Override
     public boolean Register(String Email, String Pass, String UserName, String Phone, String Address) {
-        //To change body of generated methods, choose Tools | Templates.
+        // To change body of generated methods, choose Tools | Templates.
         try {
             String PassHash = md5.getMd5(Pass);
             Nguoidung nguoidung = new Nguoidung(Email, PassHash, UserName, Phone, Address, false);
