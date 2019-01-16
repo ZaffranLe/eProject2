@@ -10,6 +10,7 @@ import Backend.Sevices.Impl.UserSevicesImpl;
 import Backend.Sevices.UserSevices;
 import Foundation.AlertMess;
 import Foundation.Transdata;
+import Views.Controllers.Validate;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -78,21 +79,44 @@ public class UserManagementController implements Initializable {
     private void btnChangePassword(MouseEvent event) {
     }
 
+    public boolean checkvalid(int id) {
+        UserSevicesImpl userS = new UserSevicesImpl();
+        if (!userS.checkEmailExistUpdate(txtEmail.getText(),id)) {
+            System.out.println("false roi :");
+            return false;
+        }
+        if (!Validate.Instance().validateEmail(txtEmail.getText())) {
+            return false;
+        }
+        if (!Validate.Instance().validateAddress(txtAddress.getText())) {
+            return false;
+        }
+        if (!Validate.Instance().validateUserName(txtUsername.getText())) {
+            return false;
+        }
+        if (!Validate.Instance().validatePhoneNumber(txtPhone.getText())) {
+            return false;
+        }
+        return true;
+    }
+
     @FXML
     private void btnSaveClick(MouseEvent event) {
-        UserSevicesImpl userS = new UserSevicesImpl();
-        Nguoidung user = Transdata.Instance().getUserLogin();
-        user.setEmail(txtEmail.getText());
-        user.setHoTen(txtUsername.getText());
-        user.setDiaChi(txtAddress.getText());
-        user.setSdt(txtPhone.getText());
-        if (userS.Edit(user)) {
-            AlertMess.Instance().ShowMessSuccess("Edit profile succeed.");
-            btnSaveProfile.setVisible(false);
-            btnEdit.setVisible(true);
-            loadForm();
-        } else {
-            AlertMess.Instance().ShowMessError("Edit profile failed.");
+            UserSevicesImpl userS = new UserSevicesImpl();
+            Nguoidung user = Transdata.Instance().getUserLogin();
+        if (checkvalid(user.getId())) {
+            user.setEmail(txtEmail.getText());
+            user.setHoTen(txtUsername.getText());
+            user.setDiaChi(txtAddress.getText());
+            user.setSdt(txtPhone.getText());
+            if (userS.Edit(user)) {
+                AlertMess.Instance().ShowMessSuccess("Edit profile succeed.");
+                btnSaveProfile.setVisible(false);
+                btnEdit.setVisible(true);
+                loadForm();
+            } else {
+                AlertMess.Instance().ShowMessError("Edit profile failed.");
+            }
         }
     }
 
