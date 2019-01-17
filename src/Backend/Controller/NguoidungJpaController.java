@@ -279,7 +279,7 @@ public class NguoidungJpaController implements Serializable {
     public List<Nguoidung> getAllByTask(String idTask) {
         EntityManager em = getEntityManager();
         try {
-            String jpql = "Select a from Nguoidung a join Noidung b where b.iDNoiDung =:idTask";
+            String jpql = "Select a from Nguoidung a join a.noidungCollection b where b.iDNoiDung =:idTask";
             return em.createQuery(jpql).setParameter("idTask", idTask).getResultList();
         } catch (Exception e) {
             System.out.println("Xảy ra lỗi khi lấy danh sách người dùng từ cơ sở dữ liệu");

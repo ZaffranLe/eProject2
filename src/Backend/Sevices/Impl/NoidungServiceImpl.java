@@ -10,6 +10,7 @@ import Backend.Controller.NguoidungDuanJpaController;
 import Backend.Controller.NguoidungJpaController;
 import Backend.Controller.NoidungJpaController;
 import Backend.Controller.exceptions.NonexistentEntityException;
+import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.VITRI;
 import Backend.Model.Nguoidung;
 import Backend.Model.NguoidungDuanPK;
@@ -33,7 +34,7 @@ public class NoidungServiceImpl implements NoidungServices {
     NguoidungJpaController nguoidungController = new NguoidungJpaController();
     NguoidungDuanJpaController nguoiDungDuAn = new NguoidungDuanJpaController();
     NguoidungServicesImpl nguoidungServiceImpl = new NguoidungServicesImpl();
-    
+
     @Override
     public List<Noidung> getAllByDuAn(String idDuAn) {
         return noiDungController.getAllByProject(idDuAn);
@@ -96,9 +97,18 @@ public class NoidungServiceImpl implements NoidungServices {
     public boolean haveRole(int idNguoidung, String idTask) {
         Noidung task = noiDungController.findNoidung(idTask);
         System.out.println(task.getIDDuAn().getIDDuAn());
-        if ( nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, task.getIDDuAn().getIDDuAn())).getViTri() == VITRI.QUANLY.toString()) {
+        if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, task.getIDDuAn().getIDDuAn())).getViTri().equals(VITRI.QUANLY.toString())) {
             return true;
+        } else {
+            System.out.println("Khong co quyen");
         }
+        System.out.println(nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, task.getIDDuAn().getIDDuAn())).getViTri());
+        System.out.println(VITRI.QUANLY.toString());
         return false;
+    }
+
+    @Override
+    public void AddUsers(String idNguoidung, String idDuan, List<Nguoidung> list) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

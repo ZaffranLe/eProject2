@@ -5,6 +5,7 @@
  */
 package Backend.Sevices;
 
+import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
 import java.util.Date;
 import java.util.List;
@@ -21,8 +22,9 @@ public interface NoidungServices {
 
     public void delete(String iDNoiDung);
     
-    
+    public void AddUsers(String idNguoidung,String idDuan,List<Nguoidung> list);
 
     public List<Noidung> getAllByDuAn(String idDuAn);
+    
 
 }
