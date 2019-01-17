@@ -45,8 +45,10 @@ public class UserSevicesImpl implements UserSevices {
                         user.setTrangThaiDangNhap(true);
                         UserJpa.edit(user);
                         return true;
-              
                     }
+                    AlertMess.Instance().ShowMessError("Username or password is not correct!");
+                    return false;
+
                 }
             }
             AlertMess.Instance().ShowMessError("Username or password is not correct!");
@@ -57,42 +59,17 @@ public class UserSevicesImpl implements UserSevices {
         }
     }
 
-    public boolean checkEmailExist(String Email) {
-        List<Nguoidung> users = UserJpa.findNguoidungByEmail(Email);
-        if (users == null || users.size() == 0) {
-            return true;
-        }
-        AlertMess.Instance().ShowMessError("Email is exist!");
-        return false;
-    }
-    public boolean checkEmailExistUpdate(String Email,int id) {
-        List<Nguoidung> users = UserJpa.findNguoidungByEmail(Email);
-        if (users.size()==1) {
-            for (Nguoidung user : users) {
-                if (user.getId()!=id) {
-                    AlertMess.Instance().ShowMessError("Email is exist!");
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     @Override
     public boolean Register(String Email, String Pass, String UserName, String Phone, String Address) {
-        //To change body of generated methods, choose Tools | Templates.
+        // To change body of generated methods, choose Tools | Templates.
         try {
-            if (checkEmailExist(Email)) {
-                String PassHash = md5.getMd5(Pass);
-                Nguoidung nguoidung = new Nguoidung(Email, PassHash, UserName, Phone, Address, false);
-                UserJpa.create(nguoidung);
-                return true;
-            }
-            return false;
+            String PassHash = md5.getMd5(Pass);
+            Nguoidung nguoidung = new Nguoidung(Email, PassHash, UserName, Phone, Address, false);
+            UserJpa.create(nguoidung);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return false;
         }
+        return false;
     }
 
     @Override

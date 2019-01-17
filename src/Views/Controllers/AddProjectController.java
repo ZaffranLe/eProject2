@@ -8,15 +8,13 @@ package Controllers;
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.VITRI;
 import Backend.Sevices.Impl.DuanServicesImpl;
-
 import Foundation.Transdata;
-
 import Foundation.AlertMess;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -64,14 +62,7 @@ public class AddProjectController implements Initializable {
             LocalDate date = dtNgayBatDau.getValue();
             Date dt = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
             DA.create(Integer.parseInt(IDuser.getText()), txtMaDuAn.getText(), txtTenProject.getText(),dt , TRANGTHAIDUAN.DANGLAM.toString());
-
             AlertMess.Instance().ShowMessSuccess("Success!");
-
-            System.out.println(dt);
-            System.out.println(IDuser);
-            System.out.println(dt);
-            System.out.println(dt);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -52,42 +52,68 @@ public class DuanServicesImpl implements DuanServices {
     }
 
     @Override
-    public void edit(String id, String name, Date start, String status) {
+    public void edit(int idNguoidung, String id, String name, Date start, String status) {
         try {
-            Duan da = duAnController.findDuan(id);
-            da.setTenDuAn(name);
-            da.setNgayBatDau(start);
-            da.setTrangThai(status);
-            duAnController.edit(da);
-        } catch (NonexistentEntityException ex) {
-            Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+            if (haveRole(idNguoidung, id)) {
+                try {
+                    Duan da = duAnController.findDuan(id);
+                    da.setTenDuAn(name);
+                    da.setNgayBatDau(start);
+                    da.setTrangThai(status);
+                    duAnController.edit(da);
+                } catch (NonexistentEntityException ex) {
+                    Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Khong co quyen edit");
+        }
+
+    }
+
+    @Override
+    public void delete(int idNguoidung, String id) {
+        try {
+            if (haveRole(idNguoidung, id)) {
+                try {
+                    duAnController.destroy(id);
+                } catch (IllegalOrphanException ex) {
+                    Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (NonexistentEntityException ex) {
+                    Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Khong co quyen");
         }
     }
 
     @Override
-    public void delete(String id) {
+    public void setEndDate(int idNguoidung, String id, Date end) {
         try {
-            duAnController.destroy(id);
-        } catch (IllegalOrphanException ex) {
-            Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NonexistentEntityException ex) {
-            Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+            if (haveRole(idNguoidung, id)) {
+                Duan da = duAnController.findDuan(id);
+                da.setNgayKetThuc(end);
+                try {
+                    duAnController.edit(da);
+                } catch (NonexistentEntityException ex) {
+                    Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Khong co quyen");
         }
     }
 
-    @Override
-    public void setEndDate(String id, Date end) {
-        Duan da = duAnController.findDuan(id);
-        da.setNgayKetThuc(end);
-        try {
-            duAnController.edit(da);
-        } catch (NonexistentEntityException ex) {
-            Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+    public boolean haveRole(int idNguoidung, String id) {
+        if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, id)).getViTri() == VITRI.QUANLY.toString()) {
+            return true;
         }
-    }
+        return false;
 
+    }
 }
