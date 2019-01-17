@@ -30,6 +30,17 @@
     -fx-background-color: #336B87;
     -fx-text-fill: #FFF;
 }
+.textFieldUser{
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    
+}
+
+.iconSetting{
+    animation:spin 4s linear infinite;
+}
 .sidebarBtn:hover{
     -fx-background-color: transparent;
     -fx-text-fill: #763626;
@@ -45,7 +56,21 @@
 
 
 }
+.UserBtn{
+    -fx-background-color: #336B87;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 30px;
+}
+.UserBtn:hover{
+    -fx-background-color: transparent;
+    -fx-text-fill: #763626;
+    -fx-border-color: #763626;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
 
+}
 .closeBtn{
     -fx-fill: #545454;
 }
