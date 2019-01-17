@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -26,24 +27,21 @@ import javafx.stage.Stage;
 public class DetailProjectController implements Initializable {
 
     @FXML
-    private Label txtTenNhiemVu;
+    private VBox vbToDo;
     @FXML
     private Label txtMoTa;
-    private int idDuan;
+    @FXML
+    private VBox vbInProgress;
+    @FXML
+    private VBox vbSolved;
+    @FXML
+    private VBox vbComplete;
     @FXML
     private Label lbID;
     @FXML
     private Label lbNameProject;
 
-    public int getIdDuan() {
-        return idDuan;
-    }
 
-    public void setIdDuan(int idDuan) {
-        this.idDuan = idDuan;
-    }
-
-  
     /**
      * Initializes the controller class.
      */
@@ -68,7 +66,6 @@ public class DetailProjectController implements Initializable {
         stage.show();
     }
 
-    @FXML
     private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/DetailMission.fxml"));

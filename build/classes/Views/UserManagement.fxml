@@ -15,48 +15,44 @@
         <URL value="@../Views/css/style.css" />
     </stylesheets>
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="173.0" layoutY="38.0" prefHeight="42.0" prefWidth="282.0" text="User Profile">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="199.0" layoutY="18.0" prefHeight="42.0" prefWidth="282.0" text="User Profile">
             <font>
                 <Font size="25.0" />
             </font>
         </Label>
-        <Label layoutX="136.0" layoutY="176.0" prefHeight="30.0" prefWidth="87.0" text="Username:">
+        <Label layoutX="167.0" layoutY="151.0" prefHeight="30.0" prefWidth="87.0" text="Username:">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <Label layoutX="173.0" layoutY="107.0" prefHeight="30.0" prefWidth="49.0" text="Email:">
+        <Label layoutX="204.0" layoutY="82.0" prefHeight="30.0" prefWidth="49.0" text="Email:">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <Label layoutX="97.0" layoutY="246.0" prefHeight="30.0" prefWidth="126.0" text="Phone Number:">
+        <Label layoutX="128.0" layoutY="221.0" prefHeight="30.0" prefWidth="126.0" text="Phone Number:">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <Label layoutX="153.0" layoutY="317.0" prefHeight="30.0" prefWidth="68.0" text="Address:">
+        <Label layoutX="184.0" layoutY="292.0" prefHeight="30.0" prefWidth="68.0" text="Address:">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <JFXTextField fx:id="txtEmail" editable="false" layoutX="231.0" layoutY="101.0" prefHeight="27.0" prefWidth="221.0" promptText="tung@gmail.com" style="-fx-border-color: black;" styleClass="textFieldUser">
+        <JFXTextField fx:id="txtEmail" editable="false" layoutX="262.0" layoutY="76.0" prefHeight="27.0" prefWidth="221.0" promptText="tung@gmail.com" style="-fx-border-color: black;" styleClass="textFieldUser">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXTextField fx:id="txtUsername" editable="false" layoutX="231.0" layoutY="171.0" prefHeight="25.0" prefWidth="221.0" promptText="Le Son Tung" style="-fx-border-color: black;" styleClass="textFieldUser">
+        <JFXTextField fx:id="txtUsername" editable="false" layoutX="262.0" layoutY="146.0" prefHeight="25.0" prefWidth="221.0" promptText="Le Son Tung" style="-fx-border-color: black;" styleClass="textFieldUser">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXTextField fx:id="txtPhone" editable="false" layoutX="231.0" layoutY="240.0" prefHeight="27.0" prefWidth="221.0" promptText="0123456789" style="-fx-border-color: black;" styleClass="textFieldUser">
+        <JFXTextField fx:id="txtPhone" editable="false" layoutX="262.0" layoutY="215.0" prefHeight="27.0" prefWidth="221.0" promptText="0123456789" style="-fx-border-color: black;" styleClass="textFieldUser">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXTextField fx:id="txtAddress" editable="false" layoutX="232.0" layoutY="311.0" prefHeight="27.0" prefWidth="221.0" promptText="285 Doi Can" style="-fx-border-color: black;" styleClass="textFieldUser">
+        <JFXTextField fx:id="txtAddress" editable="false" layoutX="263.0" layoutY="286.0" prefHeight="27.0" prefWidth="221.0" promptText="285 Doi Can" style="-fx-border-color: black;" styleClass="textFieldUser">
          <font>
             <Font size="18.0" />
          </font></JFXTextField>
-        <JFXButton fx:id="btnEdit" alignment="CENTER_RIGHT" layoutX="168.0" layoutY="390.0" onMouseClicked="#btnEditClick" prefHeight="39.0" prefWidth="165.0" styleClass="UserBtn" text="Edit Profile   ">
-         <font>
-            <Font size="18.0" />
-         </font></JFXButton>
-        <JFXButton layoutX="342.0" layoutY="390.0" onMouseClicked="#btnChangePassword" styleClass="UserBtn" text="Change Password">
+        <JFXButton fx:id="btnEdit" alignment="CENTER_RIGHT" layoutX="22.0" layoutY="422.0" onMouseClicked="#btnEditClick" prefHeight="39.0" prefWidth="148.0" styleClass="UserBtn" text="Edit Profile   ">
          <font>
             <Font size="18.0" />
          </font></JFXButton>
@@ -65,12 +61,28 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <FontAwesomeIcon fill="#2b1e6f" iconName="CIRCLE" layoutX="172.0" layoutY="80.0" size="5em" />
-      <FontAwesomeIcon fill="WHITE" iconName="USER" layoutX="183.0" layoutY="71.0" size="3em" />
-      <FontAwesomeIcon fill="#8d0505" iconName="MAP_MARKER" layoutX="63.0" layoutY="342.0" size="2.5em" />
-      <FontAwesomeIcon fill="#8d0505" iconName="PHONE" layoutX="60.0" layoutY="271.0" size="2.5em" />
-      <FontAwesomeIcon fill="#8d0505" iconName="ENVELOPE" layoutX="57.0" layoutY="132.0" size="2.5em" />
-      <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="60.0" layoutY="202.0" size="2.5em" />
-      <FontAwesomeIcon fill="WHITE" iconName="EDIT" layoutX="187.0" layoutY="418.0" size="2em" />
+      <FontAwesomeIcon fill="#2b1e6f" iconName="CIRCLE" layoutX="173.0" layoutY="61.0" size="5em" />
+      <FontAwesomeIcon fill="WHITE" iconName="USER" layoutX="184.0" layoutY="52.0" size="3em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="MAP_MARKER" layoutX="94.0" layoutY="317.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="PHONE" layoutX="91.0" layoutY="246.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="ENVELOPE" layoutX="88.0" layoutY="107.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="91.0" layoutY="177.0" size="2.5em" />
+      <FontAwesomeIcon fill="WHITE" iconName="EDIT" layoutX="30.0" layoutY="450.0" size="2em" />
+      <JFXPasswordField fx:id="txtConfirmNewPassword" labelFloat="true" layoutX="262.0" layoutY="412.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="221.0" promptText="Confirm new password" styleClass="textFieldUser" unFocusColor="#a3a3a3">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="txtNewPassWord" labelFloat="true" layoutX="262.0" layoutY="349.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="221.0" promptText="New Password" styleClass="textFieldUser" unFocusColor="#a3a3a3">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <Label layoutX="133.0" layoutY="355.0" prefHeight="30.0" prefWidth="126.0" text="New Password:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <FontAwesomeIcon fill="#8d0505" iconName="LOCK" layoutX="94.0" layoutY="380.0" size="2.5em" />
     </children>
 </AnchorPane>

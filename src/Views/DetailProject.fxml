@@ -23,7 +23,7 @@
          </font>
       </JFXTextField>
       <FontAwesomeIcon iconName="SEARCH" layoutX="255.0" layoutY="115.0" />
-      <JFXButton buttonType="RAISED" layoutX="464.0" layoutY="79.0" onMouseClicked="#addTask" prefHeight="39.0" prefWidth="156.0" styleClass="loginBtn" text="Add New Task">
+      <JFXButton buttonType="RAISED" layoutX="464.0" layoutY="79.0" onMouseClicked="#addTask" prefHeight="39.0" prefWidth="145.0" styleClass="loginBtn" text="Add New Task">
          <font>
             <Font size="18.0" />
          </font></JFXButton>
@@ -35,66 +35,10 @@
         <content>
           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="768.0">
                <children>
-                  <VBox layoutX="41.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #f2dede;">
-                     <children>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#detailTask" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                           <children>
-                              <Label fx:id="txtTenNhiemVu" layoutX="34.0" layoutY="14.0" text="Task name" />
-                              <Label fx:id="txtMoTa" layoutX="32.0" layoutY="50.0" text="Description" />
-                           </children>
-                        </Pane>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Pane>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="219.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #fcf8e3;">
-                     <children>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Pane>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Pane>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="398.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #d9edf7;">
-                     <children>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Pane>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Pane>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="572.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #dff0d8;">
-                     <children>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Pane>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: white;">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Pane>
-                     </children>
-                  </VBox>
+                  <VBox fx:id="vbToDo" layoutX="41.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #f2dede;" />
+                  <VBox fx:id="vbInProgress" layoutX="219.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #fcf8e3;" />
+                  <VBox fx:id="vbSolved" layoutX="398.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #d9edf7;" />
+                  <VBox fx:id="vbComplete" layoutX="572.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #dff0d8;" />
                   <Label layoutX="88.0" layoutY="28.0" prefHeight="26.0" prefWidth="51.0" text="To Do">
                      <font>
                         <Font name="System Bold" size="17.0" />
