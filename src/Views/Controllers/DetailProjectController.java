@@ -6,6 +6,7 @@
 package Views.Controllers;
 
 import Backend.Model.Duan;
+import Backend.Sevices.Impl.NoidungServiceImpl;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,6 +30,10 @@ public class DetailProjectController implements Initializable {
     @FXML
     private Label txtMoTa;
     private int idDuan;
+    @FXML
+    private Label lbID;
+    @FXML
+    private Label lbNameProject;
 
     public int getIdDuan() {
         return idDuan;
@@ -45,9 +50,8 @@ public class DetailProjectController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        System.out.println(getIdDuan());
-        System.out.println(getIdDuan());
-        System.out.println(getIdDuan());
+        NoidungServiceImpl ndS = new NoidungServiceImpl();
+        
         
     }    
     public void initData(Duan DA){
