@@ -49,8 +49,8 @@ public class test {
 
         List<Noidung> listNoidung = nd.getAllByStatus("abc", TRANGTHAITASK.DANGLAM.toString());
         //nd.create("5", "5", "a", "a", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
-        nd.edit("5", "5", "a", "test edit", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
-        nd.delete("5");
+        nd.edit(1,"abc", "1", "a", "fuck", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
+
 
         for (Noidung a : listNoidung) {
             System.out.println(a.getTieuDe());

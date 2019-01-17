@@ -23,7 +23,7 @@ public class NguoidungServicesImpl implements NguoidungServices{
 
     @Override
     public List<Nguoidung> getAllByTask(String idTask) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return nguoidungController.getAllByTask(idTask);
     }
     
 }
