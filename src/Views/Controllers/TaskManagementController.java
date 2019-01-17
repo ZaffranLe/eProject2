@@ -86,15 +86,16 @@ public class TaskManagementController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
+       loadForm();
+    }
+    public void loadForm(){
+         try {
             setIdUser(Transdata.Instance().getUserLoginID());
             duAn = new DuanServicesImpl();
             List<Duan> lstToDo = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.DANGLAM.toString());
             List<Duan> lstDone = duAn.getAllByStatus(Integer.parseInt(getIdUser()), TRANGTHAIDUAN.HOANTHANH.toString());
             BoardProject.setPadding(new Insets(30, 30, 30, 30));
             for (Duan DA : lstToDo) {
-                System.out.println(getCol() + "va" + getRow());
-                System.out.println(DA.getTenDuAn());
                 Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelProjects.fxml"));
                 Label lbName = (Label) node.lookup("#ProjectName");
                 lbName.setText(DA.getTenDuAn());

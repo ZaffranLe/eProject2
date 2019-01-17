@@ -45,7 +45,7 @@ public class UserSevicesImpl implements UserSevices {
                         user.setTrangThaiDangNhap(true);
                         UserJpa.edit(user);
                         return true;
-              
+
                     }
                 }
             }
@@ -55,27 +55,6 @@ public class UserSevicesImpl implements UserSevices {
             System.out.println(e.getMessage());
             return false;
         }
-    }
-
-    public boolean checkEmailExist(String Email) {
-        List<Nguoidung> users = UserJpa.findNguoidungByEmail(Email);
-        if (users == null || users.size() == 0) {
-            return true;
-        }
-        AlertMess.Instance().ShowMessError("Email is exist!");
-        return false;
-    }
-    public boolean checkEmailExistUpdate(String Email,int id) {
-        List<Nguoidung> users = UserJpa.findNguoidungByEmail(Email);
-        if (users.size()==1) {
-            for (Nguoidung user : users) {
-                if (user.getId()!=id) {
-                    AlertMess.Instance().ShowMessError("Email is exist!");
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 
     @Override
@@ -104,6 +83,28 @@ public class UserSevicesImpl implements UserSevices {
             System.out.println(e.getMessage());
             return false;
         }
+    }
+
+    public boolean checkEmailExist(String Email) {
+        List<Nguoidung> users = UserJpa.findNguoidungByEmail(Email);
+        if (users == null || users.size() == 0) {
+            return true;
+        }
+        AlertMess.Instance().ShowMessError("Email is exist!");
+        return false;
+    }
+
+    public boolean checkEmailExistUpdate(String Email, int id) {
+        List<Nguoidung> users = UserJpa.findNguoidungByEmail(Email);
+        if (users.size() == 1) {
+            for (Nguoidung user : users) {
+                if (user.getId() != id) {
+                    AlertMess.Instance().ShowMessError("Email is exist!");
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }
