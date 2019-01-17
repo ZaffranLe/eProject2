@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="parent" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.RegistrationController">
+    <stylesheets>
+        <URL value="@../Views/css/style.css" />
+    </stylesheets>
+    <children>
+        <Label layoutX="51.0" layoutY="116.0" text="Fill the form for Registration" textFill="#a3a3a3" />
+        <Label layoutX="44.0" layoutY="82.0" text="Welcome,">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@css/system-task.jpg" />
+            </image>
+        </ImageView>
+        <FontAwesomeIcon iconName="CLOSE" layoutX="379.0" layoutY="20.0" onMouseClicked="#closeApp" size="1.5em" styleClass="closeBtn" text="" />
+        <JFXPasswordField fx:id="Password" labelFloat="true" layoutX="65.0" layoutY="208.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Password" unFocusColor="#a3a3a3">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXPasswordField>
+        <JFXTextField fx:id="Email" labelFloat="true" layoutX="65.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Email" unFocusColor="#a3a3a3">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="UserName" labelFloat="true" layoutX="65.0" layoutY="315.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Enter Username" unFocusColor="#a3a3a3">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="PhoneNumber" labelFloat="true" layoutX="65.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Enter Phone Number" unFocusColor="#a3a3a3">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="Address" labelFloat="true" layoutX="65.0" layoutY="431.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Your Adress" unFocusColor="#a3a3a3">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXButton buttonType="RAISED" layoutX="50.0" layoutY="491.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#Register_click" prefHeight="50.0" prefWidth="300.0" ripplerFill="#0777ff" styleClass="loginBtn" text="Register">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXButton>
+        <FontAwesomeIcon iconName="ARROW_LEFT" layoutX="8.0" layoutY="18.0" onMouseClicked="#backToLogin" size="1.5em" styleClass="backBtn" />
+        <Label fx:id="backToLogin" layoutX="272.0" layoutY="551.0" onMouseClicked="#backToLogin" styleClass="registration" text="Login Now" textFill="#2a3132">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <JFXPasswordField fx:id="RepeatPassword" labelFloat="true" layoutX="65.0" layoutY="265.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" promptText="Confirm password" unFocusColor="#a3a3a3">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+    </children>
+</AnchorPane>

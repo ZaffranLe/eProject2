@@ -45,10 +45,8 @@ public class UserSevicesImpl implements UserSevices {
                         user.setTrangThaiDangNhap(true);
                         UserJpa.edit(user);
                         return true;
-                    }
-                    AlertMess.Instance().ShowMessError("Username or password is not correct!");
-                    return false;
 
+                    }
                 }
             }
             AlertMess.Instance().ShowMessError("Username or password is not correct!");
@@ -61,15 +59,19 @@ public class UserSevicesImpl implements UserSevices {
 
     @Override
     public boolean Register(String Email, String Pass, String UserName, String Phone, String Address) {
-        // To change body of generated methods, choose Tools | Templates.
+        //To change body of generated methods, choose Tools | Templates.
         try {
-            String PassHash = md5.getMd5(Pass);
-            Nguoidung nguoidung = new Nguoidung(Email, PassHash, UserName, Phone, Address, false);
-            UserJpa.create(nguoidung);
+            if (checkEmailExist(Email)) {
+                String PassHash = md5.getMd5(Pass);
+                Nguoidung nguoidung = new Nguoidung(Email, PassHash, UserName, Phone, Address, false);
+                UserJpa.create(nguoidung);
+                return true;
+            }
+            return false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            return false;
         }
-        return false;
     }
 
     @Override

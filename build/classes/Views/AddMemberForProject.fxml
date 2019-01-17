@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="628.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.AddMemberForProjectController">
+   <children>
+      <TableView fx:id="tblAllMember" layoutX="64.0" layoutY="114.0" prefHeight="306.0" prefWidth="155.0">
+        <columns>
+          <TableColumn fx:id="colNameMember" prefWidth="154.0" text="Users" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="215.0" layoutY="8.0" prefHeight="51.0" prefWidth="221.0" text="Add User to Project" textFill="#2a3132">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblProjectView" layoutX="422.0" layoutY="114.0" prefHeight="306.0" prefWidth="155.0">
+         <columns>
+            <TableColumn fx:id="colNameProjectMember" prefWidth="154.0" text="Added" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="txtTimKiem" layoutX="64.0" layoutY="60.0" prefHeight="25.0" prefWidth="188.0">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="276.0" layoutY="60.0" onMouseClicked="#btnSearch" prefHeight="12.0" prefWidth="99.0" styleClass="loginBtn" text="Search">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+      <FontAwesomeIcon iconName="SEARCH" layoutX="200.0" layoutY="88.0" />
+      <JFXButton buttonType="RAISED" layoutX="267.0" layoutY="218.0" onMouseClicked="#btnAddMember" prefHeight="25.0" prefWidth="117.0" styleClass="loginBtn" text="Add">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="267.0" layoutY="283.0" onMouseClicked="#btnRemoveMember" prefHeight="25.0" prefWidth="117.0" styleClass="loginBtn" text="Remove">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
+   </children>
+</AnchorPane>
