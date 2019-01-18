@@ -50,6 +50,8 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private DatePicker dtNgayKetThuc;
     @FXML
+    private CheckComboBox<String> ckcbMember;
+    @FXML
     private JFXComboBox<bindDataComboBoxStatus> cbTrangThaiNV;
     @FXML
     private JFXTextField txtMaNhiemVu;
@@ -59,7 +61,19 @@ public class AddMissionForProjectController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // checkcombobox demo
+        final ObservableList<String> strings = FXCollections.observableArrayList();
+        for (int i = 0; i <= 10; i++) {
+            strings.add("Item " + i);
+        }
+        ckcbMember.getItems().addAll(strings);
+        ckcbMember.getCheckModel().getCheckedItems().addListener(new ListChangeListener<String>(){
+            @Override
+            public void onChanged(ListChangeListener.Change<? extends String> c) {
+                    System.out.println(ckcbMember.getCheckModel().getCheckedItems());            }
+        
+        });
+        //
         NguoidungServicesImpl userS = new NguoidungServicesImpl();
         List<Nguoidung> listUser = userS.getAllByProject(Transdata.Instance().getProjectID());
         for (Nguoidung nguoidung : listUser) {

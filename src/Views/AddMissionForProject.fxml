@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="700.0" style="-fx-background-color: #FFF;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMissionForProjectController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="700.0" style="-fx-background-color: #FFF;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMissionForProjectController">
    <children>
       <Label layoutX="266.0" layoutY="14.0" text="Create Task" textFill="#2a3132">
          <font>
@@ -71,5 +74,14 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="65.0" layoutY="282.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="SIGNAL" layoutX="65.0" layoutY="228.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="TAG" layoutX="65.0" layoutY="164.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="CALENDAR" layoutX="65.0" layoutY="343.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="KEY" layoutX="65.0" layoutY="108.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="CALENDAR" layoutX="65.0" layoutY="392.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="FILE" layoutX="65.0" layoutY="442.0" size="2.5em" />
+      <FontAwesomeIcon fill="WHITE" iconName="CHECK" layoutX="562.0" layoutY="536.0" size="2.5em" />
+      <CheckComboBox fx:id="ckcbMember" layoutX="491.0" layoutY="252.0" prefHeight="39.0" prefWidth="186.0" />
    </children>
 </AnchorPane>

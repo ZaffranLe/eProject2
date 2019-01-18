@@ -40,8 +40,6 @@ public class DetailProjectController implements Initializable {
     @FXML
     private VBox vbToDo;
     @FXML
-    private Label txtMoTa;
-    @FXML
     private VBox vbInProgress;
     @FXML
     private VBox vbSolved;
@@ -135,7 +133,7 @@ public class DetailProjectController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    @FXML
     private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/DetailMission.fxml"));
@@ -157,6 +155,23 @@ public class DetailProjectController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    private void btnOpenDiary(MouseEvent event) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/NhatKy.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void btnCompleteProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnDeleteProject(MouseEvent event) {
     }
     
 }

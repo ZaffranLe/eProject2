@@ -22,7 +22,7 @@
                 <Font size="23.0" />
             </font>
         </Label>
-        <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="53.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@css/system-task.jpg" />
             </image>
@@ -68,5 +68,11 @@
             <Font size="14.0" />
          </font>
       </JFXPasswordField>
+      <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="26.0" layoutY="343.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="ENVELOPE" layoutX="23.0" layoutY="182.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="PHONE" layoutX="26.0" layoutY="400.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="MAP_MARKER" layoutX="29.0" layoutY="459.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="LOCK" layoutX="28.0" layoutY="236.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="LOCK" layoutX="28.0" layoutY="293.0" size="2.5em" />
     </children>
 </AnchorPane>

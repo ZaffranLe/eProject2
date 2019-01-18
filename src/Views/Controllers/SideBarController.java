@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import com.jfoenix.controls.JFXButton;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.IOException;
 import java.net.URL;
@@ -38,6 +39,8 @@ public class SideBarController implements Initializable {
     private ImageView imgBanhRang3;
     @FXML
     private ImageView imgBanhRang4;
+    @FXML
+    private JFXButton openDetail;
 
     /**
      * Initializes the controller class.
@@ -86,5 +89,10 @@ public class SideBarController implements Initializable {
         rotation4.setByAngle(360);
         rotation4.setCycleCount(100);
         rotation4.play();
+    }
+
+    @FXML
+    private void btnLogout(MouseEvent event) {
+        
     }
 }
