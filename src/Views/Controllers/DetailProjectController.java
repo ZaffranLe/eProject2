@@ -133,7 +133,6 @@ public class DetailProjectController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
     private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/DetailMission.fxml"));
@@ -147,15 +146,14 @@ public class DetailProjectController implements Initializable {
     private void btnLocNhiemVu(MouseEvent event) {
     }
 
-    @FXML
-    private void addMember(MouseEvent event) throws IOException {
-         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/Views/AddMemberForProject.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
+//    private void addMember(MouseEvent event) throws IOException {
+//         FXMLLoader fxmlLoader = new FXMLLoader();
+//        fxmlLoader.setLocation(getClass().getResource("/Views/AddMemberForProject.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load());
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
+//    }
     @FXML
     private void btnOpenDiary(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
@@ -172,6 +170,16 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void btnDeleteProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnEditProject(MouseEvent event) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/AddProject.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
     
 }
