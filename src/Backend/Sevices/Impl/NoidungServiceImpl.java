@@ -48,7 +48,6 @@ public class NoidungServiceImpl implements NoidungServices {
         if (noiDungController.findNoidung(iDNoiDung) != null) {
             AlertMess.Instance().ShowMessError("Task is existed!");
             return;
-
         }
         try {
 
