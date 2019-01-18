@@ -10,7 +10,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #fff;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.DetailProjectController">
+=======
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="861.0" style="-fx-background-color: #fff;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.DetailProjectController">
+>>>>>>> origin/quang1
    <children>
       <Label layoutX="29.0" layoutY="23.0" text="Project name:">
          <font>
@@ -23,7 +27,11 @@
          </font>
       </JFXTextField>
       <FontAwesomeIcon iconName="SEARCH" layoutX="255.0" layoutY="115.0" />
+<<<<<<< HEAD
       <JFXButton buttonType="RAISED" layoutX="422.0" layoutY="79.0" onMouseClicked="#addTask" prefHeight="39.0" prefWidth="145.0" styleClass="loginBtn" text="Add New Task">
+=======
+      <JFXButton buttonType="RAISED" layoutX="464.0" layoutY="79.0" onMouseClicked="#addTask" prefHeight="39.0" prefWidth="145.0" styleClass="loginBtn" text="Add New Task">
+>>>>>>> origin/quang1
          <font>
             <Font size="18.0" />
          </font></JFXButton>
@@ -35,10 +43,17 @@
         <content>
           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="886.0">
                <children>
+<<<<<<< HEAD
                   <VBox fx:id="vbToDo" layoutX="41.0" layoutY="60.0" prefHeight="416.0" prefWidth="145.0" style="-fx-background-color: #f2dede;" />
                   <VBox fx:id="vbInProgress" layoutX="246.0" layoutY="60.0" prefHeight="416.0" prefWidth="145.0" style="-fx-background-color: #fcf8e3;" />
                   <VBox fx:id="vbSolved" layoutX="464.0" layoutY="60.0" prefHeight="415.0" prefWidth="145.0" style="-fx-background-color: #d9edf7;" />
                   <VBox fx:id="vbComplete" layoutX="684.0" layoutY="60.0" prefHeight="418.0" prefWidth="145.0" style="-fx-background-color: #dff0d8;" />
+=======
+                  <VBox fx:id="vbToDo" layoutX="41.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #f2dede;" />
+                  <VBox fx:id="vbInProgress" layoutX="219.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #fcf8e3;" />
+                  <VBox fx:id="vbSolved" layoutX="398.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #d9edf7;" />
+                  <VBox fx:id="vbComplete" layoutX="572.0" layoutY="60.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: #dff0d8;" />
+>>>>>>> origin/quang1
                   <Label layoutX="88.0" layoutY="28.0" prefHeight="26.0" prefWidth="51.0" text="To Do">
                      <font>
                         <Font name="System Bold" size="17.0" />

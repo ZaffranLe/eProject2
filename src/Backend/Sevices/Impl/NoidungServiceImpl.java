@@ -34,6 +34,7 @@ public class NoidungServiceImpl implements NoidungServices {
     NguoidungJpaController nguoidungController = new NguoidungJpaController();
     NguoidungDuanJpaController nguoiDungDuAn = new NguoidungDuanJpaController();
     NguoidungServicesImpl nguoidungServiceImpl = new NguoidungServicesImpl();
+    NhatKyServicesImpl nhatKyServiceImpl = new NhatKyServicesImpl();
 
     @Override
     public List<Noidung> getAllByDuAn(String idDuAn) {
@@ -56,6 +57,7 @@ public class NoidungServiceImpl implements NoidungServices {
             nd.setIDDuAn((duAnController.findDuan(iDDuAn)));
             nd.setNguoidungCollection(nguoidung);
             noiDungController.create(nd);
+            nhatKyServiceImpl.create(iDDuAn, "Create task" + iDNoiDung + " by " + nguoitao.getHoTen(), new Date());
         } catch (Exception ex) {
             Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -72,6 +74,7 @@ public class NoidungServiceImpl implements NoidungServices {
                 nd.setNgayBatDau(ngayBatDau);
                 nd.setNgayKetThuc(ngayKetThuc);
                 nd.setIDDuAn((duAnController.findDuan(iDDuAn)));
+                nhatKyServiceImpl.create(iDDuAn, "Edit task" + iDNoiDung + " by " + nguoidungController.findNguoidung(idNguoidung).getHoTen(), ngayBatDau);
                 try {
                     noiDungController.edit(nd);
                 } catch (Exception ex) {
@@ -112,14 +115,21 @@ public class NoidungServiceImpl implements NoidungServices {
         try {
             Noidung noidung = noiDungController.findNoidung(idNoidung);
             for (Nguoidung nguoidung1 : list) {
-                if(!(noidung.getNguoidungCollection().contains(nguoidung1)))
-                noidung.getNguoidungCollection().add(nguoidung1);
+                if (!(noidung.getNguoidungCollection().contains(nguoidung1))) {
+                    noidung.getNguoidungCollection().add(nguoidung1);
+                }
 
             }
             noiDungController.edit(noidung);
+            nhatKyServiceImpl.create(noidung.getIDDuAn().getIDDuAn(), "Add user to task " + idNoidung + " by " + nguoidungController.findNguoidung(idNguoidung).getHoTen(), new Date());
         } catch (Exception ex) {
             Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    @Override
+    public Noidung findOne(String idNoiDung) {
+        return noiDungController.findNoidung(idNoiDung);
     }
 }
