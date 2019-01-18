@@ -16,12 +16,14 @@ import Backend.Model.Nguoidung;
 import Backend.Model.NguoidungDuanPK;
 import Backend.Model.Noidung;
 import Backend.Sevices.NoidungServices;
+import Foundation.AlertMess;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Alert;
 
 /**
  *
@@ -43,10 +45,14 @@ public class NoidungServiceImpl implements NoidungServices {
 
     @Override
     public void create(int idNguoitao, String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
+        if (noiDungController.findNoidung(iDNoiDung) != null) {
+            AlertMess.Instance().ShowMessError("Create project success!");
+
+        }
         try {
-            ArrayList<Nguoidung> nguoidung = new ArrayList<>();
+
             Nguoidung nguoitao = nguoidungController.findNguoidung(idNguoitao);
-            nguoidung.add(nguoitao);
+
             Noidung nd = new Noidung();
             nd.setIDNoiDung(iDNoiDung);
             nd.setTieuDe(tieuDe);
@@ -55,7 +61,7 @@ public class NoidungServiceImpl implements NoidungServices {
             nd.setNgayBatDau(ngayBatDau);
             nd.setNgayKetThuc(ngayKetThuc);
             nd.setIDDuAn((duAnController.findDuan(iDDuAn)));
-            nd.setNguoidungCollection(nguoidung);
+
             noiDungController.create(nd);
             nhatKyServiceImpl.create(iDDuAn, "Create task" + iDNoiDung + " by " + nguoitao.getHoTen(), new Date());
         } catch (Exception ex) {
