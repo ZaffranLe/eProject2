@@ -122,5 +122,14 @@ public class DetailProjectController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    private void btnOpenDiary(MouseEvent event) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/NhatKy.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
     
 }

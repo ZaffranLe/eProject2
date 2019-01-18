@@ -68,5 +68,11 @@
             <Font size="14.0" />
          </font>
       </JFXPasswordField>
+      <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="26.0" layoutY="343.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="ENVELOPE" layoutX="23.0" layoutY="182.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="PHONE" layoutX="26.0" layoutY="400.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="MAP_MARKER" layoutX="29.0" layoutY="459.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="LOCK" layoutX="28.0" layoutY="236.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="LOCK" layoutX="28.0" layoutY="293.0" size="2.5em" />
     </children>
 </AnchorPane>

@@ -33,7 +33,9 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private DatePicker dtNgayKetThuc;
     @FXML
-    private JFXComboBox<?> cbTrangThai;
+    private JFXComboBox<?> cbTrangThaiNV;
+    @FXML
+    private JFXTextField txtMaNhiemVu;
 
     /**
      * Initializes the controller class.
@@ -44,11 +46,8 @@ public class AddMissionForProjectController implements Initializable {
     }    
 
     @FXML
-    private void btnSuaNhiemVu(MouseEvent event) {
+    private void btnThemNhiemVu(MouseEvent event) {
     }
 
-    @FXML
-    private void btnLuuNhiemVu(MouseEvent event) {
-    }
     
 }
