@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Backend.Controller.NguoidungJpaController;
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Nguoidung;
@@ -17,6 +18,7 @@ import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Observable;
@@ -39,7 +41,6 @@ import org.controlsfx.control.CheckComboBox;
  */
 public class AddMissionForProjectController implements Initializable {
 
-    @FXML
     private JFXComboBox<bindDataComboBoxMemBer> cbThanhVien;
     @FXML
     private JFXTextField txtTenNhiemVu;
@@ -50,7 +51,7 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private DatePicker dtNgayKetThuc;
     @FXML
-    private CheckComboBox<String> ckcbMember;
+    private CheckComboBox<bindDataComboBoxMemBer> ckcbMember;
     @FXML
     private JFXComboBox<bindDataComboBoxStatus> cbTrangThaiNV;
     @FXML
@@ -62,24 +63,20 @@ public class AddMissionForProjectController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // checkcombobox demo
-        final ObservableList<String> strings = FXCollections.observableArrayList();
-        for (int i = 0; i <= 10; i++) {
-            strings.add("Item " + i);
-        }
-        ckcbMember.getItems().addAll(strings);
-        ckcbMember.getCheckModel().getCheckedItems().addListener(new ListChangeListener<String>(){
-            @Override
-            public void onChanged(ListChangeListener.Change<? extends String> c) {
-                    System.out.println(ckcbMember.getCheckModel().getCheckedItems());            }
-        
-        });
-        //
+        final ObservableList<bindDataComboBoxMemBer> cbMember = FXCollections.observableArrayList();
         NguoidungServicesImpl userS = new NguoidungServicesImpl();
         List<Nguoidung> listUser = userS.getAllByProject(Transdata.Instance().getProjectID());
         for (Nguoidung nguoidung : listUser) {
-            cbThanhVien.getItems().add(new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen()));
+            cbMember.add(new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen()));
         }
-
+        ckcbMember.getItems().addAll(cbMember);
+        ckcbMember.getCheckModel().getCheckedItems().addListener(new ListChangeListener<bindDataComboBoxMemBer>(){
+            @Override
+            public void onChanged(ListChangeListener.Change<? extends bindDataComboBoxMemBer> c) {
+                    System.out.println(ckcbMember.getCheckModel().getCheckedItems());            }
+        
+        });
+      
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CANLAM, "To Do"));
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.DANGLAM, "Inprogress"));
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CHODUYET, "Solved"));
@@ -89,17 +86,32 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private void btnThemNhiemVu(MouseEvent event) {
         NoidungServiceImpl nd = new NoidungServiceImpl();
+        NguoidungJpaController userJPA = new NguoidungJpaController();
         String idTask = txtMaNhiemVu.getText();
         String tittle = txtTenNhiemVu.getText();
         String status = cbTrangThaiNV.getValue().Status.toString();
-        int userID = cbThanhVien.getValue().userID;
+        int userID = Integer.parseInt(Transdata.Instance().getUserLoginID());
         LocalDate dateStartL = dtNgayBatDau.getValue();
         LocalDate dateEndL = dtNgayKetThuc.getValue();
         Date dateStart = Date.from(dateStartL.atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(dateEndL.atStartOfDay(ZoneId.systemDefault()).toInstant());
         String description = txtMoTa.getText();
-        
         nd.create(userID, Transdata.Instance().getProjectID() , idTask, tittle, description, status, dateStart, dateEnd);
+        List<bindDataComboBoxMemBer> lstBindMember = ckcbMember.getCheckModel().getCheckedItems();
+        List<Nguoidung> lstUserFind = new ArrayList<>();
+        for (bindDataComboBoxMemBer dataComboBoxMemBer : lstBindMember) {
+            lstUserFind.add(userJPA.findNguoidung(dataComboBoxMemBer.userID));
+        }
+        nd.AddUsers(userID, idTask, lstUserFind);
+        
+    }
+
+    @FXML
+    private void btnSave(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnSuaNhiemVu(MouseEvent event) {
     }
 
     public class bindDataComboBoxMemBer {

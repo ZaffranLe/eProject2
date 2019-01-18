@@ -16,6 +16,8 @@ public interface NguoidungServices {
 
     public List<Nguoidung> getAll();
 
+    public List<Nguoidung> getAllAvailable(String idDuAn);
+
     public List<Nguoidung> getAllByProject(String idDuAn);
 
     public List<Nguoidung> getAllAvailableInProject(String idDuAn, String idTask);

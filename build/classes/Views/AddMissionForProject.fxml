@@ -13,7 +13,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="700.0" style="-fx-background-color: #FFF;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddMissionForProjectController">
    <children>
-      <Label layoutX="266.0" layoutY="14.0" text="Create Task" textFill="#2a3132">
+      <Label layoutX="334.0" layoutY="14.0" text="Task" textFill="#2a3132">
          <font>
             <Font name="System Bold" size="31.0" />
          </font>
@@ -38,7 +38,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cbThanhVien" layoutX="234.0" layoutY="260.0" prefHeight="25.0" prefWidth="234.0" />
       <JFXComboBox fx:id="cbTrangThaiNV" layoutX="233.0" layoutY="206.0" prefHeight="25.0" prefWidth="234.0" />
       <JFXTextField fx:id="txtTenNhiemVu" layoutX="234.0" layoutY="134.0" prefHeight="25.0" prefWidth="234.0">
          <font>
@@ -60,7 +59,7 @@
       </Label>
       <DatePicker fx:id="dtNgayBatDau" layoutX="233.0" layoutY="318.0" prefHeight="30.0" prefWidth="234.0" />
       <DatePicker fx:id="dtNgayKetThuc" layoutX="233.0" layoutY="367.0" prefHeight="30.0" prefWidth="234.0" />
-      <JFXButton buttonType="RAISED" layoutX="540.0" layoutY="506.0" onMouseClicked="#btnThemNhiemVu" prefHeight="38.0" prefWidth="146.0" styleClass="loginBtn" text="Save">
+      <JFXButton buttonType="RAISED" layoutX="540.0" layoutY="506.0" onMouseClicked="#btnThemNhiemVu" prefHeight="38.0" prefWidth="146.0" styleClass="loginBtn" text="Create">
          <font>
             <Font size="18.0" />
          </font></JFXButton>
@@ -81,7 +80,19 @@
       <FontAwesomeIcon fill="#8d0505" iconName="KEY" layoutX="65.0" layoutY="108.0" size="2.5em" />
       <FontAwesomeIcon fill="#8d0505" iconName="CALENDAR" layoutX="65.0" layoutY="392.0" size="2.5em" />
       <FontAwesomeIcon fill="#8d0505" iconName="FILE" layoutX="65.0" layoutY="442.0" size="2.5em" />
-      <FontAwesomeIcon fill="WHITE" iconName="CHECK" layoutX="562.0" layoutY="536.0" size="2.5em" />
-      <CheckComboBox fx:id="ckcbMember" layoutX="491.0" layoutY="252.0" prefHeight="39.0" prefWidth="186.0" />
+      <FontAwesomeIcon fill="WHITE" iconName="CHECK" layoutX="555.0" layoutY="536.0" size="2.5em" />
+      <CheckComboBox fx:id="ckcbMember" layoutX="233.0" layoutY="253.0" prefHeight="39.0" prefWidth="234.0" />
+      <JFXButton buttonType="RAISED" layoutX="540.0" layoutY="446.0" onMouseClicked="#btnSave" prefHeight="39.0" prefWidth="146.0" styleClass="loginBtn" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIcon fill="WHITE" iconName="CHECK" layoutX="555.0" layoutY="476.0" size="2.5em" />
+      <JFXButton buttonType="RAISED" layoutX="538.0" layoutY="377.0" onMouseClicked="#btnSuaNhiemVu" prefHeight="39.0" prefWidth="153.0" styleClass="loginBtn" text="Edit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIcon fill="WHITE" iconName="EDIT" layoutX="555.0" layoutY="405.0" size="2em" />
    </children>
 </AnchorPane>

@@ -48,7 +48,6 @@ public class NoidungServiceImpl implements NoidungServices {
         if (noiDungController.findNoidung(iDNoiDung) != null) {
             AlertMess.Instance().ShowMessError("Task is existed!");
             return;
-
         }
         try {
 
@@ -91,10 +90,11 @@ public class NoidungServiceImpl implements NoidungServices {
                 } catch (Exception ex) {
                     Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
                 }
+            } else {
+                AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
             }
 
         } catch (Exception e) {
-            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
 
         }
 
@@ -124,6 +124,11 @@ public class NoidungServiceImpl implements NoidungServices {
 
     @Override
     public void AddUsers(int idNguoidung, String idNoidung, List<Nguoidung> list) {
+        if (!haveRole(idNguoidung, idNoidung)) {
+            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+
+            return;
+        }
         try {
             Noidung noidung = noiDungController.findNoidung(idNoidung);
             for (Nguoidung nguoidung1 : list) {

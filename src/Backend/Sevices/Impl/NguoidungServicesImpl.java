@@ -53,4 +53,11 @@ public class NguoidungServicesImpl implements NguoidungServices {
         return nguoidungController.getAll();
     }
 
+    @Override
+    public List<Nguoidung> getAllAvailable(String idDuAn) {
+        List<Nguoidung> available = getAll();
+        available.removeAll(getAllByProject(idDuAn));
+        return available;
+    }
+
 }

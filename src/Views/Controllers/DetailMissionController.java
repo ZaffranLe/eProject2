@@ -24,8 +24,6 @@ import org.controlsfx.control.CheckComboBox;
 public class DetailMissionController implements Initializable {
 
     @FXML
-    private JFXComboBox<?> cbThanhVien;
-    @FXML
     private JFXComboBox<?> cbTrangThai;
     @FXML
     private JFXTextField txtTenNhiemVu;

@@ -38,9 +38,8 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cbThanhVien" layoutX="233.0" layoutY="205.0" prefHeight="25.0" prefWidth="234.0" />
       <JFXComboBox fx:id="cbTrangThai" layoutX="233.0" layoutY="142.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXTextField fx:id="txtTenNhiemVu" layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField fx:id="txtTenNhiemVu" editable="false" layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
       <JFXTextArea fx:id="txtMoTa" layoutX="237.0" layoutY="380.0" prefHeight="127.0" prefWidth="301.0" />
       <Label layoutX="114.0" layoutY="272.0" prefHeight="30.0" prefWidth="50.0" text="Start:">
          <font>
@@ -70,6 +69,6 @@
       <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="76.0" layoutY="228.0" size="2.5em" />
       <FontAwesomeIcon fill="WHITE" iconName="EDIT" layoutX="544.0" layoutY="104.0" size="2em" />
       <FontAwesomeIcon fill="WHITE" iconName="CHECK" layoutX="544.0" layoutY="175.0" size="2em" />
-      <CheckComboBox fx:id="ckcbThanhVien" layoutX="494.0" layoutY="218.0" prefHeight="39.0" prefWidth="186.0" />
+      <CheckComboBox fx:id="ckcbThanhVien" layoutX="239.0" layoutY="202.0" prefHeight="39.0" prefWidth="234.0" />
    </children>
 </AnchorPane>
