@@ -21,12 +21,16 @@ public interface NoidungServices {
     public void edit(int idNguoidung, String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc);
 
     public void delete(String iDNoiDung);
+    
+    public void setDone(int idNguoidung,String idDuAn,String idNoiDung);
 
     public Noidung findOne(String idNoiDung);
 
     public void AddUsers(int idNguoidung, String idNoidung, List<Nguoidung> list);
 
     public List<Noidung> getAllByDuAn(String idDuAn);
+    
+    
     
     public List<Noidung> getAllByProjectAndEmail(String idDuAn,String email);
 

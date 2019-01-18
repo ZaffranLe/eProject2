@@ -11,6 +11,7 @@ import Backend.Controller.NguoidungJpaController;
 import Backend.Controller.NoidungJpaController;
 import Backend.Controller.exceptions.NonexistentEntityException;
 import Backend.Enum.TRANGTHAIDUAN;
+import Backend.Enum.TRANGTHAITASK;
 import Backend.Enum.VITRI;
 import Backend.Model.Nguoidung;
 import Backend.Model.NguoidungDuanPK;
@@ -73,29 +74,25 @@ public class NoidungServiceImpl implements NoidungServices {
 
     @Override
     public void edit(int idNguoidung, String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
+        if (trangThai.equals(TRANGTHAITASK.HOANTHANH.toString())) {
+            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+            return;
+        }
+        Noidung nd = noiDungController.findNoidung(iDNoiDung);
+        nd.setTieuDe(tieuDe);
+        nd.setNoiDung(noiDung);
+        nd.setTrangThai(trangThai);
+        nd.setNgayBatDau(ngayBatDau);
+        nd.setNgayKetThuc(ngayKetThuc);
+        nd.setIDDuAn((duAnController.findDuan(iDDuAn)));
         try {
-            if (haveRole(idNguoidung, iDNoiDung)) {
-                Noidung nd = noiDungController.findNoidung(iDNoiDung);
-                nd.setTieuDe(tieuDe);
-                nd.setNoiDung(noiDung);
-                nd.setTrangThai(trangThai);
-                nd.setNgayBatDau(ngayBatDau);
-                nd.setNgayKetThuc(ngayKetThuc);
-                nd.setIDDuAn((duAnController.findDuan(iDDuAn)));
-                nhatKyServiceImpl.create(iDDuAn, "Edit task" + iDNoiDung + " by " + nguoidungController.findNguoidung(idNguoidung).getHoTen(), ngayBatDau);
-                try {
-                    noiDungController.edit(nd);
-                    AlertMess.Instance().ShowMessSuccess("Edit task success!");
+            noiDungController.edit(nd);
+            AlertMess.Instance().ShowMessSuccess("Edit task success!");
+            nhatKyServiceImpl.create(iDDuAn, "Edit task" + iDNoiDung + " by " + nguoidungController.findNguoidung(idNguoidung).getHoTen(), ngayBatDau);
 
-                } catch (Exception ex) {
-                    Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } else {
-                AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
-            }
-
-        } catch (Exception e) {
-
+        } catch (Exception ex) {
+            AlertMess.Instance().ShowMessSuccess("Edit task fail!");
+            Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -104,8 +101,10 @@ public class NoidungServiceImpl implements NoidungServices {
     public void delete(String iDNoiDung) {
         try {
             noiDungController.destroy(iDNoiDung);
+
         } catch (NonexistentEntityException ex) {
-            Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NoidungServiceImpl.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -139,8 +138,10 @@ public class NoidungServiceImpl implements NoidungServices {
             }
             noiDungController.edit(noidung);
             nhatKyServiceImpl.create(noidung.getIDDuAn().getIDDuAn(), "Add user to task " + idNoidung + " by " + nguoidungController.findNguoidung(idNguoidung).getHoTen(), new Date());
+
         } catch (Exception ex) {
-            Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NoidungServiceImpl.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -153,5 +154,26 @@ public class NoidungServiceImpl implements NoidungServices {
     @Override
     public List<Noidung> getAllByProjectAndEmail(String idDuAn, String email) {
         return noiDungController.getAllByEmail(idDuAn, email);
+    }
+
+    @Override
+    public void setDone(int idNguoidung, String idDuAn, String idNoiDung) {
+        Noidung noidung = noiDungController.findNoidung(idNoiDung);
+        try {
+            if (!haveRole(idNguoidung, idDuAn)) {
+                AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+                return;
+
+            }
+
+            noidung.setTrangThai(TRANGTHAITASK.HOANTHANH.toString());
+            noiDungController.edit(noidung);
+            AlertMess.Instance().ShowMessSuccess("Task" + noidung.getIDNoiDung() + "is done!");
+            nhatKyServiceImpl.create(noidung.getIDDuAn().getIDDuAn(), "Task" + idNoiDung + " is done " + nguoidungController.findNguoidung(idNguoidung).getHoTen(), new Date());
+
+        } catch (Exception ex) {
+            AlertMess.Instance().ShowMessError("Can not set " + noidung.getIDNoiDung() + " done!");
+            Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
