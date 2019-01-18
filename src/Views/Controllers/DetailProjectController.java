@@ -126,9 +126,12 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void addTask(MouseEvent event) throws IOException {
+        Transdata.Instance().setIsEdit(false);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddMissionForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        Label lbTittle = (Label) scene.lookup("#tittleForm");
+        lbTittle.setText("Create Task");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();

@@ -12,6 +12,7 @@ import Backend.Model.Nguoidung;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
 import Foundation.Transdata;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
@@ -56,6 +57,14 @@ public class AddMissionForProjectController implements Initializable {
     private JFXComboBox<bindDataComboBoxStatus> cbTrangThaiNV;
     @FXML
     private JFXTextField txtMaNhiemVu;
+    @FXML
+    private Label tittleForm;
+    @FXML
+    private JFXButton Add;
+    @FXML
+    private JFXButton Save;
+    @FXML
+    private JFXButton Edit;
 
     /**
      * Initializes the controller class.
@@ -63,7 +72,20 @@ public class AddMissionForProjectController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // checkcombobox demo
-        final ObservableList<bindDataComboBoxMemBer> cbMember = FXCollections.observableArrayList();
+        if (Transdata.Instance().isIsEdit()) {
+            loadFormDetail();
+        }else{
+            loadFormCreate();
+        }
+       
+    }
+    public void loadFormDetail(){
+        Save.setVisible(false);
+        Add.setVisible(false);
+    }
+    public void loadFormCreate(){
+        
+         final ObservableList<bindDataComboBoxMemBer> cbMember = FXCollections.observableArrayList();
         NguoidungServicesImpl userS = new NguoidungServicesImpl();
         List<Nguoidung> listUser = userS.getAllByProject(Transdata.Instance().getProjectID());
         for (Nguoidung nguoidung : listUser) {
@@ -82,7 +104,7 @@ public class AddMissionForProjectController implements Initializable {
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CHODUYET, "Solved"));
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.HOANTHANH, "Complete"));
     }
-
+    
     @FXML
     private void btnThemNhiemVu(MouseEvent event) {
         NoidungServiceImpl nd = new NoidungServiceImpl();
