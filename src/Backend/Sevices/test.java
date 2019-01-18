@@ -43,21 +43,6 @@ public class test {
         Collection<Nguoidung> aaa = ndjpa.findNoidung("1").getNguoidungCollection();
         System.out.println("noi dung" + aaa);
 
-        System.out.println(listnd);
-        for (Noidung noidung : listnd) {
-            System.out.println(noidung.getTieuDe());
-            for (Noidung noidung1 : listnd) {
-                nds.edit(1, noidung1.getiDDuAn().getIDDuAn(), noidung1.getIDNoiDung(), "hohoho", "hohoho",
-                        TRANGTHAITASK.CANLAM.toString(), new Date(), new Date());
-                List<Nguoidung> listnguoidung = nguoidung.getAllByTask(noidung1.getIDNoiDung());
-                // duanService.addUser(2, "7", listnguoidung);
-                System.out.println(listnguoidung1);
-                nds.AddUsers(1, "1", listnguoidung1);
-
-            }
-        }
-        System.out.println(nguoidung.findByEmail("admin"));
-        System.out.println(nguoidung.findByEmailAndProject("1", "ntq"));
 
 //          NguoidungDuanJpaController da = new NguoidungDuanJpaController();
 //        try {
@@ -67,7 +52,7 @@ public class test {
 //        }
         NhatKyServicesImpl nhatky = new NhatKyServicesImpl();
         nhatky.create("1", "hahaha", new Date());
-        System.out.println("task"+nguoidung.getAllByTask("1")); 
+        System.out.println("test"+nguoidung.getAllAvailableInProject("1", "1"));
 
     }
 }

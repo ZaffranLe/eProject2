@@ -42,7 +42,11 @@ public class DuanServicesImpl implements DuanServices {
 
     @Override
     public void create(int idNguoidung, String id, String name, Date start, String status) {
+        if (duAnController.findDuan(id) != null) {
+            AlertMess.Instance().ShowMessError("Project is existed!");
+            return;
 
+        }
         try {
             Duan duan = new Duan(id, name, start, status);
             duAnController.create(duan);
@@ -83,7 +87,8 @@ public class DuanServicesImpl implements DuanServices {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Khong co quyen edit");
+            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+
         }
 
     }
@@ -147,7 +152,8 @@ public class DuanServicesImpl implements DuanServices {
             nhatKy.create(idDuan, "Add user to project by " + nguoiDungController.findNguoidung(idNguoidung).getHoTen(), new Date());
 
         } else {
-            System.out.println("Khong co quyen");
+            AlertMess.Instance().ShowMessError("You might not have permission to add user!");
+
         }
     }
 
