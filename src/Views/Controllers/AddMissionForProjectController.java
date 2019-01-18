@@ -39,7 +39,6 @@ import org.controlsfx.control.CheckComboBox;
  */
 public class AddMissionForProjectController implements Initializable {
 
-    @FXML
     private JFXComboBox<bindDataComboBoxMemBer> cbThanhVien;
     @FXML
     private JFXTextField txtTenNhiemVu;
