@@ -60,9 +60,7 @@ public class AddProjectController implements Initializable {
             DuanServicesImpl DA = new  DuanServicesImpl();
             LocalDate date = dtNgayBatDau.getValue();
             Date dt = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
-            
             DA.create(Integer.parseInt(IDuser.getText()), txtMaDuAn.getText(), txtTenProject.getText(),dt , TRANGTHAIDUAN.DANGLAM.toString());
-            AlertMess.Instance().ShowMessSuccess("Success!");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
