@@ -25,6 +25,8 @@ public class PanelMissionController implements Initializable {
     private Label lbIDTask;
     @FXML
     private Label lbTitleTask;
+    @FXML
+    private Label lbUserName;
 
     /**
      * Initializes the controller class.

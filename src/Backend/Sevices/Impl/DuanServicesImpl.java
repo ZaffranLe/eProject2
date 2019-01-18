@@ -17,6 +17,7 @@ import Backend.Model.Nguoidung;
 import Backend.Model.NguoidungDuan;
 import Backend.Model.NguoidungDuanPK;
 import Backend.Sevices.DuanServices;
+import Foundation.AlertMess;
 import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.List;
@@ -46,8 +47,10 @@ public class DuanServicesImpl implements DuanServices {
             Duan duan = new Duan(id, name, start, status);
             duAnController.create(duan);
             nhatKy.create(duan.getIDDuAn(), "Create project by " + nguoiDungController.findNguoidung(idNguoidung).getHoTen(), start);
+            AlertMess.Instance().ShowMessSuccess("Create project success!");
         } catch (Exception ex) {
             Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+            AlertMess.Instance().ShowMessError("Create project fail!");
         }
         try {
             NguoidungDuan ndda = new NguoidungDuan(new NguoidungDuanPK(idNguoidung, id), VITRI.QUANLY.toString());
@@ -56,6 +59,7 @@ public class DuanServicesImpl implements DuanServices {
         } catch (Exception ex) {
             Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     @Override
@@ -69,11 +73,13 @@ public class DuanServicesImpl implements DuanServices {
                     da.setTrangThai(status);
                     duAnController.edit(da);
                     nhatKy.create(da.getIDDuAn(), "Edit project by " + nguoiDungController.findNguoidung(idNguoidung).getHoTen(), start);
-
+                    AlertMess.Instance().ShowMessSuccess("Edit project success!");
                 } catch (NonexistentEntityException ex) {
                     Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                    AlertMess.Instance().ShowMessError("Project is not existed!");
                 } catch (Exception ex) {
                     Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                    AlertMess.Instance().ShowMessError("Edit project fail!");
                 }
             }
         } catch (Exception e) {
@@ -120,6 +126,7 @@ public class DuanServicesImpl implements DuanServices {
 
     private boolean haveRole(int idNguoidung, String id) {
         if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, id)).getViTri().equals(VITRI.QUANLY.toString())) {
+
             return true;
         }
         return false;
@@ -131,7 +138,8 @@ public class DuanServicesImpl implements DuanServices {
         if (haveRole(idNguoidung, idDuan)) {
             for (Nguoidung nguoidung : list) {
                 try {
-                    nguoiDungDuAn.create(new NguoidungDuan(new NguoidungDuanPK(nguoidung.getId(), idDuan), VITRI.NHANVIEN.toString()));
+                    nguoiDungDuAn.create(new NguoidungDuan(new NguoidungDuanPK(nguoidung.getId(), idDuan),
+                            VITRI.NHANVIEN.toString()));
                 } catch (Exception ex) {
                     Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
                 }

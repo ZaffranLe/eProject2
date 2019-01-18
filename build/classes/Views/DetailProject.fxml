@@ -67,7 +67,7 @@
          <font>
             <Font size="18.0" />
          </font></JFXButton>
-      <Label fx:id="lbID" layoutX="399.0" layoutY="26.0" prefHeight="17.0" prefWidth="113.0" text="Label" textFill="#3c77cf">
+      <Label fx:id="lbID" layoutX="399.0" layoutY="26.0" prefHeight="17.0" prefWidth="113.0" text="Label" textFill="#3c77cf" visible="false">
          <font>
             <Font size="18.0" />
          </font>

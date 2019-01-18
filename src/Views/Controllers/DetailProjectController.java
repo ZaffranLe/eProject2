@@ -5,13 +5,23 @@
  */
 package Views.Controllers;
 
+import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Duan;
+import Backend.Model.Nguoidung;
+import Backend.Model.Noidung;
+import Backend.Sevices.Impl.NoidungServiceImpl;
+import Foundation.Transdata;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -25,9 +35,10 @@ import javafx.stage.Stage;
  */
 public class DetailProjectController implements Initializable {
 
-    private int idDuan;
     @FXML
     private VBox vbToDo;
+    @FXML
+    private Label txtMoTa;
     @FXML
     private VBox vbInProgress;
     @FXML
@@ -39,26 +50,43 @@ public class DetailProjectController implements Initializable {
     @FXML
     private Label lbNameProject;
 
-    public int getIdDuan() {
-        return idDuan;
-    }
 
-    public void setIdDuan(int idDuan) {
-        this.idDuan = idDuan;
-    }
-
-  
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        System.out.println(getIdDuan());
-        System.out.println(getIdDuan());
-        System.out.println(getIdDuan());
+        try {
+            // TODO
+            loadForm();
+        } catch (IOException ex) {
+            Logger.getLogger(DetailProjectController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         
     }    
+    public void loadForm() throws IOException{
+        NoidungServiceImpl ndS = new NoidungServiceImpl();
+        List<Noidung> lstTask  = ndS.getAllByDuAn(lbID.getText());
+        for (Noidung noidung : lstTask) {
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.CANLAM.toString())) {
+                // TODO
+            }
+        }
+        
+    }
+    public Node gen(String id, String tittle, String userName) throws IOException{
+         Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelMission.fxml"));
+            Label lbID = (Label) node.lookup("#lbIDTask");
+            lbID.setText(id);
+            Label lbTitle = (Label) node.lookup("#lbTitleTask");
+            lbTitle.setText(tittle);
+            Label lbUserName = (Label) node.lookup("#lbUserName");
+            lbUserName.setText(userName);
+            return node;
+    }
+    
     public void initData(Duan DA){
 //        setDa(DA);
     }
