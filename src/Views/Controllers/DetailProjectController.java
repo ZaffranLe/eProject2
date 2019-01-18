@@ -67,30 +67,12 @@ public class DetailProjectController implements Initializable {
     }    
     public void loadForm() throws IOException{
         NoidungServiceImpl ndS = new NoidungServiceImpl();
-        List<Noidung> lstToDo = ndS.getAllByStatus(lbID.getText(), TRANGTHAITASK.CANLAM.toString());
-        List<Noidung> lstInProgress = ndS.getAllByStatus(lbID.getText(), TRANGTHAITASK.DANGLAM.toString());
-        List<Noidung> lstSolved = ndS.getAllByStatus(lbID.getText(), TRANGTHAITASK.CHODUYET.toString());
-        List<Noidung> lstDone = ndS.getAllByStatus(lbID.getText(), TRANGTHAITASK.HOANTHANH.toString());
-        
-        for (Noidung noidung : lstToDo) {
-            vbToDo.getChildren().add(gen(noidung.getIDNoiDung(), noidung.getTieuDe(), "lol"));
-            Collection<Nguoidung> nguoidungCollection = noidung.getNguoidungCollection();
-            for (Nguoidung nguoidung : nguoidungCollection) {
-                System.out.println(nguoidung.getEmail());
+        List<Noidung> lstTask  = ndS.getAllByDuAn(lbID.getText());
+        for (Noidung noidung : lstTask) {
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.CANLAM.toString())) {
+                // TODO
             }
-            
         }
-        for (Noidung noidung : lstInProgress) {
-//            gen(noidung.getIDNoiDung(), noidung.getTieuDe(), "lol");
-        }
-        for (Noidung noidung : lstSolved) {
-//            gen(noidung.getIDNoiDung(), noidung.getTieuDe(), "lol");
-        }
-        for (Noidung noidung : lstDone) {
-//            gen(noidung.getIDNoiDung(), noidung.getTieuDe(), "lol");
-        }
-      
-        
         
     }
     public Node gen(String id, String tittle, String userName) throws IOException{

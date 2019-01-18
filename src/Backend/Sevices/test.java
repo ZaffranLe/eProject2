@@ -59,7 +59,6 @@ public class test {
         System.out.println(nguoidung.findByEmailAndProject("1", "ntq"));
 
         // NguoidungDuanJpaController da = new NguoidungDuanJpaController();
-        da.edit(1, "xxx", "test", new Date(), TRANGTHAIDUAN.HOANTHANH.toString());
         // try {
         // da.create(new NguoidungDuan(new NguoidungDuanPK(2, "7"),
         // VITRI.NHANVIEN.toString()));
