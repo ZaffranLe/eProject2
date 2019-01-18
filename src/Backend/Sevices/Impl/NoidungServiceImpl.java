@@ -108,7 +108,18 @@ public class NoidungServiceImpl implements NoidungServices {
     }
 
     @Override
-    public void AddUsers(String idNguoidung, String idDuan, List<Nguoidung> list) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void AddUsers(int idNguoidung, String idNoidung, List<Nguoidung> list) {
+        try {
+            Noidung noidung = noiDungController.findNoidung(idNoidung);
+            for (Nguoidung nguoidung1 : list) {
+                if(!(noidung.getNguoidungCollection().contains(nguoidung1)))
+                noidung.getNguoidungCollection().add(nguoidung1);
+
+            }
+            noiDungController.edit(noidung);
+        } catch (Exception ex) {
+            Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 }

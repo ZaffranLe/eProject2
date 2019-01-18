@@ -25,5 +25,15 @@ public class NguoidungServicesImpl implements NguoidungServices{
     public List<Nguoidung> getAllByTask(String idTask) {
         return nguoidungController.getAllByTask(idTask);
     }
+
+    @Override
+    public List<Nguoidung> findByEmail(String Email) {
+        return nguoidungController.findByEmail(Email);
+    }
+
+    @Override
+    public List<Nguoidung> findByEmailAndProject(String idProject, String Email) {
+        return nguoidungController.findByEmailAndDuAn(idProject, Email);
+    }
     
 }

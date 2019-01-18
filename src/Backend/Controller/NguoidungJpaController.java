@@ -291,4 +291,34 @@ public class NguoidungJpaController implements Serializable {
         }
     }
 
+    public List<Nguoidung> findByEmail(String email) {
+        EntityManager em = getEntityManager();
+        try {
+            String jpql = "Select a from Nguoidung a where a.email like :key";
+            return em.createQuery(jpql).setParameter("key", "%" + email + "%").getResultList();
+        } catch (Exception e) {
+            System.out.println("Xảy ra lỗi khi lấy danh sách người dùng từ cơ sở dữ liệu by email");
+            System.out.println(e.getMessage());
+            return null;
+
+        } finally {
+            em.close();
+        }
+    }
+
+    public List<Nguoidung> findByEmailAndDuAn(String idDuAn,String email) {
+        EntityManager em = getEntityManager();
+        try {
+            String jpql = "Select a from Nguoidung a join a.nguoidungDuanCollection b where a.email like :key and b.duan.iDDuAn =:iDDuAn";
+            return em.createQuery(jpql).setParameter("key", "%" + email + "%").setParameter("iDDuAn", idDuAn).getResultList();
+        } catch (Exception e) {
+            System.out.println("Xảy ra lỗi khi lấy danh sách người dùng từ cơ sở dữ liệu by email and dự án");
+            System.out.println(e.getMessage());
+            return null;
+
+        } finally {
+            em.close();
+        }
+    }
+
 }

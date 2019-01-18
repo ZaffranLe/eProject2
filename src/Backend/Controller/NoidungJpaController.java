@@ -211,7 +211,7 @@ public class NoidungJpaController implements Serializable {
     }
 
     /**
-     * Lấy ra các task trong dự án theo trạng thái
+     * Lấy ra các task trong dự án 
      *
      * @param idDuAn id của dự án được chọn
      * @param trangThaiTask trạng thái của task
@@ -232,4 +232,7 @@ public class NoidungJpaController implements Serializable {
             em.close();
         }
     }
+    
+
+    
 }

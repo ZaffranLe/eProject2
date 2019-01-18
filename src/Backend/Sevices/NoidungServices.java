@@ -22,7 +22,7 @@ public interface NoidungServices {
 
     public void delete(String iDNoiDung);
     
-    public void AddUsers(String idNguoidung,String idDuan,List<Nguoidung> list);
+    public void AddUsers(int idNguoidung,String idNoidung,List<Nguoidung> list);
 
     public List<Noidung> getAllByDuAn(String idDuAn);
     
