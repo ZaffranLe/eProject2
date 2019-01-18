@@ -22,7 +22,7 @@
                 <Font size="23.0" />
             </font>
         </Label>
-        <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="53.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@css/system-task.jpg" />
             </image>

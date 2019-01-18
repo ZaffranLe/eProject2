@@ -38,7 +38,7 @@
                </opaqueInsets></JFXButton>
             <Label layoutX="72.0" layoutY="254.0" />
             <JFXButton fx:id="openDetail" layoutX="52.0" layoutY="259.0" visible="false" />
-            <JFXButton alignment="CENTER" layoutY="442.0" prefHeight="38.0" prefWidth="172.0" styleClass="sidebarBtn" text="Log out">
+            <JFXButton alignment="CENTER" layoutY="442.0" onMouseClicked="#btnLogout" prefHeight="38.0" prefWidth="172.0" styleClass="sidebarBtn" text="Log out">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
