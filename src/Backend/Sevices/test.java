@@ -53,6 +53,7 @@ public class test {
         NhatKyServicesImpl nhatky = new NhatKyServicesImpl();
         nhatky.create("1", "hahaha", new Date());
         System.out.println("test"+nguoidung.getAllAvailableInProject("1", "1"));
+        System.out.println(nguoidung.getAll());
 
     }
 }

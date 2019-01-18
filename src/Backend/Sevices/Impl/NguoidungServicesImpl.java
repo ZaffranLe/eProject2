@@ -48,4 +48,9 @@ public class NguoidungServicesImpl implements NguoidungServices {
         return available;
     }
 
+    @Override
+    public List<Nguoidung> getAll() {
+        return nguoidungController.getAll();
+    }
+
 }
