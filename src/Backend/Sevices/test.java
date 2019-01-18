@@ -51,8 +51,7 @@ public class test {
 //            Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         NhatKyServicesImpl nhatky = new NhatKyServicesImpl();
-        nhatky.create("1", "hahaha", new Date());
-        System.out.println("test"+nguoidung.getAllAvailableInProject("1", "1"));
+        System.out.println("test"+nds.getAllByProjectAndEmail("1", "ntq"));
 
     }
 }
