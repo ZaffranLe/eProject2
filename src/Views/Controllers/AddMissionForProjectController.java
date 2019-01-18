@@ -47,7 +47,6 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private JFXTextField txtMaNhiemVu;
 
-
     /**
      * Initializes the controller class.
      */
@@ -63,7 +62,7 @@ public class AddMissionForProjectController implements Initializable {
             bindDataComboBoxMemBer memberCombo = new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen());
             cbThanhVien.getItems().add(memberCombo);
         }
-   
+
     }
 
     @FXML
@@ -81,12 +80,11 @@ public class AddMissionForProjectController implements Initializable {
 
         public int userID;
         public String userName;
+
         @Override
-        public String toString(){
+        public String toString() {
             return this.userName;
         }
     }
-
-    
 
 }

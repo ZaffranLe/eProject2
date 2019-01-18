@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -71,5 +72,13 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="65.0" layoutY="282.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="SIGNAL" layoutX="65.0" layoutY="228.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="TAG" layoutX="65.0" layoutY="164.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="CALENDAR" layoutX="65.0" layoutY="343.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="KEY" layoutX="65.0" layoutY="108.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="CALENDAR" layoutX="65.0" layoutY="392.0" size="2.5em" />
+      <FontAwesomeIcon fill="#8d0505" iconName="FILE" layoutX="65.0" layoutY="442.0" size="2.5em" />
+      <FontAwesomeIcon fill="WHITE" iconName="CHECK" layoutX="562.0" layoutY="536.0" size="2.5em" />
    </children>
 </AnchorPane>
