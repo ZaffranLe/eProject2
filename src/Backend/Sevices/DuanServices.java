@@ -22,7 +22,7 @@ public interface DuanServices {
     public void delete(int idNguoidung,String id);
     public void setEndDate(int idNguoidung,String id,Date end);
     public void addUser(int idNguoidung,String idDuan,List<Nguoidung> list);
-    
+    public void setStatus(int idNguoidung,String idDuAn, TRANGTHAIDUAN status);
     public List<Duan> getAllByStatus(int idNguoiDung, String trangThaiDuAn);
     
 }

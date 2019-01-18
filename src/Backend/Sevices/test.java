@@ -17,6 +17,7 @@ import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
 import Backend.Sevices.Impl.DuanServicesImpl;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
+import Backend.Sevices.Impl.NhatKyServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
 import java.util.Collection;
 import java.util.Date;
@@ -63,5 +64,7 @@ public class test {
 //        } catch (Exception ex) {
 //            Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
 //        }
+        NhatKyServicesImpl nhatky = new NhatKyServicesImpl();
+        nhatky.create("1", "hahaha", new Date());
     }
 }

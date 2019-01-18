@@ -159,5 +159,20 @@ public class NhatkyJpaController implements Serializable {
             em.close();
         }
     }
+        public List<Nhatky> getAllByProject(String idDuAn) {
+        EntityManager em = getEntityManager();
+        try {
+            String jpql = String.format("Select a from Nhatky a   where a.iDDuAn.iDDuAn =:idDuAn");
+            return em.createQuery(jpql).setParameter("idDuAn", idDuAn).getResultList();
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+            return null;
+        } finally {
+            em.close();
+        }
+    }
     
 }

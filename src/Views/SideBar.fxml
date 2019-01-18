@@ -48,6 +48,26 @@
             <FontAwesomeIcon fill="#e85f5f" iconName="POWER_OFF" layoutX="36.0" layoutY="471.0" size="2em" />
             <FontAwesomeIcon fill="#0c1e79" iconName="CIRCLE" layoutX="49.0" layoutY="86.0" size="7em" wrappingWidth="74.0" />
             <FontAwesomeIcon fill="#f2eeee" iconName="STEAM" layoutX="63.0" layoutY="74.0" size="4em" />
+            <ImageView fx:id="imgBanhRang3" fitHeight="38.0" fitWidth="42.0" layoutX="92.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@css/45864-200.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgBanhRang1" fitHeight="55.0" fitWidth="48.0" layoutX="111.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@css/45864-200.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgBanhRang2" fitHeight="55.0" fitWidth="52.0" layoutX="31.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@css/45864-200.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgBanhRang4" fitHeight="24.0" fitWidth="26.0" layoutX="45.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@css/45864-200.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

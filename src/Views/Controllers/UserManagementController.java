@@ -12,6 +12,7 @@ import Foundation.AlertMess;
 import Foundation.Transdata;
 import Views.Controllers.Validate;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -40,6 +42,12 @@ public class UserManagementController implements Initializable {
 
     @FXML
     private JFXButton btnSaveProfile;
+    @FXML
+    private AnchorPane btnSave;
+    @FXML
+    private JFXPasswordField txtConfirmNewPassword;
+    @FXML
+    private JFXPasswordField txtNewPassWord;
 
     /**
      * Initializes the controller class.
@@ -75,9 +83,6 @@ public class UserManagementController implements Initializable {
 
     }
 
-    @FXML
-    private void btnChangePassword(MouseEvent event) {
-    }
 
     public boolean checkvalid(int id) {
         UserSevicesImpl userS = new UserSevicesImpl();

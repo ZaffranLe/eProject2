@@ -57,5 +57,6 @@ public class test {
         for (Nguoidung nguoidung1 : ListNguoidung) {
             System.out.println(nguoidung1.getHoTen());
         }
+        da.create(1, "du an moi", "hahaha  ", new Date(), TRANGTHAIDUAN.DANGLAM.toString());
     }
 }

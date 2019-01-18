@@ -9,19 +9,22 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="panelProject" layoutX="54.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelProjectClick" prefHeight="109.0" prefWidth="220.0" styleClass="projectBtn" AnchorPane.topAnchor="24.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PanelProjectController">
+<AnchorPane fx:id="panelProject" layoutX="54.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelProjectClick" prefHeight="126.0" prefWidth="208.0" styleClass="projectBtn" stylesheets="@css/style.css" AnchorPane.topAnchor="24.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PanelProjectController">
     <children>
-        <Label fx:id="ProjectName" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="31.0" prefHeight="35.0" prefWidth="218.0" text="Tên project" textAlignment="CENTER">
+        <Label fx:id="ProjectName" alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="51.0" prefHeight="35.0" prefWidth="134.0" text="Tên project" textAlignment="CENTER">
             <font>
-                <Font name="Franklin Gothic Demi" size="29.0" />
+                <Font name="Franklin Gothic Demi" size="21.0" />
             </font>
         </Label>
-        <Label fx:id="ProjectStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="64.0" prefHeight="35.0" prefWidth="90.0" text="Trạng thái" textFill="#d3132c">
+        <Label fx:id="ProjectStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="91.0" prefHeight="32.0" prefWidth="134.0" text="Trạng thái" textFill="#d3132c">
             <font>
                 <Font name="System Bold Italic" size="20.0" />
             </font>
         </Label>
-      <Label fx:id="idProject" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="50.0" text="chiHang" />
+      <Label fx:id="idProject" alignment="CENTER" layoutX="43.0" layoutY="13.0" prefHeight="32.0" prefWidth="134.0" text="IDProject">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
