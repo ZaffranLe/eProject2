@@ -15,6 +15,9 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import java.util.Observable;
 import java.util.ResourceBundle;
@@ -47,6 +50,8 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private DatePicker dtNgayKetThuc;
     @FXML
+    private CheckComboBox<String> ckcbMember;
+    @FXML
     private JFXComboBox<bindDataComboBoxStatus> cbTrangThaiNV;
     @FXML
     private JFXTextField txtMaNhiemVu;
@@ -56,19 +61,25 @@ public class AddMissionForProjectController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // checkcombobox demo
+        final ObservableList<String> strings = FXCollections.observableArrayList();
+        for (int i = 0; i <= 10; i++) {
+            strings.add("Item " + i);
+        }
+        ckcbMember.getItems().addAll(strings);
+        ckcbMember.getCheckModel().getCheckedItems().addListener(new ListChangeListener<String>(){
+            @Override
+            public void onChanged(ListChangeListener.Change<? extends String> c) {
+                    System.out.println(ckcbMember.getCheckModel().getCheckedItems());            }
+        
+        });
+        //
         NguoidungServicesImpl userS = new NguoidungServicesImpl();
-        System.out.println(Transdata.Instance().getProjectID());
-        final ObservableList<bindDataComboBoxMemBer> data = FXCollections.observableArrayList();
         List<Nguoidung> listUser = userS.getAllByProject(Transdata.Instance().getProjectID());
         for (Nguoidung nguoidung : listUser) {
-            System.out.println(nguoidung.getHoTen());
-            bindDataComboBoxMemBer memberCombo = new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen());
-            data.add(memberCombo);
+            cbThanhVien.getItems().add(new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen()));
         }
-        final CheckComboBox<bindDataComboBoxMemBer> check = new CheckComboBox<bindDataComboBoxMemBer>(data);
-        
-        
+
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CANLAM, "To Do"));
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.DANGLAM, "Inprogress"));
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CHODUYET, "Solved"));
@@ -81,9 +92,14 @@ public class AddMissionForProjectController implements Initializable {
         String idTask = txtMaNhiemVu.getText();
         String tittle = txtTenNhiemVu.getText();
         String status = cbTrangThaiNV.getValue().Status.toString();
-
-//        nd.create(0, iDDuAn, iDNoiDung, tieuDe, noiDung, trangThai, ngayBatDau, ngayKetThuc);
-
+        int userID = cbThanhVien.getValue().userID;
+        LocalDate dateStartL = dtNgayBatDau.getValue();
+        LocalDate dateEndL = dtNgayKetThuc.getValue();
+        Date dateStart = Date.from(dateStartL.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date dateEnd = Date.from(dateEndL.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        String description = txtMoTa.getText();
+        
+        nd.create(userID, Transdata.Instance().getProjectID() , idTask, tittle, description, status, dateStart, dateEnd);
     }
 
     public class bindDataComboBoxMemBer {

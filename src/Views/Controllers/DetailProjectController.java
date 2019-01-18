@@ -40,8 +40,6 @@ public class DetailProjectController implements Initializable {
     @FXML
     private VBox vbToDo;
     @FXML
-    private Label txtMoTa;
-    @FXML
     private VBox vbInProgress;
     @FXML
     private VBox vbSolved;
@@ -76,7 +74,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -86,7 +83,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -96,7 +92,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -106,7 +101,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -132,7 +126,6 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void addTask(MouseEvent event) throws IOException {
-        System.out.println(lbID.getText());
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddMissionForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -140,7 +133,7 @@ public class DetailProjectController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    @FXML
     private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/DetailMission.fxml"));
@@ -162,6 +155,23 @@ public class DetailProjectController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    private void btnOpenDiary(MouseEvent event) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/NhatKy.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void btnCompleteProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnDeleteProject(MouseEvent event) {
     }
     
 }

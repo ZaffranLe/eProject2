@@ -56,6 +56,15 @@
 
 
 }
+.taskBtn{
+    -fx-background-color: #8FDBFF;
+    -fx-border-color: black;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-style: solid;
+
+
+}
 .UserBtn{
     -fx-background-color: #336B87;
     -fx-text-fill: #FFF;
