@@ -89,7 +89,6 @@ public class AddMissionForProjectController implements Initializable {
         txtMaNhiemVu.setEditable(false);
         txtTenNhiemVu.setEditable(false);
         txtMoTa.setEditable(false);
-        cbTrangThaiNV.setEditable(false);
         dtNgayBatDau.setEditable(false);
         dtNgayKetThuc.setEditable(false);
 
@@ -180,7 +179,6 @@ public class AddMissionForProjectController implements Initializable {
         txtMaNhiemVu.setEditable(true);
         txtTenNhiemVu.setEditable(true);
         txtMoTa.setEditable(true);
-        cbTrangThaiNV.setEditable(true);
         dtNgayBatDau.setEditable(true);
         dtNgayKetThuc.setEditable(true);
 
