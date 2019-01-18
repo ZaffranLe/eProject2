@@ -101,6 +101,10 @@ public class AddMissionForProjectController implements Initializable {
         nd.create(userID, Transdata.Instance().getProjectID() , idTask, tittle, description, status, dateStart, dateEnd);
     }
 
+    @FXML
+    private void btnSave(MouseEvent event) {
+    }
+
     public class bindDataComboBoxMemBer {
 
         public bindDataComboBoxMemBer(int id, String name) {
