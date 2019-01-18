@@ -17,6 +17,16 @@ public class Transdata {
     public static String taskID;
     public static Transdata instance;
     public static Nguoidung userLogin;
+    public static boolean isEdit;
+
+    public static boolean isIsEdit() {
+        return isEdit;
+    }
+
+    public static void setIsEdit(boolean isEdit) {
+        Transdata.isEdit = isEdit;
+    }
+    
   
 
     public static Nguoidung getUserLogin() {
