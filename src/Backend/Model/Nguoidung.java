@@ -183,5 +183,11 @@ public class Nguoidung implements Serializable {
     public String toString() {
         return "Backend.Model.Nguoidung[ id=" + id + " ]";
     }
+    public void addNoidung(Noidung noidung){
+        if(!noidungCollection.contains(noidung)){
+            noidungCollection.add(noidung);
+            noidung.addNguoidung(this);
+        }
+    }
     
 }

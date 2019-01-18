@@ -209,17 +209,19 @@ public class NoidungJpaController implements Serializable {
             em.close();
         }
     }
+
     /**
-     * Lấy ra các task trong dự án theo trạng thái
+     * Lấy ra các task trong dự án 
+     *
      * @param idDuAn id của dự án được chọn
      * @param trangThaiTask trạng thái của task
      * @return danh sách các task có trạng thái và thuộc dự án đã chọn
      */
-    public List<Noidung> getAllByStatus(String idDuAn, String trangThaiTask) {
+    public List<Noidung> getAllByProject(String idDuAn) {
         EntityManager em = getEntityManager();
         try {
-            String jpql = String.format("Select a from Noidung a   where a.iDDuAn.iDDuAn =:idDuAn and   a.trangThai = :trangThaiTask");
-            return em.createQuery(jpql).setParameter("idDuAn", idDuAn).setParameter("trangThaiTask", trangThaiTask).getResultList();
+            String jpql = String.format("Select a from Noidung a   where a.iDDuAn.iDDuAn =:idDuAn");
+            return em.createQuery(jpql).setParameter("idDuAn", idDuAn).getResultList();
 
         } catch (Exception e) {
 
@@ -230,4 +232,7 @@ public class NoidungJpaController implements Serializable {
             em.close();
         }
     }
+    
+
+    
 }

@@ -8,6 +8,7 @@ package Backend.Model;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -71,6 +72,23 @@ public class Noidung implements Serializable {
     @JoinColumn(name = "IDDuAn", referencedColumnName = "IDDuAn")
     @ManyToOne(optional = false)
     private Duan iDDuAn;
+
+
+    public String getiDNoiDung() {
+        return iDNoiDung;
+    }
+
+    public void setiDNoiDung(String iDNoiDung) {
+        this.iDNoiDung = iDNoiDung;
+    }
+
+    public Duan getiDDuAn() {
+        return iDDuAn;
+    }
+
+    public void setiDDuAn(Duan iDDuAn) {
+        this.iDDuAn = iDDuAn;
+    }
 
     public Noidung() {
     }
@@ -176,6 +194,12 @@ public class Noidung implements Serializable {
     @Override
     public String toString() {
         return "Backend.Model.Noidung[ iDNoiDung=" + iDNoiDung + " ]";
+    }
+    public void addNguoidung(Nguoidung nguoidung){
+        if(!nguoidungCollection.contains(nguoidung)){
+            nguoidungCollection.add(nguoidung);
+            nguoidung.addNoidung(this);
+        }
     }
     
 
