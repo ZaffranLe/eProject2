@@ -46,7 +46,8 @@ public class NoidungServiceImpl implements NoidungServices {
     @Override
     public void create(int idNguoitao, String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
         if (noiDungController.findNoidung(iDNoiDung) != null) {
-            AlertMess.Instance().ShowMessError("Create project success!");
+            AlertMess.Instance().ShowMessError("Task is existed!");
+            return;
 
         }
         try {
@@ -63,6 +64,8 @@ public class NoidungServiceImpl implements NoidungServices {
             nd.setIDDuAn((duAnController.findDuan(iDDuAn)));
 
             noiDungController.create(nd);
+            AlertMess.Instance().ShowMessSuccess("Create task success!");
+
             nhatKyServiceImpl.create(iDDuAn, "Create task" + iDNoiDung + " by " + nguoitao.getHoTen(), new Date());
         } catch (Exception ex) {
             Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,13 +86,16 @@ public class NoidungServiceImpl implements NoidungServices {
                 nhatKyServiceImpl.create(iDDuAn, "Edit task" + iDNoiDung + " by " + nguoidungController.findNguoidung(idNguoidung).getHoTen(), ngayBatDau);
                 try {
                     noiDungController.edit(nd);
+                    AlertMess.Instance().ShowMessSuccess("Edit task success!");
+
                 } catch (Exception ex) {
                     Logger.getLogger(NoidungServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 
         } catch (Exception e) {
-            System.out.println("Khong co quyen edit noi dung");
+            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+
         }
 
     }

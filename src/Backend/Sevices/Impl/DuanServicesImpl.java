@@ -87,7 +87,8 @@ public class DuanServicesImpl implements DuanServices {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Khong co quyen edit");
+            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+
         }
 
     }
