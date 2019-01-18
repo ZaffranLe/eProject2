@@ -17,6 +17,7 @@ public class Transdata {
     public static String taskID;
     public static Transdata instance;
     public static Nguoidung userLogin;
+  
 
     public static Nguoidung getUserLogin() {
         return userLogin;

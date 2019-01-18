@@ -10,6 +10,7 @@ import Backend.Model.Duan;
 import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
 import Backend.Sevices.Impl.NoidungServiceImpl;
+import Foundation.Transdata;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;

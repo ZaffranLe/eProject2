@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Foundation.Transdata;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,7 +40,6 @@ public class PanelProjectController implements Initializable {
     @FXML
     private void panelProjectClick(MouseEvent event) throws IOException {
         try {
-            System.out.println("hahahaha");
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/DetailProject.fxml"));
             Scene scene = new Scene(loader.load());
             Label lbID = (Label) scene.lookup("#lbID");
@@ -49,6 +49,7 @@ public class PanelProjectController implements Initializable {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
+            Transdata.Instance().setProjectID(idProject.getText());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
