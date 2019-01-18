@@ -76,7 +76,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -86,7 +85,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -96,7 +94,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -106,7 +103,6 @@ public class DetailProjectController implements Initializable {
                 // TODO
                 String userName = "";
                 List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
-                System.out.println(lstUser.size());
                 for (Nguoidung nguoidung : lstUser) {
                     userName = userName + nguoidung.getHoTen()+",";
                 }
@@ -132,7 +128,6 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void addTask(MouseEvent event) throws IOException {
-        System.out.println(lbID.getText());
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddMissionForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
