@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Backend.Controller.NguoidungJpaController;
 import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Nguoidung;
@@ -17,6 +18,7 @@ import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Observable;
@@ -84,17 +86,24 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private void btnThemNhiemVu(MouseEvent event) {
         NoidungServiceImpl nd = new NoidungServiceImpl();
+        NguoidungJpaController userJPA = new NguoidungJpaController();
         String idTask = txtMaNhiemVu.getText();
         String tittle = txtTenNhiemVu.getText();
         String status = cbTrangThaiNV.getValue().Status.toString();
-        int userID = cbThanhVien.getValue().userID;
+        int userID = Integer.parseInt(Transdata.Instance().getUserLoginID());
         LocalDate dateStartL = dtNgayBatDau.getValue();
         LocalDate dateEndL = dtNgayKetThuc.getValue();
         Date dateStart = Date.from(dateStartL.atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date dateEnd = Date.from(dateEndL.atStartOfDay(ZoneId.systemDefault()).toInstant());
         String description = txtMoTa.getText();
-        
         nd.create(userID, Transdata.Instance().getProjectID() , idTask, tittle, description, status, dateStart, dateEnd);
+        List<bindDataComboBoxMemBer> lstBindMember = ckcbMember.getCheckModel().getCheckedItems();
+        List<Nguoidung> lstUserFind = new ArrayList<>();
+        for (bindDataComboBoxMemBer dataComboBoxMemBer : lstBindMember) {
+            lstUserFind.add(userJPA.findNguoidung(dataComboBoxMemBer.userID));
+        }
+        nd.AddUsers(userID, idTask, lstUserFind);
+        
     }
 
     public class bindDataComboBoxMemBer {
