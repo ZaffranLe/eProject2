@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/Welcome/Desktop/eproject2/eProject2/src/Backend/Model/Noidung.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject2/eProject2/src/Backend/Model/Nhatky.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject2/eProject2/src/Backend/Sevices/Impl/NguoidungServicesImpl.java</file>
@@ -12,15 +11,6 @@
             <file>file:/C:/Users/Welcome/Desktop/eproject2/eProject2/src/Backend/Sevices/NhatKyServices.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject2/eProject2/src/Backend/Sevices/NoidungServices.java</file>
             <file>file:/C:/Users/Welcome/Desktop/eproject2/eProject2/src/Backend/Sevices/Impl/NoidungServiceImpl.java</file>
-=======
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Views/Controllers/PanelProjectController.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Views/Controllers/DetailProjectController.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Backend/Model/Noidung.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Foundation/Transdata.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Backend/Sevices/test.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Views/Controllers/Validate.java</file>
-            <file>file:/C:/Users/Admin/Desktop/Projects/eProject2/src/Views/Controllers/AddMissionForProjectController.java</file>
->>>>>>> 691675b9f459067940389c83847180bd29a0cd83
         </group>
     </open-files>
 </project-private>

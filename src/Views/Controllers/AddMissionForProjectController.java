@@ -6,6 +6,7 @@
 package Controllers;
 
 import Backend.Enum.TRANGTHAIDUAN;
+import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Nguoidung;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
@@ -18,12 +19,15 @@ import java.util.List;
 import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Control;
+import org.controlsfx.control.CheckComboBox;
 
 /**
  * FXML Controller class
@@ -43,10 +47,9 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private DatePicker dtNgayKetThuc;
     @FXML
-    private JFXComboBox<String> cbTrangThaiNV;
+    private JFXComboBox<bindDataComboBoxStatus> cbTrangThaiNV;
     @FXML
     private JFXTextField txtMaNhiemVu;
-
 
     /**
      * Initializes the controller class.
@@ -54,22 +57,33 @@ public class AddMissionForProjectController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        ObservableList<bindDataComboBoxMemBer> listTest = FXCollections.observableArrayList();
         NguoidungServicesImpl userS = new NguoidungServicesImpl();
         System.out.println(Transdata.Instance().getProjectID());
+        final ObservableList<bindDataComboBoxMemBer> data = FXCollections.observableArrayList();
         List<Nguoidung> listUser = userS.getAllByProject(Transdata.Instance().getProjectID());
         for (Nguoidung nguoidung : listUser) {
             System.out.println(nguoidung.getHoTen());
             bindDataComboBoxMemBer memberCombo = new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen());
-            cbThanhVien.getItems().add(memberCombo);
+            data.add(memberCombo);
         }
-   
+        final CheckComboBox<bindDataComboBoxMemBer> check = new CheckComboBox<bindDataComboBoxMemBer>(data);
+        
+        
+        cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CANLAM, "To Do"));
+        cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.DANGLAM, "Inprogress"));
+        cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CHODUYET, "Solved"));
+        cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.HOANTHANH, "Complete"));
     }
 
     @FXML
     private void btnThemNhiemVu(MouseEvent event) {
         NoidungServiceImpl nd = new NoidungServiceImpl();
-        System.out.println(cbThanhVien.getValue().userName);
+        String idTask = txtMaNhiemVu.getText();
+        String tittle = txtTenNhiemVu.getText();
+        String status = cbTrangThaiNV.getValue().Status.toString();
+
+//        nd.create(0, iDDuAn, iDNoiDung, tieuDe, noiDung, trangThai, ngayBatDau, ngayKetThuc);
+
     }
 
     public class bindDataComboBoxMemBer {
@@ -81,12 +95,26 @@ public class AddMissionForProjectController implements Initializable {
 
         public int userID;
         public String userName;
+
         @Override
-        public String toString(){
+        public String toString() {
             return this.userName;
         }
     }
 
-    
+    public class bindDataComboBoxStatus {
+
+        public bindDataComboBoxStatus(TRANGTHAITASK statusEnum, String name) {
+            this.Status = statusEnum;
+            this.Name = name;
+        }
+        public TRANGTHAITASK Status;
+        public String Name;
+
+        @Override
+        public String toString() {
+            return this.Name;
+        }
+    }
 
 }
