@@ -80,6 +80,18 @@ public class Validate {
         }
         return true;
     }
+    public boolean validateAddProject(String MaDuAn, String tenDuAn){
+        if (MaDuAn.isEmpty()||MaDuAn.length()>20) {
+            AlertMess.Instance().ShowMessError("ID must be between 0 and 20 characters!");
+            return false;
+        }
+        if (tenDuAn.isEmpty()||MaDuAn.length()>20) {
+            AlertMess.Instance().ShowMessError("Name must be between 0 and 20 characters!");
+            return false;
+        }
+        return true;
+        
+    }
     public boolean validateAddress(String address) {
         if (address.isEmpty()) {
             AlertMess.Instance().ShowMessError("Address number is empty!");

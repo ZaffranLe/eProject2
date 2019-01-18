@@ -11,6 +11,7 @@ import Backend.Controller.exceptions.IllegalOrphanException;
 import Backend.Controller.exceptions.NonexistentEntityException;
 import Backend.Enum.VITRI;
 import Backend.Model.Duan;
+import Backend.Model.Nguoidung;
 import Backend.Model.NguoidungDuan;
 import Backend.Model.NguoidungDuanPK;
 import Backend.Sevices.DuanServices;
@@ -110,10 +111,27 @@ public class DuanServicesImpl implements DuanServices {
     }
 
     public boolean haveRole(int idNguoidung, String id) {
-        if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, id)).getViTri() == VITRI.QUANLY.toString()) {
+        if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, id)).getViTri()
+                .equals(VITRI.QUANLY.toString())) {
             return true;
         }
         return false;
 
+    }
+
+    @Override
+    public void addUser(int idNguoidung, String idDuan, List<Nguoidung> list) {
+        if (haveRole(idNguoidung, idDuan)) {
+            for (Nguoidung nguoidung : list) {
+                try {
+                    nguoiDungDuAn.create(new NguoidungDuan(new NguoidungDuanPK(nguoidung.getId(), idDuan),
+                            VITRI.NHANVIEN.toString()));
+                } catch (Exception ex) {
+                    Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } else {
+            System.out.println("Khong co quyen");
+        }
     }
 }

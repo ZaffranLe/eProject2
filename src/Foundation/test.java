@@ -36,9 +36,10 @@ public class test {
         List<Duan> list = da.getAllByStatus(1, TRANGTHAIDUAN.DANGLAM.toString());
         try {
 
-            // da.edit("1", "test edit", new Date(1998, 02, 11), TRANGTHAIDUAN.DANGLAM.toString());
-            //da.delete("4");
-            //da.setEndDate("1", new Date());
+            // da.edit("1", "test edit", new Date(1998, 02, 11),
+            // TRANGTHAIDUAN.DANGLAM.toString());
+            // da.delete("4");
+            // da.setEndDate("1", new Date());
         } catch (Exception ex) {
             Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -47,15 +48,9 @@ public class test {
 
         }
 
-        List<Noidung> listNoidung = nd.getAllByStatus("abc", TRANGTHAITASK.DANGLAM.toString());
-        //nd.create("5", "5", "a", "a", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
-        nd.edit("5", "5", "a", "test edit", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
-        nd.delete("5");
-
-        for (Noidung a : listNoidung) {
-            System.out.println(a.getTieuDe());
-
-        }
+        // nd.create("5", "5", "a", "a", TRANGTHAITASK.DANGLAM.toString(), new Date(),
+        // new Date());
+        nd.edit(1, "abc", "1", "a", "fuck", TRANGTHAITASK.DANGLAM.toString(), new Date(), new Date());
 
         List<Nguoidung> ListNguoidung = nguoidung.getAllByProject("1");
 
