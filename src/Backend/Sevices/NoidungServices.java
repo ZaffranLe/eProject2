@@ -27,5 +27,7 @@ public interface NoidungServices {
     public void AddUsers(int idNguoidung, String idNoidung, List<Nguoidung> list);
 
     public List<Noidung> getAllByDuAn(String idDuAn);
+    
+    public List<Noidung> getAllByProjectAndEmail(String idDuAn,String email);
 
 }

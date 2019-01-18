@@ -149,4 +149,9 @@ public class NoidungServiceImpl implements NoidungServices {
     public Noidung findOne(String idNoiDung) {
         return noiDungController.findNoidung(idNoiDung);
     }
+
+    @Override
+    public List<Noidung> getAllByProjectAndEmail(String idDuAn, String email) {
+        return noiDungController.getAllByEmail(idDuAn, email);
+    }
 }
