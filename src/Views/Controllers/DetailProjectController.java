@@ -135,7 +135,7 @@ public class DetailProjectController implements Initializable {
     }
     private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/Views/DetailMission.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/Views/AddMissionForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);

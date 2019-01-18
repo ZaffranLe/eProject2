@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="595.0" style="-fx-background-color: #FFF;" stylesheets="@../Views/css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddProjectController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="199.0" layoutY="48.0" prefHeight="45.0" prefWidth="217.0" text="Create Project" textFill="#2a3132">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="199.0" layoutY="48.0" prefHeight="45.0" prefWidth="217.0" text="Project" textFill="#2a3132">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
@@ -72,5 +72,11 @@
       </Label>
       <FontAwesomeIcon fill="#8d0505" iconName="USER" layoutX="123.0" layoutY="286.0" size="2.5em" />
       <CheckComboBox fx:id="ckcbThanhVienProject" layoutX="243.0" layoutY="261.0" prefHeight="39.0" prefWidth="217.0" />
+      <JFXButton buttonType="RAISED" layoutX="98.0" layoutY="382.0" onMouseClicked="#btnSuaProject" prefHeight="45.0" prefWidth="122.0" styleClass="loginBtn" text="Edit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIcon fill="WHITE" iconName="EDIT" layoutX="105.0" layoutY="413.0" size="2em" />
    </children>
 </AnchorPane>

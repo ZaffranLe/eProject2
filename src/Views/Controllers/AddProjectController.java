@@ -74,5 +74,9 @@ public class AddProjectController implements Initializable {
     @FXML
     private void btnSaveProject(MouseEvent event) {
     }
+
+    @FXML
+    private void btnSuaProject(MouseEvent event) {
+    }
     
 }

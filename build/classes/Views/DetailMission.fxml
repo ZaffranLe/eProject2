@@ -39,7 +39,7 @@
          </font>
       </Label>
       <JFXComboBox fx:id="cbTrangThai" layoutX="233.0" layoutY="142.0" prefHeight="25.0" prefWidth="234.0" />
-      <JFXTextField fx:id="txtTenNhiemVu" layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField fx:id="txtTenNhiemVu" editable="false" layoutX="233.0" layoutY="76.0" prefHeight="25.0" prefWidth="234.0" />
       <JFXTextArea fx:id="txtMoTa" layoutX="237.0" layoutY="380.0" prefHeight="127.0" prefWidth="301.0" />
       <Label layoutX="114.0" layoutY="272.0" prefHeight="30.0" prefWidth="50.0" text="Start:">
          <font>
