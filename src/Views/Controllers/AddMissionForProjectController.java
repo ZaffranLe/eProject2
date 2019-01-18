@@ -106,6 +106,14 @@ public class AddMissionForProjectController implements Initializable {
         
     }
 
+    @FXML
+    private void btnSave(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnSuaNhiemVu(MouseEvent event) {
+    }
+
     public class bindDataComboBoxMemBer {
 
         public bindDataComboBoxMemBer(int id, String name) {

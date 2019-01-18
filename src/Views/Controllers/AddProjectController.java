@@ -24,6 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import org.controlsfx.control.CheckComboBox;
 
 /**
  * FXML Controller class
@@ -43,6 +44,8 @@ public class AddProjectController implements Initializable {
     
     @FXML
     private DatePicker dtNgayBatDau;
+    @FXML
+    private CheckComboBox<?> ckcbThanhVienProject;
     
 
 
@@ -64,6 +67,14 @@ public class AddProjectController implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    private void btnSaveProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnSuaProject(MouseEvent event) {
     }
     
 }
