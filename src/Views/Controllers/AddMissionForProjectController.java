@@ -50,7 +50,7 @@ public class AddMissionForProjectController implements Initializable {
     @FXML
     private DatePicker dtNgayKetThuc;
     @FXML
-    private CheckComboBox<String> ckcbMember;
+    private CheckComboBox<bindDataComboBoxMemBer> ckcbMember;
     @FXML
     private JFXComboBox<bindDataComboBoxStatus> cbTrangThaiNV;
     @FXML
@@ -62,24 +62,20 @@ public class AddMissionForProjectController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // checkcombobox demo
-        final ObservableList<String> strings = FXCollections.observableArrayList();
-        for (int i = 0; i <= 10; i++) {
-            strings.add("Item " + i);
-        }
-        ckcbMember.getItems().addAll(strings);
-        ckcbMember.getCheckModel().getCheckedItems().addListener(new ListChangeListener<String>(){
-            @Override
-            public void onChanged(ListChangeListener.Change<? extends String> c) {
-                    System.out.println(ckcbMember.getCheckModel().getCheckedItems());            }
-        
-        });
-        //
+        final ObservableList<bindDataComboBoxMemBer> cbMember = FXCollections.observableArrayList();
         NguoidungServicesImpl userS = new NguoidungServicesImpl();
         List<Nguoidung> listUser = userS.getAllByProject(Transdata.Instance().getProjectID());
         for (Nguoidung nguoidung : listUser) {
-            cbThanhVien.getItems().add(new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen()));
+            cbMember.add(new bindDataComboBoxMemBer(nguoidung.getId(), nguoidung.getHoTen()));
         }
-
+        ckcbMember.getItems().addAll(cbMember);
+        ckcbMember.getCheckModel().getCheckedItems().addListener(new ListChangeListener<bindDataComboBoxMemBer>(){
+            @Override
+            public void onChanged(ListChangeListener.Change<? extends bindDataComboBoxMemBer> c) {
+                    System.out.println(ckcbMember.getCheckModel().getCheckedItems());            }
+        
+        });
+      
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CANLAM, "To Do"));
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.DANGLAM, "Inprogress"));
         cbTrangThaiNV.getItems().add(new bindDataComboBoxStatus(TRANGTHAITASK.CHODUYET, "Solved"));
