@@ -146,6 +146,7 @@ public class TaskManagementController implements Initializable {
 
     @FXML
     private void openCreateProject(MouseEvent event) throws IOException {
+        Transdata.Instance().setIsEdit(false);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

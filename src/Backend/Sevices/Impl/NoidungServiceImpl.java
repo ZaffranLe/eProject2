@@ -75,8 +75,11 @@ public class NoidungServiceImpl implements NoidungServices {
     @Override
     public void edit(int idNguoidung, String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
         if (trangThai.equals(TRANGTHAITASK.HOANTHANH.toString())) {
-            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
-            return;
+            if (!haveRole(idNguoidung, iDDuAn)) {
+                AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+                return;
+            }
+
         }
         Noidung nd = noiDungController.findNoidung(iDNoiDung);
         nd.setTieuDe(tieuDe);
@@ -108,15 +111,12 @@ public class NoidungServiceImpl implements NoidungServices {
         }
     }
 
-    public boolean haveRole(int idNguoidung, String idTask) {
-        Noidung task = noiDungController.findNoidung(idTask);
-        System.out.println(task.getIDDuAn().getIDDuAn());
-        if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, task.getIDDuAn().getIDDuAn())).getViTri().equals(VITRI.QUANLY.toString())) {
+    public boolean haveRole(int idNguoidung, String idDuAn) {
+        if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, idDuAn)).getViTri().equals(VITRI.QUANLY.toString())) {
             return true;
         } else {
             System.out.println("Khong co quyen");
         }
-        System.out.println(nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, task.getIDDuAn().getIDDuAn())).getViTri());
         System.out.println(VITRI.QUANLY.toString());
         return false;
     }
