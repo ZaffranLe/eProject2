@@ -12,6 +12,7 @@ import Backend.Model.Nguoidung;
 import Backend.Sevices.Impl.DuanServicesImpl;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Foundation.Transdata;
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -80,6 +81,10 @@ public class PanelProjectController implements Initializable {
                 DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
                 String format = df.format(findDuan.getNgayKetThuc());
                 lbEndDate.setText("EndDate: "+format);
+                JFXButton add = (JFXButton) scene.lookup("#btnAdd");
+                add.setVisible(false);
+                JFXButton edit = (JFXButton) scene.lookup("#btnEditPJ");
+                edit.setVisible(false);
                 Stage stage = new Stage();
                 stage.setScene(scene);
                 stage.show();

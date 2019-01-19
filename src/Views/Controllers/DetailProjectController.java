@@ -15,6 +15,7 @@ import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
 import Backend.Sevices.Impl.UserSevicesImpl;
 import Foundation.Transdata;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
@@ -62,6 +63,10 @@ public class DetailProjectController implements Initializable {
     private Label lbMember;
     @FXML
     private JFXTextField txtSearch;
+    @FXML
+    private JFXButton btnAdd;
+    @FXML
+    private JFXButton btnEditPJ;
 
     /**
      * Initializes the controller class.
