@@ -14,6 +14,7 @@ import Backend.Sevices.Impl.DuanServicesImpl;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
 import Backend.Sevices.Impl.UserSevicesImpl;
+import Foundation.AlertMess;
 import Foundation.Transdata;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -251,6 +252,7 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void btnCompleteProject(MouseEvent event) {
+    
         try {
             DuanServicesImpl daS = new DuanServicesImpl();
             daS.setDone(Integer.parseInt(Transdata.Instance().getUserLoginID()), Transdata.Instance().getProjectID());
