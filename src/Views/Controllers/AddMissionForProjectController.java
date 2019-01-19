@@ -12,6 +12,7 @@ import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
+import Foundation.AlertMess;
 import Foundation.DateTimeParse;
 import Foundation.Transdata;
 import com.jfoenix.controls.JFXButton;
@@ -35,6 +36,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Control;
+import javafx.stage.Stage;
 import org.controlsfx.control.CheckComboBox;
 
 /**
@@ -131,6 +133,27 @@ public class AddMissionForProjectController implements Initializable {
 
     @FXML
     private void btnThemNhiemVu(MouseEvent event) {
+        if (txtMaNhiemVu.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Task's Id can not be empty");
+            return;
+        }
+        if (txtTenNhiemVu.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Task's title can not be empty");
+            return;
+        }
+        if (cbTrangThaiNV.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Task's status can not be empty");
+            return;
+        }
+
+        if (dtNgayBatDau.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Task's start date can not be empty");
+            return;
+        }
+        if (dtNgayKetThuc.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Task's end date can not be empty");
+            return;
+        }
         NoidungServiceImpl nd = new NoidungServiceImpl();
         NguoidungJpaController userJPA = new NguoidungJpaController();
         String idTask = txtMaNhiemVu.getText();
@@ -150,10 +173,33 @@ public class AddMissionForProjectController implements Initializable {
         txtMaNhiemVu.setText("");
         txtMoTa.setText("");
         txtTenNhiemVu.setText("");
+        Stage stage = (Stage) Save.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     private void btnSave(MouseEvent event) {
+        if (txtMaNhiemVu.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Task's Id can not be empty");
+            return;
+        }
+        if (txtTenNhiemVu.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Task's title can not be empty");
+            return;
+        }
+        if (cbTrangThaiNV.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Task's status can not be empty");
+            return;
+        }
+
+        if (dtNgayBatDau.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Task's start date can not be empty");
+            return;
+        }
+        if (dtNgayKetThuc.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Task's end date can not be empty");
+            return;
+        }
         NoidungServiceImpl nd = new NoidungServiceImpl();
         NguoidungJpaController userJPA = new NguoidungJpaController();
         String idTask = txtMaNhiemVu.getText();
@@ -170,6 +216,8 @@ public class AddMissionForProjectController implements Initializable {
             lstUserFind.add(userJPA.findNguoidung(dataComboBoxMemBer.userID));
         }
         nd.AddUsers(userID, idTask, lstUserFind);
+        Stage stage = (Stage) Save.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

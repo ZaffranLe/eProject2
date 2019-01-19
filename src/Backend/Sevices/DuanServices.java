@@ -30,6 +30,8 @@ public interface DuanServices {
 
     public void setStatus(int idNguoidung, String idDuAn, TRANGTHAIDUAN status);
 
+    public void setDone(int idNguoidung, String idDuAn);
+
     public List<Duan> getAllByStatus(int idNguoiDung, String trangThaiDuAn);
 
 }
