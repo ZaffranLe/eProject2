@@ -5,6 +5,9 @@
  */
 package Controllers;
 
+import Backend.Controller.NguoidungJpaController;
+import Backend.Model.Nguoidung;
+import Foundation.Transdata;
 import com.jfoenix.controls.JFXButton;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.IOException;
@@ -13,13 +16,18 @@ import javafx.util.Duration;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.RotateTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -45,6 +53,8 @@ public class SideBarController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    public static Stage stage = null;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -81,11 +91,11 @@ public class SideBarController implements Initializable {
         rotation2.setByAngle(360);
         rotation2.setCycleCount(100);
         rotation2.play();
-        
+
         rotation3.setByAngle(360);
         rotation3.setCycleCount(100);
         rotation3.play();
-        
+
         rotation4.setByAngle(360);
         rotation4.setCycleCount(100);
         rotation4.play();
@@ -93,6 +103,31 @@ public class SideBarController implements Initializable {
 
     @FXML
     private void btnLogout(MouseEvent event) {
-        
+        try {
+            System.out.println("Stage is closing");
+            NguoidungJpaController userJPA = new NguoidungJpaController();
+            Nguoidung user = Transdata.Instance().getUserLogin();
+            user.setTrangThaiDangNhap(false);
+            userJPA.edit(user);
+            FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/Views/Main.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.initStyle(StageStyle.UNDECORATED);
+
+                
+                this.stage = stage;
+                stage.show();
+                ((Node) (event.getSource())).getScene().getWindow().hide();
+              
+             
+
+                
+
+          
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
