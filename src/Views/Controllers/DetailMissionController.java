@@ -5,9 +5,16 @@
  */
 package Controllers;
 
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.input.MouseEvent;
+import org.controlsfx.control.CheckComboBox;
 
 /**
  * FXML Controller class
@@ -16,6 +23,19 @@ import javafx.fxml.Initializable;
  */
 public class DetailMissionController implements Initializable {
 
+    @FXML
+    private JFXComboBox<?> cbTrangThai;
+    @FXML
+    private JFXTextField txtTenNhiemVu;
+    @FXML
+    private JFXTextArea txtMoTa;
+    @FXML
+    private DatePicker dtNgayBatDau;
+    @FXML
+    private DatePicker dtNgayKetThuc;
+    @FXML
+    private CheckComboBox<?> ckcbThanhVien;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +43,13 @@ public class DetailMissionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void btnSuaNhiemVu(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnLuuNhiemVu(MouseEvent event) {
+    }
     
 }

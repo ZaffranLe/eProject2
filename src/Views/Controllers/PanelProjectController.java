@@ -40,16 +40,17 @@ public class PanelProjectController implements Initializable {
     @FXML
     private void panelProjectClick(MouseEvent event) throws IOException {
         try {
+            Transdata.Instance().setProjectID(idProject.getText());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/DetailProject.fxml"));
             Scene scene = new Scene(loader.load());
             Label lbID = (Label) scene.lookup("#lbID");
+            System.out.println(idProject.getText());
             lbID.setText(idProject.getText());
             Label lbName = (Label) scene.lookup("#lbNameProject");
             lbName.setText(ProjectName.getText());
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
-            Transdata.Instance().setProjectID(idProject.getText());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

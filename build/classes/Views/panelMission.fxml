@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="pnMission" prefHeight="100.0" prefWidth="125.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.PanelMissionController">
+<AnchorPane id="AnchorPane" fx:id="pnMission" onMouseClicked="#panelMissionClick" prefHeight="81.0" prefWidth="141.0" styleClass="taskBtn" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.PanelMissionController">
    <children>
       <Label fx:id="lbIDTask" layoutX="25.0" layoutY="7.0" prefHeight="31.0" prefWidth="72.0" text="ID Mission" visible="false" />
-      <Label fx:id="lbTitleTask" layoutX="27.0" layoutY="23.0" prefHeight="31.0" prefWidth="72.0" text="Tiltle" />
-      <Label fx:id="lbUserName" layoutY="77.0" prefHeight="22.0" prefWidth="125.0" text="Tiltle" />
+      <Label fx:id="lbTitleTask" layoutX="37.0" layoutY="9.0" prefHeight="27.0" prefWidth="49.0" text="Tiltle" textFill="#ee561f" wrapText="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="lbUserName" layoutX="42.0" layoutY="41.0" prefHeight="22.0" prefWidth="40.0" text="Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

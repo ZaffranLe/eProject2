@@ -9,6 +9,7 @@ import Backend.Model.Nguoidung;
 import Backend.Sevices.Impl.UserSevicesImpl;
 import Backend.Sevices.UserSevices;
 import Foundation.AlertMess;
+import Foundation.LibraryMD5;
 import Foundation.Transdata;
 import Views.Controllers.Validate;
 import com.jfoenix.controls.JFXButton;
@@ -70,6 +71,8 @@ public class UserManagementController implements Initializable {
         txtAddress.setEditable(false);
         txtUsername.setEditable(false);
         txtPhone.setEditable(false);
+        txtNewPassWord.setEditable(false);
+        txtConfirmNewPassword.setEditable(false);
     }
 
     @FXML
@@ -80,6 +83,8 @@ public class UserManagementController implements Initializable {
         txtAddress.setEditable(true);
         txtUsername.setEditable(true);
         txtPhone.setEditable(true);
+        txtNewPassWord.setEditable(true);
+        txtConfirmNewPassword.setEditable(true);
 
     }
 
@@ -102,6 +107,13 @@ public class UserManagementController implements Initializable {
         if (!Validate.Instance().validatePhoneNumber(txtPhone.getText())) {
             return false;
         }
+        if (!Validate.Instance().validatePassword(txtNewPassWord.getText())) {
+            return false;
+        }
+        if (!txtNewPassWord.getText().equals(txtConfirmNewPassword.getText())) {
+            AlertMess.Instance().ShowMessError("The confirm password does not match password!");
+            return false;
+        }
         return true;
     }
 
@@ -114,6 +126,9 @@ public class UserManagementController implements Initializable {
             user.setHoTen(txtUsername.getText());
             user.setDiaChi(txtAddress.getText());
             user.setSdt(txtPhone.getText());
+            LibraryMD5 lbr = new LibraryMD5();
+            String passHash = lbr.getMd5(txtNewPassWord.getText());
+            user.setMatKhau(passHash);
             if (userS.Edit(user)) {
                 AlertMess.Instance().ShowMessSuccess("Edit profile succeed.");
                 btnSaveProfile.setVisible(false);

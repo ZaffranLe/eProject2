@@ -211,7 +211,7 @@ public class NoidungJpaController implements Serializable {
     }
 
     /**
-     * Lấy ra các task trong dự án 
+     * Lấy ra các task trong dự án
      *
      * @param idDuAn id của dự án được chọn
      * @param trangThaiTask trạng thái của task
@@ -232,7 +232,20 @@ public class NoidungJpaController implements Serializable {
             em.close();
         }
     }
-    
 
-    
+    public List<Noidung> getAllByEmail(String idDuAn, String email) {
+        EntityManager em = getEntityManager();
+        try {
+            String jpql = "Select a from Noidung a join a.nguoidungCollection b where b.email like :email and  a.iDDuAn.iDDuAn =:idDuAn";
+            return em.createQuery(jpql).setParameter("email", "%" + email + "%").setParameter("idDuAn", idDuAn).getResultList();
+        } catch (Exception e) {
+            System.out.println("Xảy ra lỗi khi lấy danh sách người dùng từ cơ sở dữ liệu");
+            System.out.println(e.getMessage());
+            return null;
+
+        } finally {
+            em.close();
+        }
+    }
+
 }

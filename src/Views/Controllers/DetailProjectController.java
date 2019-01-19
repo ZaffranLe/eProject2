@@ -9,7 +9,9 @@ import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Duan;
 import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
+import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
+import Backend.Sevices.Impl.UserSevicesImpl;
 import Foundation.Transdata;
 import java.io.IOException;
 import java.net.URL;
@@ -55,7 +57,6 @@ public class DetailProjectController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            // TODO
             loadForm();
         } catch (IOException ex) {
             Logger.getLogger(DetailProjectController.class.getName()).log(Level.SEVERE, null, ex);
@@ -66,15 +67,49 @@ public class DetailProjectController implements Initializable {
     }    
     public void loadForm() throws IOException{
         NoidungServiceImpl ndS = new NoidungServiceImpl();
-        List<Noidung> lstTask  = ndS.getAllByDuAn(lbID.getText());
+        List<Noidung> lstTask  = ndS.getAllByDuAn(Transdata.Instance().getProjectID());
+        NguoidungServicesImpl userS = new NguoidungServicesImpl();
         for (Noidung noidung : lstTask) {
             if (noidung.getTrangThai().equals(TRANGTHAITASK.CANLAM.toString())) {
                 // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbToDo.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
+            }
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.DANGLAM.toString())) {
+                // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbInProgress.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
+            }
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.CHODUYET.toString())) {
+                // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbSolved.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
+            }
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.HOANTHANH.toString())) {
+                // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbComplete.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
             }
         }
         
     }
-    public Node gen(String id, String tittle, String userName) throws IOException{
+    public Node getNode(String id, String tittle, String userName) throws IOException{
          Node node = (Node) FXMLLoader.load(getClass().getResource("/Views/panelMission.fxml"));
             Label lbID = (Label) node.lookup("#lbIDTask");
             lbID.setText(id);
@@ -91,17 +126,19 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void addTask(MouseEvent event) throws IOException {
+        Transdata.Instance().setIsEdit(false);
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddMissionForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        Label lbTittle = (Label) scene.lookup("#tittleForm");
+        lbTittle.setText("Create Task");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
     private void detailTask(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/Views/DetailMission.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/Views/AddMissionForProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -112,15 +149,14 @@ public class DetailProjectController implements Initializable {
     private void btnLocNhiemVu(MouseEvent event) {
     }
 
-    @FXML
-    private void addMember(MouseEvent event) throws IOException {
-         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/Views/AddMemberForProject.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
+//    private void addMember(MouseEvent event) throws IOException {
+//         FXMLLoader fxmlLoader = new FXMLLoader();
+//        fxmlLoader.setLocation(getClass().getResource("/Views/AddMemberForProject.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load());
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
+//    }
     @FXML
     private void btnOpenDiary(MouseEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader();
@@ -137,6 +173,16 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void btnDeleteProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnEditProject(MouseEvent event) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/AddProject.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
     
 }

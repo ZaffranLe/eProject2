@@ -306,13 +306,28 @@ public class NguoidungJpaController implements Serializable {
         }
     }
 
-    public List<Nguoidung> findByEmailAndDuAn(String idDuAn,String email) {
+    public List<Nguoidung> findByEmailAndDuAn(String idDuAn, String email) {
         EntityManager em = getEntityManager();
         try {
             String jpql = "Select a from Nguoidung a join a.nguoidungDuanCollection b where a.email like :key and b.duan.iDDuAn =:iDDuAn";
             return em.createQuery(jpql).setParameter("key", "%" + email + "%").setParameter("iDDuAn", idDuAn).getResultList();
         } catch (Exception e) {
             System.out.println("Xảy ra lỗi khi lấy danh sách người dùng từ cơ sở dữ liệu by email and dự án");
+            System.out.println(e.getMessage());
+            return null;
+
+        } finally {
+            em.close();
+        }
+    }
+
+    public List<Nguoidung> getAll() {
+        EntityManager em = getEntityManager();
+        try {
+            String jpql = "Select a from Nguoidung a ";
+            return em.createQuery(jpql).getResultList();
+        } catch (Exception e) {
+            System.out.println("Xảy ra lỗi khi lấy danh sách người dùng từ cơ sở dữ liệu");
             System.out.println(e.getMessage());
             return null;
 
