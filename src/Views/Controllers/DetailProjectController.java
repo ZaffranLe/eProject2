@@ -5,10 +5,12 @@
  */
 package Views.Controllers;
 
+import Backend.Enum.TRANGTHAIDUAN;
 import Backend.Enum.TRANGTHAITASK;
 import Backend.Model.Duan;
 import Backend.Model.Nguoidung;
 import Backend.Model.Noidung;
+import Backend.Sevices.Impl.DuanServicesImpl;
 import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
 import Backend.Sevices.Impl.UserSevicesImpl;
@@ -230,10 +232,27 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void btnCompleteProject(MouseEvent event) {
+        try {
+            DuanServicesImpl daS = new DuanServicesImpl();
+            daS.setDone(Integer.parseInt(Transdata.Instance().getUserLoginID()), Transdata.Instance().getProjectID());
+            Stage stage = (Stage) txtSearch.getScene().getWindow();
+            stage.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
     private void btnDeleteProject(MouseEvent event) {
+        try {
+            DuanServicesImpl daS = new DuanServicesImpl();
+            daS.setStatus(Integer.parseInt(Transdata.Instance().getUserLoginID()), Transdata.Instance().getProjectID(), TRANGTHAIDUAN.DAXOA);
+            Stage stage = (Stage) txtSearch.getScene().getWindow();
+            stage.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 
     @FXML
