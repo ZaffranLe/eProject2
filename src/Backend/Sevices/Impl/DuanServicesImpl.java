@@ -146,7 +146,8 @@ public class DuanServicesImpl implements DuanServices {
                     Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            nhatKy.create(idDuan, "Add user to project by " + nguoiDungController.findNguoidung(idNguoidung).getHoTen(), new Date());
+            nhatKy.create(idDuan, "Add user to project by " + nguoiDungController.findNguoidung(idNguoidung).getHoTen(),
+                    new Date());
 
         } else {
             AlertMess.Instance().ShowMessError("You might not have permission to add user!");
@@ -161,7 +162,9 @@ public class DuanServicesImpl implements DuanServices {
                 Duan duan = duAnController.findDuan(idDuAn);
                 duan.setTrangThai(status.toString());
                 duAnController.edit(duan);
-                nhatKy.create(idDuAn, "Change project status by" + nguoiDungController.findNguoidung(idNguoidung).getHoTen(), new Date());
+                nhatKy.create(idDuAn,
+                        "Change project status by" + nguoiDungController.findNguoidung(idNguoidung).getHoTen(),
+                        new Date());
             } catch (NonexistentEntityException ex) {
                 Logger.getLogger(DuanServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {

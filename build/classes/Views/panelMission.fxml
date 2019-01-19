@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="pnMission" onMouseClicked="#panelMissionClick" prefHeight="81.0" prefWidth="141.0" styleClass="taskBtn" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.PanelMissionController">
+<AnchorPane id="AnchorPane" fx:id="pnMission" onMouseClicked="#panelMissionClick" prefHeight="81.0" prefWidth="141.0" style="-fx-background-color: #FFF;" styleClass="taskBtn" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Controllers.PanelMissionController">
    <children>
       <Label fx:id="lbIDTask" layoutX="25.0" layoutY="7.0" prefHeight="31.0" prefWidth="72.0" text="ID Mission" visible="false" />
-      <Label fx:id="lbTitleTask" layoutX="37.0" layoutY="9.0" prefHeight="27.0" prefWidth="49.0" text="Tiltle" textFill="#ee561f" wrapText="true">
+      <Label fx:id="lbTitleTask" alignment="CENTER" layoutX="14.0" layoutY="9.0" prefHeight="27.0" prefWidth="115.0" text="Tiltle" textAlignment="CENTER" textFill="#ee561f" wrapText="true">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="lbUserName" layoutX="42.0" layoutY="41.0" prefHeight="22.0" prefWidth="40.0" text="Name">
+      <Label fx:id="lbUserName" alignment="CENTER" layoutX="4.0" layoutY="41.0" prefHeight="27.0" prefWidth="133.0" text="Name" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>

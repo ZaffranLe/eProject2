@@ -11,19 +11,19 @@
 
 <AnchorPane fx:id="panelProject" layoutX="54.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelProjectClick" prefHeight="126.0" prefWidth="208.0" styleClass="projectBtn" stylesheets="@css/style.css" AnchorPane.topAnchor="24.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PanelProjectController">
     <children>
-        <Label fx:id="ProjectName" alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="51.0" prefHeight="35.0" prefWidth="134.0" text="Tên project" textAlignment="CENTER">
+        <Label fx:id="ProjectName" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="51.0" prefHeight="35.0" prefWidth="202.0" text="Tên project" textAlignment="CENTER">
             <font>
-                <Font name="Franklin Gothic Demi" size="21.0" />
+                <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="ProjectStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="91.0" prefHeight="32.0" prefWidth="134.0" text="Trạng thái" textFill="#d3132c">
+        <Label fx:id="ProjectStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="91.0" prefHeight="32.0" prefWidth="167.0" text="Trạng thái" textFill="#d3132c">
             <font>
-                <Font name="System Bold Italic" size="20.0" />
+                <Font name="System Bold Italic" size="18.0" />
             </font>
         </Label>
-      <Label fx:id="idProject" alignment="CENTER" layoutX="43.0" layoutY="13.0" prefHeight="32.0" prefWidth="134.0" text="IDProject">
+      <Label fx:id="idProject" alignment="CENTER" layoutX="8.0" layoutY="13.0" prefHeight="32.0" prefWidth="194.0" text="IDProject">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
     </children>
     <padding>
