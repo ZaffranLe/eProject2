@@ -118,6 +118,19 @@ public class AddProjectController implements Initializable {
 
     @FXML
     private void btnThemProject(MouseEvent event) {
+        if (txtMaDuAn.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Project's Id can not be empty");
+            return;
+
+        }
+        if (txtTenProject.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Project's name can not be empty");
+            return;
+        }
+        if (dtNgayBatDau.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Start date can not be empty");
+            return;
+        }
         try {
             NguoidungJpaController userJPA = new NguoidungJpaController();
             DuanServicesImpl DA = new DuanServicesImpl();
@@ -129,6 +142,8 @@ public class AddProjectController implements Initializable {
                 lstUserFind.add(userJPA.findNguoidung(dataComboBoxMemBer.userID));
             }
             DA.addUser(Integer.parseInt(Transdata.Instance().getUserLoginID()), txtMaDuAn.getText(), lstUserFind);
+            Stage stage = (Stage) Save.getScene().getWindow();
+            stage.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -136,6 +151,19 @@ public class AddProjectController implements Initializable {
 
     @FXML
     private void btnSaveProject(MouseEvent event) {
+        if (txtMaDuAn.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Project's Id can not be empty");
+            return;
+
+        }
+        if (txtTenProject.getText().isEmpty()) {
+            AlertMess.Instance().ShowMessError("Project's name can not be empty");
+            return;
+        }
+        if (dtNgayBatDau.getValue() == null) {
+            AlertMess.Instance().ShowMessError("Start date can not be empty");
+            return;
+        }
         try {
             NguoidungJpaController userJPA = new NguoidungJpaController();
             DuanServicesImpl DA = new DuanServicesImpl();
@@ -147,6 +175,8 @@ public class AddProjectController implements Initializable {
                 lstUserFind.add(userJPA.findNguoidung(dataComboBoxMemBer.userID));
             }
             DA.addUser(Integer.parseInt(Transdata.Instance().getUserLoginID()), txtMaDuAn.getText(), lstUserFind);
+            Stage stage = (Stage) Save.getScene().getWindow();
+            stage.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
