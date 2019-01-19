@@ -87,9 +87,12 @@ public class MainController implements Initializable {
                 Stage stage = new Stage();
                 stage.setTitle("Task Management");
                 stage.setScene(scene);
+                
                 this.stage = stage;
                 stage.show();
-                ((Node) (event.getSource())).getScene().getWindow().hide();
+//                Controllers.MainLaunch.stage.hide();
+              ((Node) (event.getSource())).getScene().getWindow().hide();
+                
                 //Goi su kien khi nhan nut tat (dung de chuyen trang thai dang nhap)
                 stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                     public void handle(WindowEvent we) {
