@@ -42,6 +42,7 @@ public class DuanServicesImpl implements DuanServices {
 
     @Override
     public void create(int idNguoidung, String id, String name, Date start, String status) {
+
         if (duAnController.findDuan(id) != null) {
             AlertMess.Instance().ShowMessError("Project is existed!");
             return;
@@ -130,11 +131,7 @@ public class DuanServicesImpl implements DuanServices {
     }
 
     private boolean haveRole(int idNguoidung, String id) {
-        if (nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, id)).getViTri().equals(VITRI.QUANLY.toString())) {
-
-            return true;
-        }
-        return false;
+        return nguoiDungDuAn.findNguoidungDuan(new NguoidungDuanPK(idNguoidung, id)).getViTri().equals(VITRI.QUANLY.toString());
 
     }
 
