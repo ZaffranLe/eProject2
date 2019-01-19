@@ -173,6 +173,8 @@ public class AddMissionForProjectController implements Initializable {
         txtMaNhiemVu.setText("");
         txtMoTa.setText("");
         txtTenNhiemVu.setText("");
+        Stage stage = (Stage) Save.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
