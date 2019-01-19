@@ -15,7 +15,7 @@
           <TableColumn fx:id="colContent" editable="false" prefWidth="958.0" text="Content" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" layoutX="605.0" layoutY="31.0" prefHeight="40.0" prefWidth="120.0" text="Log Project">
+      <Label alignment="CENTER" layoutX="545.0" layoutY="33.0" prefHeight="40.0" prefWidth="120.0" text="Log Project">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
