@@ -46,7 +46,11 @@ public class NoidungServiceImpl implements NoidungServices {
 
     @Override
     public void create(int idNguoitao, String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
- 
+        if (ngayBatDau.after(ngayKetThuc)) {
+            AlertMess.Instance().ShowMessError("Start date must be less than end date!");
+            return;
+
+        }
         if (noiDungController.findNoidung(iDNoiDung) != null) {
             AlertMess.Instance().ShowMessError("Task is existed!");
             return;
