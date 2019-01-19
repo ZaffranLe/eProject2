@@ -75,8 +75,11 @@ public class NoidungServiceImpl implements NoidungServices {
     @Override
     public void edit(int idNguoidung, String iDDuAn, String iDNoiDung, String tieuDe, String noiDung, String trangThai, Date ngayBatDau, Date ngayKetThuc) {
         if (trangThai.equals(TRANGTHAITASK.HOANTHANH.toString())) {
-            AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
-            return;
+            if (!haveRole(idNguoidung, iDDuAn)) {
+                AlertMess.Instance().ShowMessError("You might not have permission to do this function!");
+                return;
+            }
+
         }
         Noidung nd = noiDungController.findNoidung(iDNoiDung);
         nd.setTieuDe(tieuDe);
