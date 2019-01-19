@@ -16,7 +16,7 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <JFXTextField labelFloat="true" layoutX="52.0" layoutY="87.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="228.0" promptText="Filter" unFocusColor="#4712da">
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="52.0" layoutY="87.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="228.0" promptText="Filter" unFocusColor="#4712da">
          <font>
             <Font size="18.0" />
          </font>

@@ -13,6 +13,7 @@ import Backend.Sevices.Impl.NguoidungServicesImpl;
 import Backend.Sevices.Impl.NoidungServiceImpl;
 import Backend.Sevices.Impl.UserSevicesImpl;
 import Foundation.Transdata;
+import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
@@ -29,6 +30,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javax.swing.JTextField;
 
 /**
  * FXML Controller class
@@ -49,6 +51,8 @@ public class DetailProjectController implements Initializable {
     private Label lbID;
     @FXML
     private Label lbNameProject;
+    @FXML
+    private JFXTextField txtSearch;
 
 
     /**
@@ -66,8 +70,60 @@ public class DetailProjectController implements Initializable {
         
     }    
     public void loadForm() throws IOException{
+        clearVbox();
         NoidungServiceImpl ndS = new NoidungServiceImpl();
         List<Noidung> lstTask  = ndS.getAllByDuAn(Transdata.Instance().getProjectID());
+        NguoidungServicesImpl userS = new NguoidungServicesImpl();
+        for (Noidung noidung : lstTask) {
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.CANLAM.toString())) {
+                // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbToDo.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
+            }
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.DANGLAM.toString())) {
+                // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbInProgress.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
+            }
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.CHODUYET.toString())) {
+                // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbSolved.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
+            }
+            if (noidung.getTrangThai().equals(TRANGTHAITASK.HOANTHANH.toString())) {
+                // TODO
+                String userName = "";
+                List<Nguoidung> lstUser = userS.getAllByTask(noidung.getIDNoiDung());
+                for (Nguoidung nguoidung : lstUser) {
+                    userName = userName + nguoidung.getHoTen()+",";
+                }
+                vbComplete.getChildren().add(getNode(noidung.getIDNoiDung(), noidung.getTieuDe(), userName));
+            }
+        }
+        
+    }
+    public void clearVbox(){
+        vbToDo.getChildren().clear();
+        vbInProgress.getChildren().clear();
+        vbSolved.getChildren().clear();
+        vbComplete.getChildren().clear();
+    }
+    public void loadFormByEmail() throws IOException{
+        clearVbox();
+        NoidungServiceImpl ndS = new NoidungServiceImpl();
+        List<Noidung> lstTask  = ndS.getAllByProjectAndEmail(Transdata.Instance().getProjectID(),txtSearch.getText());
         NguoidungServicesImpl userS = new NguoidungServicesImpl();
         for (Noidung noidung : lstTask) {
             if (noidung.getTrangThai().equals(TRANGTHAITASK.CANLAM.toString())) {
@@ -146,7 +202,12 @@ public class DetailProjectController implements Initializable {
     }
 
     @FXML
-    private void btnLocNhiemVu(MouseEvent event) {
+    private void btnLocNhiemVu(MouseEvent event) throws IOException {
+        if (txtSearch.getText().isEmpty()) {
+            loadForm();
+            return;
+        }
+        loadFormByEmail();
     }
 
 //    private void addMember(MouseEvent event) throws IOException {
@@ -177,9 +238,12 @@ public class DetailProjectController implements Initializable {
 
     @FXML
     private void btnEditProject(MouseEvent event) throws IOException {
-         FXMLLoader fxmlLoader = new FXMLLoader();
+        Transdata.Instance().setIsEdit(true);
+        FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/AddProject.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        Label lookup = (Label) scene.lookup("#IDuser");
+        lookup.setText(Transdata.Instance().getUserLoginID());
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
